@@ -1,0 +1,4 @@
+# set PHP Log file
+php_value error_log /Users/smurali/Projects/YPS/Salon/localhost/logs/error_log
+php_value upload_max_filesize 256M
+php_value post_max_size 256M

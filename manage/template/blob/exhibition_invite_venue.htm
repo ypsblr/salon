@@ -1,0 +1,203 @@
+<html>
+<head>
+<style type="text/css">
+
+.tableContent img {
+	border: 0 !important;
+	display: block !important;
+	outline: none !important;
+}
+p, ul, li {
+	color:#5C5A5A;
+	font-size:14px;
+	line-height:21px;
+	margin:0;
+	padding: 8px;
+}
+p a {
+	color:#1f8544;
+	font-size:14px;
+	line-height:21px;
+	margin:0;
+	padding: 8px;
+}
+h2,h1 {
+	color:#555;
+	font-size:24px;
+	line-height:30px;
+	font-weight:bold;
+	margin: 8px 0px 4px 0px;
+}
+h3 {
+	color:#555;
+	font-size:18px;
+	line-height:24px;
+	font-weight:bold;
+	margin: 8px 0px 4px 0px;
+}
+
+table .table-data {
+	margin: 0;
+	width: 100%;
+	padding: 8px;
+	border-collapse: collapse;
+}
+
+table .table-data td, th  {
+	padding: 8px;
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+}
+
+table .table-data td img {
+	padding-right:10px;
+	padding-left: 10px;
+	max-width: 80px;
+}
+
+h2.white {
+	color:#ffffff;
+}
+
+img.img-avatar {
+	width : 120px;
+}
+
+</style>
+</head>
+
+<body style="width: 100%; background-color : #efe6bd;">
+	<table align="center" bgcolor="#f6f6f6" border="0" cellpadding="25" cellspacing="0" style="font-family:helvetica, sans-serif;" width="600" class="MainContainer">
+	<tbody>
+		<tr>
+			<td>
+				<table width="100%">
+				<tbody>
+					<tr>
+						<td colspan="2"><img alt="Award Ceremony" style="max-width: 600px;" src="[banner-image]"></td>
+					</tr>
+					<tr bgcolor="#fff">
+						<td valign="top" width="100">
+							<img alt="<<YPS Logo>>" src="[salon-website]/img/ypsLogo.png" height="80">
+						</td>
+						<td align="left" bgcolor="#fcab55" style="padding:8px;" colspan="8">
+							<p style="color:#ffffff;font-size:24px;line-height:36px;">
+								<b>[salon-name]</b>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table class="table-data" width="100%">
+				<tbody>
+					<tr>
+						<td>
+							<br>
+							<h3> Dear [participant-name],</h3>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>Thank you once again for participating in the [salon-name]. On behalf of the Salon Committee and the YPS Executive
+							Committe, it gives me great pleasure to invite you to the Salon Exhibition and to the Award Function.</p>
+							[if_begin:exhibition-invite-exists]
+							<p>
+								<img src="[salon-website]/salons/[yearmonth]/img/[exhibition-invite-img]" style="max-height: 300px; text-align: center;">
+							</p>
+							[if_end:exhibition-invite-exists]
+							[if_begin:exhibition-message-exists]
+							[exhibition-message-blob]
+							[if_end:exhibition-message-exists]
+							{{{ REMOVE THE FOLLOWING PARAGRAPHS IF EMAIL MESSAGE HAS BEEN COMPILED WITH THESE DETAILS }}}
+							<h1>Exhibition Details</h1>
+							<p><b>Exhibition Dates :</b> [exhibition-start-date] to [exhibition-end-date]</p>
+							<p><b>Exhibition Venue :</b> [exhibition-venue]</p>
+							<p><b>Venue Address    :</b> [exhibition-venue-address]</p>
+							<p><b>Venue Location   :</b></p>
+							<div style="margin-left: 100px;">
+								<iframe src="[exhibition-venue-location-map]" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+							</div>
+							<p>Please visit the exhibition between 10:00 AM and 06:00 PM on any of the days to appreciate the award winning
+								images in glorious print and frame and watch a slideshow of all the accepted images.</p>
+
+							<h1>Award Function</h1>
+							<p>The Award Function will start at {AWARD FUNCTION START TIME} on {AWARD FUNCTION DATE}.</p>
+							<p>Program Details are as follows:</p>
+							<p>
+								{TIME} - Welcome Speech by the President, YPS <br>
+								{TIME} - Salon Report by the Salon Secretary <br>
+								{TIME} - Presentation of Awards <br>
+								{TIME} - Speech by the Dignitories <br>
+								{TIME} - Vote of thanks by the Secretary, YPS
+							</p>
+							<h2>Dignitories</h2>
+							[if_begin:exhibition-chair-exists]
+							<table class="table-grid">
+								<tr>
+									<td><img class="img-avatar" src="[salon-website]/salons/[yearmonth]/img/[exhibition-chair-avatar]" ></td>
+									<td>
+										<p><i>[exhibition-chair-role]</i></p>
+										<h3>[exhibition-chair-name]</h3>
+										<p>[exhibition-chair-position]</p>
+										<span>[exhibition-chair-blob]</span>
+									</td>
+								</tr>
+							</table>
+							[if_end:exhibition-chair-exists]
+							[if_begin:exhibition-guest-exists]
+							<table class="table-grid">
+								<tr>
+									<td><img class="img-avatar" src="[salon-website]/salons/[yearmonth]/img/[exhibition-guest-avatar]" ></td>
+									<td>
+										<p><i>[exhibition-guest-role]</i></p>
+										<h3>[exhibition-guest-name]</h3>
+										<p>[exhibition-guest-position]</p>
+										<span>[exhibition-guest-blob]</span>
+									</td>
+								</tr>
+							</table>
+							[if_end:exhibition-guest-exists]
+							[if_begin:exhibition-other-exists]
+							<table class="table-grid">
+								<tr>
+									<td><img class="img-avatar" src="[salon-website]/salons/[yearmonth]/img/[exhibition-other-avatar]" ></td>
+									<td>
+										<p><i>[exhibition-other-role]</i></p>
+										<h3>[exhibition-other-name]</h3>
+										<p>[exhibition-other-position]</p>
+										<span>[exhibition-other-blob]</span>
+									</td>
+								</tr>
+							</table>
+							[if_end:exhibition-other-exists]
+
+
+							<p>It is our pleasure to invite you to join us during the Award Function.</p>
+							<br>
+							<p>Please visit <a alt="[contest-name] Award Ceremony Event"
+												href="[yps-website]/event/<<AWARD FUNCTION EVENT>>/" >
+											Youth Photographic Society</a>
+								for more details of the program.
+							<p>
+							<p>Looking forward to see you at the Exhibition and Award Function.</p>
+							<br>
+							<b>[salon-secretary]</b><br>
+							<i>Secretary, [salon-name]</i>
+							<br>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>[partner-data]</td>
+		</tr>
+	</tbody>
+	</table>
+</body>
+</html>

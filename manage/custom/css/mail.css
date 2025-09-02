@@ -1,0 +1,146 @@
+
+/* standard elements */
+body {
+	width: 100%;
+	background-color : #efe6bd;
+}
+
+p, ul, li, p a {
+	color:#5C5A5A;
+	font-size:14px;
+	line-height:21px;
+	margin: 0px 0px 8px 0px;
+	text-align: justify;
+}
+
+h1 {
+	color:#555;
+	font-size:36px;
+	line-height:42px;
+	font-weight:bold;
+	margin: 15px 0px 4px 0px;
+}
+
+h2 {
+	color:#555;
+	font-size:24px;
+	line-height:30px;
+	font-weight:bold;
+	margin: 8px 0px 4px 0px;
+}
+
+h2 .white {
+	color:#fff;
+}
+
+h3 {
+	color:#555;
+	font-size:18px;
+	line-height:24px;
+	font-weight:bold;
+	margin: 8px 0px 4px 0px;
+}
+
+h4 {
+	color:#555;
+	font-size:16px;
+	font-weight:bold;
+	margin: 8px 0px 4px 0px;
+}
+
+/* table classes */
+/* body table */
+/* table .table-body {
+	border : 0;
+	width : 720px !important;
+	margin : 0;
+	background-color: #f6f6f6;
+	padding : 25px;
+	align-content: center;
+}
+
+table .table-body td th {
+	font-family: helvetica, sans-serif;
+	border : 0;
+	background-color: #f6f6f6;
+	margin : 0;
+	padding : 0;
+} */
+
+/* table with lines above and below each row */
+table .table-data {
+	margin: 0;
+	width: 100%;
+	padding: 8px;
+	border-collapse: collapse;
+}
+
+table .table-data td, th  {
+	padding: 4px !important;
+	border-top: 1px solid #aaa !important;
+	border-bottom: 1px solid #aaa !important;
+}
+
+/* table without borders to show grid of images */
+table .table-grid {
+	margin : 0;
+	width : 100%;
+	padding : 8px;
+	border : 0;
+}
+
+table .table-grid td, th {
+	padding : 8px;
+	border : 0;
+}
+
+/* table without borders without padding to show grid of images */
+table .table-zero {
+	margin : 0;
+	width : 100%;
+	padding : 0;
+	border : 0;
+}
+
+table .table-zero td, th {
+	padding : 0;
+	border : 0;
+}
+
+
+/* full border on all cells */
+table .table-bordered {
+	margin: 0;
+	width: 100%;
+	padding: 8px;
+	border-collapse: collapse;
+}
+
+table .table-bordered td, th  {
+	padding: 8px;
+	border: 1px solid #aaa;
+}
+
+
+img .banner-image {
+	max-width: 100%;
+}
+
+td .salon-name {
+	text-align : left;
+	background-color : #1f8544;
+	padding : 8px;
+}
+
+td .salon-name p {
+	color : #ffffff;
+	font-size : 24px;
+	line-height : 36px;
+}
+
+/* display image in a table cell */
+.table-content img {
+	border: 0 !important;
+	display: block !important;
+	outline: none !important;
+}

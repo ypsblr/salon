@@ -1,0 +1,38 @@
+<?php
+	$photo_path = "/photos/202112/exhibition/";
+	if (is_dir($_SERVER['DOCUMENT_ROOT'] . $photo_path)) {
+		$photos = [
+			// array("photo" => "VCDR.jpg", "caption" => "caption"),
+			array("photo" => "VCDR1533.jpeg", "caption" => "Welcome to the Salon Exhibition at Deveraj Urs Hall"),
+			array("photo" => "VCDR1536.jpeg", "caption" => "Visitors to the Exhibition"),
+			array("photo" => "VCDR1547.jpeg", "caption" => "Chief Guest being given a tour of the exhibition"),
+			array("photo" => "VCDR1556.jpeg", "caption" => "Visitors enjoying the visual presentation of pictures"),
+			array("photo" => "VCDR1612.jpeg", "caption" => "Teams assembling at the Exhibition venue for the Award Function"),
+			array("photo" => "VCDR1616.jpeg", "caption" => "Master of Ceremony Ms. Prema Kakade welcoming all to the function"),
+			array("photo" => "VCDR1623.jpeg", "caption" => "Salon Chairman, H Satish, Chief Guest, Dr. M Jagadeesh and Salon Secretary, Vikas Sastry taking the dais"),
+			array("photo" => "VCDR1625.jpeg", "caption" => "Function starts with Invocation of God through music rendered through flute by YPS Member, Ms. Subhadra"),
+			array("photo" => "VCDR1646.jpeg", "caption" => "Traditional lighting of lamp to commence the function"),
+			array("photo" => "VCDR1663.jpeg", "caption" => "Chief Guest welcomed with a boquet of flowers"),
+			array("photo" => "VCDR1677.jpeg", "caption" => "Chief Guest presented with a picture taken by Mr. Rajasimha, extended member of the Salon Committee"),
+			array("photo" => "VCDR1699.jpeg", "caption" => "Salon Chairman & YPS President, H Satish welcoming the participants and giving Chairman's speech"),
+			array("photo" => "VCDR1714.jpeg", "caption" => "Large gathering of participants for the award function"),
+			array("photo" => "VCDR1725.jpeg", "caption" => "Salon Secretary, Vikas Sastry, presenting the Salon Report"),
+			array("photo" => "VCDR1751.jpeg", "caption" => "Release of Catalog by the Chief Guest"),
+			array("photo" => "VCDR1755.jpeg", "caption" => "Release of Catalog by the Chief Guest"),
+			array("photo" => "VCDR1775.jpeg", "caption" => "Passionate address by the Chief Guest Dr. M Jagadeesh"),
+			array("photo" => "VCDR1780.jpeg", "caption" => "Chief Guest, Dr. Jagadeesh appreciating the quality of pictures"),
+			array("photo" => "VCDR1814.jpeg", "caption" => "Dr. Ajit Huilgol collecting his awards"),
+			array("photo" => "VCDR1825.jpeg", "caption" => "S P Nagendra collecting his awards"),
+			array("photo" => "VCDR1832.jpeg", "caption" => "Yogesh B collecting his awards"),
+			array("photo" => "VCDR1863.jpeg", "caption" => "Felicitation of Mr. Satheesh B Seshadri and honoring of services rendered by Technova India"),
+			array("photo" => "VCDR1864.jpeg", "caption" => "Mr. Satheesh thanking YPS for the felicitation and the opportunities provided"),
+			array("photo" => "VCDR1888.jpeg", "caption" => "Chief Guest presented with a YPS Golden Jubilee Coffee Cup"),
+			array("photo" => "VCDR1916.jpeg", "caption" => "Release of Drsti, YPS Journal, by Chief Guest accompanied by the Drsti team"),
+			array("photo" => "VCDR1925.jpeg", "caption" => "Time to socialize among long term friends"),
+			array("photo" => "VCDR1928.jpeg", "caption" => "Make new contacts and strengthen existing ones"),
+			array("photo" => "VCDR1938.jpeg", "caption" => "YPS Executive Committee with the Chief Guest"),
+			array("photo" => "VCDR1943.jpeg", "caption" => "Visitors at the exhibition"),
+			array("photo" => "VCDR1956.jpeg", "caption" => "Stalwarts of YPS"),
+			array("photo" => "VCDR1993.jpeg", "caption" => "Running slideshow of all accepted pictures on large format TV"),
+		];
+?>

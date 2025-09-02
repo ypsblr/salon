@@ -1,0 +1,227 @@
+<html>
+<head>
+<style type="text/css">
+body {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	margin:0 !important;
+	width: 100% !important;
+	-webkit-text-size-adjust: 100% !important;
+	-ms-text-size-adjust: 100% !important;
+	-webkit-font-smoothing: antialiased !important;
+	background-color : #efe6bd;
+ }
+
+.tableContent img {
+	border: 0 !important;
+	display: block !important;
+	outline: none !important;
+}
+p, ul, li, p a {
+	color:#5C5A5A;
+	font-size:14px;
+	line-height:21px;
+	margin: 0px 0px 8px 0px;
+}
+h2,h1 {
+	color:#555;
+	font-size:24px;
+	line-height:30px;
+	font-weight:bold;
+	margin: 8px 0px 4px 0px;
+}
+h3 {
+	color:#555;
+	font-size:18px;
+	line-height:24px;
+	font-weight:bold;
+	margin: 8px 0px 4px 0px;
+}
+
+table .table-data {
+	margin: 0;
+	width: 100%;
+	padding: 8px;
+	border-collapse: collapse;
+}
+
+table .table-data td, th  {
+	padding: 4px;
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+}
+h2.white {
+	color:#ffffff;
+}
+
+a {
+	color:#000000;
+}
+
+a.link1 {
+	font-size:14px;
+	color:#3892E3;
+}
+a.link2 {
+	padding:8px;
+	background:#fcab55;
+	font-size:14px;
+	color:#ffffff;
+	text-decoration:none;
+	font-weight:bold;
+}
+a.link3 {
+	color:#52619E;
+	font-size:14px;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.bgBody {
+	background: #F6F6F6;
+}
+.bgItem {
+	background: #ffffff;
+	border:1px solid #dddddd;
+	padding: 8px;
+	margin: 0;
+	vertical-align: top;
+	align: center;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+	font-size: 12px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 50%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+</style>
+</head>
+
+<body>
+	<table align="center" bgcolor="#f6f6f6" border="0" cellpadding="25" cellspacing="0" style="font-family:helvetica, sans-serif;" width="800" class="MainContainer">
+	<tbody>
+		<tr>
+			<td>
+				<table width="100%">
+				<tbody>
+					<tr><td colspan="2"><img src="[server-name]/salons/202012/img/Catalog_Mail_Header.jpg" style="max-width: 100%;"></td></tr>
+					<tr bgcolor="#fff">
+						<td valign="top" width="100">
+							<img alt="YPS Salon" src="[server-name]/img/ypsLogo.png" height="80">
+						</td>
+						<td align="left" bgcolor="#fcab55" style="padding:8px;" colspan="8">
+							<p style="color:#ffffff;font-size:24px;line-height:36px;">
+								<b>[salon-name]</b>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table class="bgItem" width="100%">
+				<tbody>
+					<tr>
+						<td>
+							<br>
+							<h2>Dear [participant-name],</h2>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<br>
+							<p>Thank you for participating in the [salon-name].</p>
+							<br>
+							<p>
+								We would like to update you on the status of the FIAP Medals and Ribbons. We are happy to inform you that we have
+								now received the FIAP Medals / Ribbons for the following awards won by you:
+							</p>
+							<ul>
+								[list_of_items]
+							</ul>
+							<br>
+							<p>
+								Our city, Bangalore is under lockdown for handling the pandemic till June 14, 2021.
+								We hope that the postal services will resume soon and that we will be able to mail the awards.
+								We will keep you informed of the status.
+							</p>
+							<br>
+							<p>[notes]</p>
+							<br>
+							<p>Thank you for your patience. Please write to us for any clarifications.</p>
+							<br><br>
+							<p>
+								With Best Regards,
+								<br>
+								Salon Secretary
+								<br>
+								<a target="_blank" href="[server-name]" style="color:#A8B0B6;" ><b>[salon-name]</b></a>
+								<br>
+								<br>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody>
+					<tr>
+						<td align="left" valign="top">
+							<a target="_blank" href="https://www.ypsbengaluru.com" style="color:#A8B0B6; font-weight:bold; font-size:13px; line-height: 20px;">About Youth Photographic Society</a>
+						</td>
+						<td align="right" valign="top">
+							<a target="_blank" href="[server-name]" style="line-height: 20px;color:#A8B0B6; font-size:13px;">Visit Salon Website</a>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<html>
+<head>
+<style type="text/css">
+.tableContent img {
+	border: 0 !important;
+	display: block !important;
+	outline: none !important;
+}
+p, ul, li {
+	color:#5C5A5A;
+	font-size:14px;
+	line-height:21px;
+	margin: 0px 0px 8px 0px;
+}
+p a {
+	color:#1f8544;
+	font-size:14px;
+	line-height:21px;
+	margin:0;
+	padding: 8px;
+}
+h2,h1 {
+	color:#555;
+	font-size:24px;
+	line-height:30px;
+	font-weight:bold;
+	margin: 8px 0px 4px 0px;
+}
+h3 {
+	color:#555;
+	font-size:18px;
+	line-height:24px;
+	font-weight:bold;
+	margin: 8px 0px 4px 0px;
+}
+
+table .table-data {
+	margin: 0;
+	width: 100%;
+	padding: 8px;
+	border-collapse: collapse;
+}
+
+table .table-data td, th  {
+	padding: 4px;
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+}
+h2.white {
+	color:#ffffff;
+}
+
+</style>
+</head>
+
+<body style="width: 100%; background-color : #efe6bd;">
+	<table align="center" bgcolor="#f6f6f6" border="0" cellpadding="25" cellspacing="0" style="font-family:helvetica, sans-serif;" width="800" class="MainContainer">
+	<tbody>
+		<tr>
+			<td>
+				<table width="100%">
+				<tbody>
+					<tr><td colspan="2"><img src="[banner-image]" style="max-width: 100%;"></td></tr>
+					<tr bgcolor="#fff">
+						<td valign="top" width="100">
+							<img alt="YPS Salon" src="[salon-website]/img/ypsLogo.png" height="80">
+						</td>
+						<td align="left" bgcolor="#fcab55" style="padding:8px;" colspan="8">
+							<p style="color:#ffffff;font-size:24px;line-height:36px;">
+								<b>[salon-name]</b>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table class="bgItem" width="100%">
+				<tbody>
+					<tr>
+						<td>
+							<br>
+							<h2>Dear [participant-name],</h2>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<br>
+							<p style="text-align: justify">
+								We would like to thank you once again for participating in the [salon-name].
+							</p>
+							<p>[if_begin:is-exhibition-virtual]
+								The Award Function was held on [exhibition-start-date] through a webinar. The Virtual Exhibition is
+								open 24x7 from [exhibition-start-date] to [exhibition-end-date].
+								[if_end:is-exhibition-virtual]
+							</p>
+							<p>[if_begin:is-exhibition-venue]
+								The Award Function was held during the Salon Exhibition organized at [exhibition-venue] between
+								[exhibition-start-date] and [exhibition-end-date].
+								[if_end:is-exhibition-venue]
+							</p>
+							<p>We thank all those who could participate and made the function a great success.</p>
+							</p>
+							<h1>Catalog has been released</h1>
+							<p style="text-align: justify;">
+								During the Award Function the Chief Guest, [exhibition-chair-name], the YPS President, [salon-chairman] and
+								[salon-secretary] released the beautifully designed Salon Catalog. The Catalog is available for viewing and
+								downloading on the <a href="[salon-website]">Salon Website</a>.
+							</p>
+							<p>[if_begin:can-order-catalog]
+								The Catalog is printed on TechNova non-tear paper, with hard bound cover. The Printed Catalog is
+								<b>available for ordering online</b>. Use the link below to order the catalog. The <b>last date</b>
+								for ordering the catalog is <b>[catalog-order-last-date]</b>.
+								[if_end:can-order-catalog]
+							</p>
+							<p>[if_begin:can-order-catalog][catalog-list][if_end:can-order-catalog]</p>
+
+							<h3>Before Signing Off</h3>
+							<p style="text-align: justify;">
+								Before signing off from the [salon-name], please take the following actions:
+							</p>
+							[salon-actions]
+							<p style="text-align: justify;">
+								Also do not forget to visit <a href="[salon-website]">Salon Website</a> and enjoy Author Videos.
+							</p>
+							<!-- Award money remittance information -->
+							<p>[account-data]</p>
+							<p>[mailing-data]</p>
+							<h3>Till the next Salon...</h3>
+							<p>We once again thank you for participating in [salon-name]. We are looking forward to see you in the next Salon.</p>
+							<p>Have a great day.</p>
+							<p><b>[salon-secretary]</b></p>
+							<p>[secretary-role], [salon-name]</p>
+							<br>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<hr>
+				[recognition-data]
+			</td>
+		</tr>
+		<tr>
+			<td>[partner-data]</td>
+		</tr>
+	</tbody>
+	</table>
+</body>
+</html>

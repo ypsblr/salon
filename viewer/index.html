@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+     <title>PDF.js and turn.js magazine viewer</title>
+  </head>
+
+  <body>
+<p>PDF files are a great way of presenting information for download and print purposes. The file format is used widely across the Internet. In order to view PDF files either the audience needs to have a PDF reader installed on their device or in some cases certain browsers have a reader built-in (such as the latest versions of Firefox). </p>
+<p>In many cases though it is preferable to be able to view content PDF directly through the browser without having to go through the download process (which is in some cases simplified by the browser but in other cases the process can be a little fragmented which doesn't help the audience focus on the information itself). The team at Mozilla have developed a Javascript based solution that allows PDFs to be presented through modern browsers natively without a 3rd party reader plugin. We've used this and then extended it to include the ability to view the PDF as a magazine style presentation (flip book, page turning application).</p>
+<p>The flip book or magazine presentation style uses the turn.js library which we've integrated into the viewer to provide the start of a full publishing solution for PDFs through html5. It is still in it's early stages and is by no means complete (or perfectly implemented) but it shows the potential.</p>
+<p>In developing the idea of presenting PDFs directly through the browser we've been through a number of different ideas such as pre-processing the PDF and converting each page to an image. This worked well and was the simplest solution to implement however this means holding images for all pages of the document in various sizes to allow zooming. This all takes up space in a hosting environment so the later ideas using PDF.js to allow the client to render the document using html5 elements seemed much cleaner. There are use cases for both methods however the PDF.js solution seems like it has the most potential.</p>
+<p>Using this tool can greatly improve the reach of your PDF based information to your audience making it seem part of your website as opposed to a separate file download. </p>
+
+<p>See an example of the reader here (including the magazine presentation style): <a href="viewer.html?file=YPSNL201707.pdf#magazineMode=true" target="_blank" title="PDF reader">YPS Newsletter</a></p>
+<p>To go to the magazine view click on the "magazine mode" button in the tool bar.</p>
+
+
+       <!-- <h2 class='title-v2'>Basic viewer embedded in an iframe</h2>
+    
+    
+        <iframe width="600" height="800" src="viewer.html?file=YPSNL201707.pdf#page=1&zoom=page-width"></iframe> -->
+    
+
+    
+    
+        <h2 class='title-v2'>Augmented magazine view embedded in an iframe</h2>
+    
+    
+        <iframe width="800" height="600" src="viewer.html?file=YPSNL201707.pdf#magazineMode=true"></iframe>
+    
+
+</body>
+</html>

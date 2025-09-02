@@ -1,0 +1,134 @@
+<html>
+<head>
+<style type="text/css">
+.tableContent img {
+	border: 0 !important;
+	display: block !important;
+	outline: none !important;
+}
+p, ul, li {
+	color:#5C5A5A;
+	font-size:14px;
+	line-height:21px;
+	margin: 0px 0px 8px 0px;
+}
+p a {
+	color:#1f8544;
+	font-size:14px;
+	line-height:21px;
+	margin:0;
+	padding: 8px;
+}
+h2,h1 {
+	color:#555;
+	font-size:24px;
+	line-height:30px;
+	font-weight:bold;
+	margin: 8px 0px 4px 0px;
+}
+h3 {
+	color:#555;
+	font-size:18px;
+	line-height:24px;
+	font-weight:bold;
+	margin: 8px 0px 4px 0px;
+}
+
+table .table-data {
+	margin: 0;
+	width: 100%;
+	padding: 8px;
+	border-collapse: collapse;
+}
+
+table .table-data td, th  {
+	padding: 8px;
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+}
+h2.white {
+	color:#ffffff;
+}
+</style>
+</head>
+
+<body style="width: 100%; background-color : #efe6bd;">
+	<table align="center" bgcolor="#f6f6f6" border="0" cellpadding="25" cellspacing="0" style="font-family:helvetica, sans-serif;" width="800" class="MainContainer">
+	<tbody>
+		<tr>
+			<td>
+				<table width="100%">
+				<tbody>
+					<tr><td colspan="2"><img src="[banner-image]" style="max-width: 100%;"></td></tr>
+					<tr bgcolor="#fff">
+						<td valign="top" width="100">
+							<img alt="YPS Salon" src="[salon-website]/img/ypsLogo.png" height="80">
+						</td>
+						<td align="left" bgcolor="#fcab55" style="padding:8px;" colspan="8">
+							<p style="color:#ffffff;font-size:24px;line-height:36px;">
+								<b>[salon-name]</b>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table class="bgItem" width="100%">
+				<tbody>
+					<tr>
+						<td>
+							<br>
+							<h2>Dear [participant-name],</h2>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<br>
+							<p style="text-align: justify">
+								We would like to thank you once again for participating in the [salon-name]. Hope you were able to download
+								the certificates using the links shared earlier.
+							</p>
+							[if_begin:can-order-catalog]
+							<p style="text-align: justify;">
+								Trust you had the opportunity to view/download the Catalog. The Catalog is printed on TechNova non-tear paper,
+								with hard bound cover and is <b>available for ordering online</b>.
+								The <b>last date</b> for ordering the catalog is <b>[catalog-order-last-date]</b>.
+							</p>
+							<p>[catalog-list]</p>
+							<br>
+							<p><a href="[catalog-order-link]">Click and Order the Catalog</a></p>
+							<br>
+							[if_end:can-order-catalog]
+							<br>
+							<p style="text-align: justify;">
+								If not already done, please click and <a href="{GOOGLE FORM}" >
+								<b>complete a short survey</b></a> and help us make future Salons better.
+							</p>
+							<br>
+							<p>Have a great day.</p>
+							<br>
+							<p><b>[salon-secretary]</b></p>
+							<p>[secretary-role]</p>
+							<br>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<hr>
+				[recognition-data]
+			</td>
+		</tr>
+		<tr>
+			<td>[partner-data]</td>
+		</tr>
+	</tbody>
+	</table>
+</body>
+</html>

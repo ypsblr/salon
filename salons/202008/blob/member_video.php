@@ -1,0 +1,31 @@
+<?php
+$video_folder = "salons/202008/video/pic/";
+$member_videos = array(
+					array("profile_id" => 2, "pic_id" => 7, "video" => "PIC-2-7.mp4"),
+					array("profile_id" => 44, "pic_id" => 3, "video" => "PIC-44-3.mp4"),
+					array("profile_id" => 44, "pic_id" => 9, "video" => "PIC-44-9.mp4"),
+					array("profile_id" => 88, "pic_id" => 4, "video" => "PIC-88-4.mp4"),
+					array("profile_id" => 88, "pic_id" => 10, "video" => "PIC-88-10.mp4"),
+					array("profile_id" => 588, "pic_id" => 10, "video" => "PIC-588-10.mov"),
+					array("profile_id" => 595, "pic_id" => 16, "video" => "PIC-595-16.mp4"),
+					array("profile_id" => 672, "pic_id" => 1, "video" => "PIC-672-1.mp4"),
+					array("profile_id" => 672, "pic_id" => 6, "video" => "PIC-672-6.mp4"),
+					array("profile_id" => 672, "pic_id" => 7, "video" => "PIC-672-7.mp4"),
+					array("profile_id" => 672, "pic_id" => 10, "video" => "PIC-672-10.mp4"),
+					array("profile_id" => 672, "pic_id" => 13, "video" => "PIC-672-13.mp4"),
+					array("profile_id" => 744, "pic_id" => 12, "video" => "PIC-744-12.mp4"),
+					array("profile_id" => 1511, "pic_id" => 4, "video" => "PIC-1511-4.mp4"),
+					array("profile_id" => 1589, "pic_id" => 1, "video" => "PIC-1589-1.mp4"),
+					array("profile_id" => 1606, "pic_id" => 6, "video" => "PIC-1606-6.mp4"),
+					array("profile_id" => 1610, "pic_id" => 1, "video" => "PIC-1610-1.mp4"),
+					array("profile_id" => 1619, "pic_id" => 3, "video" => "PIC-1619-3.mp4"),
+					array("profile_id" => 1619, "pic_id" => 6, "video" => "PIC-1619-6.mp4"),
+					array("profile_id" => 1652, "pic_id" => 3, "video" => "PIC-1652-3.mp4"),
+					array("profile_id" => 1652, "pic_id" => 6, "video" => "PIC-1652-6.mp4"),
+					array("profile_id" => 1653, "pic_id" => 8, "video" => "PIC-1653-8.mp4"),
+					array("profile_id" => 1653, "pic_id" => 14, "video" => "PIC-1653-14.mp4"),
+					array("profile_id" => 1666, "pic_id" => 2, "video" => "PIC-1666-2.mp4"),
+					array("profile_id" => 1744, "pic_id" => 1, "video" => "PIC-1744-1.mp4"),
+					array("profile_id" => 1745, "pic_id" => 1, "video" => "PIC-1745-1.mp4"),
+					);
+?>

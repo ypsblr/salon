@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /custom/
+Disallow: /doc/
+Disallow: /img/
+Disallow: /inc/
+Disallow: /jurypanel/
+Disallow: /op/
+Disallow: /pdf/
+Disallow: /photos/
+Disallow: /plugins/
+Disallow: /svc/
+Disallow: /salon.php

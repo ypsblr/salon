@@ -1,0 +1,33 @@
+.well-known/
+
+generated/
+photos/
+logs/
+session/
+
+#salons/
+
+res/
+video/
+tmp/
+
+# doc/
+
+catalog/
+
+# viewer/
+# blob/jury/
+
+*.zip
+
+salons/*/upload/
+salons/*/video/
+salons/*/files/
+salons/*/exhibition/
+
+error_log
+**/error_log
+errors.txt
+img/*.png
+
+.DS_Store

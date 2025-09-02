@@ -1,0 +1,243 @@
+<html>
+<head>
+<style type="text/css">
+body {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	margin:0 !important;
+	-webkit-text-size-adjust: 100% !important;
+	-ms-text-size-adjust: 100% !important;
+	-webkit-font-smoothing: antialiased !important;
+	background-color : #efe6bd;
+ }
+
+.tableContent img {
+	border: 0 !important;
+	display: block !important;
+	outline: none !important;
+}
+p, ul, li, p a {
+	color:#5C5A5A;
+	font-size:14px;
+	line-height:21px;
+	margin:0;
+	text-align: justify;
+}
+h2,h1 {
+	color:#555;
+	font-size:24px;
+	line-height:30px;
+	font-weight:bold;
+	margin: 8px 0px 4px 0px;
+}
+h3 {
+	color:#555;
+	font-size:18px;
+	line-height:24px;
+	font-weight:bold;
+	margin: 8px 0px 4px 0px;
+	text-decoration-line: underline;
+}
+h4 {
+	color:#555;
+	font-size:16px;
+	font-weight:bold;
+	margin: 8px 0px 4px 0px;
+}
+
+table .table-data {
+	margin: 0;
+	width: 100%;
+	padding: 8px;
+	border-collapse: collapse;
+}
+
+table .table-data td, th  {
+	padding: 4px;
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+}
+
+table .partner-data {
+	margin: 0;
+	width: 100%;
+	padding: 8px;
+	border-collapse: collapse;
+}
+
+table .partner-data td, th  {
+	padding: 4px;
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+}
+
+table .table-grid {
+	margin : 0;
+	width : 100%;
+	padding : 8px;
+	border : 0;
+}
+
+table .table-grid td, th {
+	padding : 8px;
+	border : 0;
+}
+
+h2.white {
+	color:#ffffff;
+}
+
+a {
+	color:#000000;
+}
+
+a.link1 {
+	font-size:14px;
+	color:#3892E3;
+}
+a.link2 {
+	padding:8px;
+	background:#fcab55;
+	font-size:14px;
+	color:#ffffff;
+	text-decoration:none;
+	font-weight:bold;
+}
+a.link3 {
+	color:#52619E;
+	font-size:14px;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.bgBody {
+	background: #F6F6F6;
+}
+.bgItem {
+	background: #ffffff;
+	border:1px solid #dddddd;
+	padding: 30px;
+	margin: 0;
+	vertical-align: top;
+	align: center;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+	font-size: 12px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 50%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+</style>
+</head>
+
+<body>
+	<table align="center" bgcolor="#f6f6f6" border="0" cellpadding="25" cellspacing="0" width="720" style="font-family:helvetica, sans-serif;" class="MainContainer">
+	<tbody>
+		<tr>
+			<td>
+				<table width="100%">
+				<tbody>
+					[banner-image]
+					<tr bgcolor="#fff">
+						<td valign="top" width="100px">
+							<img alt="YPS Salon" src="[server-address]/img/ypsLogo.png" height="80">
+						</td>
+						<td align="left" bgcolor="#1f8544" style="padding:8px;" colspan="8">
+							<p style="color:#ffffff;font-size:24px;line-height:36px;">
+								<b>[contest-name]</b>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%">
+				<tbody>
+					<tr>
+						<td>
+							<br>
+							<h2>Dear [participant-name],</h2>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<br>
+							<p>[contest-data]</p>
+							<br>
+							<p>[download-actions]</p>
+							<br>
+							<p>[update-actions]</p>
+							<br>
+							<p>[individual-data]</p>
+							<p>[special-pic-data]</p>
+							<br>
+							<h2>Your Pictures</h2>
+							<p>Here is a consolidated view of all the pictures submitted by you. You can also see this information by logging-in to the <a href='[server-address]'><?php echo $contest['name'];?> website</a>.</p>
+							<p>[awards-data]</p>
+							<p>[acceptances-data]</p>
+							<p>[others-data]</p>
+							<br><br>
+							<p>We once again thank you for participating in the [contest-name] and request you to continue to
+								participate in future Salons of Youth Photographic Society, Bangalore.</p><br>
+							<p>Have a great day.</p>
+								<br>
+							<p><b>[salon-secretary]</b></p>
+							<p>[secretary-role]</p>
+							<br>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>[recognition-data]</td>
+		</tr>
+		<tr>
+			<td>[partner-data]</td>
+		</tr>
+	</tbody>
+	</table>
+</body>
+</html>

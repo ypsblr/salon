@@ -1,0 +1,102 @@
+<table class="MainContainer" style="font-family: helvetica, sans-serif;" border="0" width="600" cellspacing="0" cellpadding="25" align="center" bgcolor="#f6f6f6">
+<tbody>
+<tr>
+<td>
+<table width="100%">
+<tbody>
+<tr>
+<td colspan="2"><img style="max-width: 600px;" src="[banner-image]" alt="Award Ceremony"></td>
+</tr>
+<tr bgcolor="#fff">
+<td valign="top" width="100"><img src="[salon-website]/img/ypsLogo.png" alt="&lt;&lt;YPS Logo&gt;&gt;" height="80"></td>
+<td style="padding: 8px;" colspan="8" align="left" bgcolor="#fcab55">
+<p style="color: #ffffff; font-size: 24px; line-height: 36px;"><strong>[salon-name]</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table class="table-data" width="100%">
+<tbody>
+<tr>
+<td><br>
+<h3>Dear [participant-name],</h3>
+</td>
+</tr>
+<tr>
+<td>
+<p>Thank you once again for participating in the [salon-name]. On behalf of the Salon Committee and the YPS Executive Committe, it gives me great pleasure to invite you to the Salon Exhibition and to the Award Function.</p>
+[if_begin:exhibition-invite-exists]
+<p><img style="max-height: 300px; text-align: center;" src="[salon-website]/salons/[yearmonth]/img/[exhibition-invite-img]"></p>
+[if_end:exhibition-invite-exists] [if_begin:exhibition-message-exists] [exhibition-message-blob] [if_end:exhibition-message-exists]&nbsp;
+<h1>Exhibition Details</h1>
+<p><strong>Exhibition Dates :</strong> [exhibition-start-date] to [exhibition-end-date]</p>
+<p><strong>Exhibition Venue :</strong> [exhibition-venue]</p>
+<p><strong>Venue Address :</strong> [exhibition-venue-address]</p>
+<p><strong>Venue Location :</strong></p>
+<div style="margin-left: 100px;"><iframe style="border: 0;" src="[exhibition-venue-location-map]" width="400" height="300" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>
+<p>Please visit the exhibition between 10:00 AM and 06:00 PM on any of the days to appreciate the award-winning images in glorious print and frame and watch a slideshow of all the accepted images.</p>
+<h1>Award Function</h1>
+<p>The Award Function will start at 11 AM on Jul 16, 2023</p>
+<p><strong>Program Details are as follows:</strong></p>
+<p>11:00 AM - Invocation<br>11:10 AM - Welcome Speech by President, YPS<br>11:20 AM - Address by Salon Chairperson&nbsp;<br>11:30 AM - Salon Report by Salon Secretary <br>11:40 AM - Presentation of Awards <br>12:30 PM - Speech by Dignitaries<br>&nbsp;1:00 PM - Vote of thanks by Secretary, YPS</p>
+<h2>Dignitaries</h2>
+[if_begin:exhibition-chair-exists]
+<table class="table-grid">
+<tbody>
+<tr>
+<td><img class="img-avatar" src="[salon-website]/salons/[yearmonth]/img/[exhibition-chair-avatar]"></td>
+<td>
+<p><em>[exhibition-chair-role]</em></p>
+<h3>[exhibition-chair-name]</h3>
+<p>[exhibition-chair-position]</p>
+[exhibition-chair-blob]</td>
+</tr>
+</tbody>
+</table>
+[if_end:exhibition-chair-exists] [if_begin:exhibition-guest-exists]
+<table class="table-grid">
+<tbody>
+<tr>
+<td><img class="img-avatar" src="[salon-website]/salons/[yearmonth]/img/[exhibition-guest-avatar]"></td>
+<td>
+<p><em>[exhibition-guest-role]</em></p>
+<h3>[exhibition-guest-name]</h3>
+<p>[exhibition-guest-position]</p>
+[exhibition-guest-blob]</td>
+</tr>
+</tbody>
+</table>
+[if_end:exhibition-guest-exists] [if_begin:exhibition-other-exists]
+<table class="table-grid">
+<tbody>
+<tr>
+<td><img class="img-avatar" src="[salon-website]/salons/[yearmonth]/img/[exhibition-other-avatar]"></td>
+<td>
+<p><em>[exhibition-other-role]</em></p>
+<h3>[exhibition-other-name]</h3>
+<p>[exhibition-other-position]</p>
+[exhibition-other-blob]</td>
+</tr>
+</tbody>
+</table>
+[if_end:exhibition-other-exists]
+<p>It is our pleasure to invite you to join us during the Award Function.</p>
+<br>
+<p>Please visit <a href="[yps-website]/event/&lt;&lt;AWARD FUNCTION EVENT&gt;&gt;/"> Youth Photographic Society</a> for more details of the program.</p>
+<p>&nbsp;</p>
+<p>Looking forward to seeing you at the Exhibition and Award Function.</p>
+<br><strong>[salon-secretary]</strong><br><em>Secretary, [salon-name]</em></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>[partner-data]</td>
+</tr>
+</tbody>
+</table>

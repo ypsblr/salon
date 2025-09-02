@@ -1,0 +1,218 @@
+<html>
+<head>
+<style type="text/css">
+body {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	margin:0 !important;
+	width: 100% !important;
+	-webkit-text-size-adjust: 100% !important;
+	-ms-text-size-adjust: 100% !important;
+	-webkit-font-smoothing: antialiased !important;
+	background-color : #efe6bd;
+ }
+.tableContent img {
+	border: 0 !important;
+	display: block !important;
+	outline: none !important;
+}
+ul{
+ 	margin:0;
+}
+p, p a {
+	color:#5C5A5A;
+	font-size:14px;
+	line-height:21px;
+	margin:0;
+}
+h2,h1 {
+	color:#555555;
+	font-size:16px;
+	font-weight:normal;
+	margin: 0;
+}
+
+h2.white {
+	color:#ffffff;
+}
+
+a {
+	color:#000000;
+}
+
+a.link1 {
+	font-size:13px;
+	color:#3892E3;
+}
+a.link2 {
+	padding:8px;
+	background:#fcab55;
+	font-size:13px;
+	color:#ffffff;
+	text-decoration:none;
+	font-weight:bold;
+}
+a.link3 {
+	color:#52619E;
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.bgBody {
+	background: #F6F6F6;
+}
+.bgItem {
+	background: #ffffff;
+	border:1px solid #dddddd;
+	padding: 0;
+	margin: 0;
+	vertical-align: top;
+	align: center;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+	font-size: 12px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 50%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+</style>
+</head>
+
+<body>
+	<table align="center" bgcolor="#f6f6f6" border="0" cellpadding="0" cellspacing="0" style="font-family:helvetica, sans-serif;" width="600" class="MainContainer">
+	<tbody>
+		<tr>
+			<td>
+				<table>
+				<tbody>
+					<tr>
+						<td valign="bottom" width="15%">
+							<img alt="[salon-name]" src="[server-link]/img/ypsLogo.png" style="max-width: 80%;">
+						</td>
+						<td align="left" bgcolor="#fcab55" style="padding:8px;" colspan="8">
+							<p style="color:#ffffff;font-size:24px;line-height:36px;">
+								<b>[salon-name]</b>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table class="bgItem" width="100%">
+				<tbody>
+					<tr>
+						<td>
+							<br>
+							<h2>Dear [participant-name],</h2>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<br>
+							<p>Thank you for your keen interest in participating in [salon-name]. Based on your previous
+								communication, we have set up the following discounts for your Club/Group.</p>
+							<br>
+							<table style="margin: auto; width: 100%">
+								<tr>
+									<td><b>Club/Group</b> </td>
+									<td> : </td>
+									<td>[club-name]</td>
+								</tr>
+								<tr>
+									<td><b>Participation Category</b> </td>
+									<td> : </td>
+									<td>[entrant-category]</td>
+								</tr>
+								<tr>
+									<td><b>Promised Minimum Number of Participants</b> </td>
+									<td> : </td>
+									<td>[minimum-group-size]</td>
+								</tr>
+								<tr>
+									<td><b>Payment will be made by</b> </td>
+									<td> : </td>
+									<td>[payment-mode]</td>
+								</tr>
+								<tr>
+									<td><b>Discount</b> </td>
+									<td> : </td>
+									<td>[discount]</td>
+								</tr>
+								<tr>
+									<td><b>Participations Allowed</b> </td>
+									<td> : </td>
+									<td>[participations]</td>
+								</tr>
+							</table>
+							<p>You can use "Generate Group Discount" option to add the emails of members. Discount will be automatically applied to members
+								when they register. If you have opted for Group Payment, use "Group Payment" option to make the choices and make payment.
+							</p>
+							<p><b>YPS Salon Committee</b></p>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody>
+					<tr>
+						<td align="left" valign="top">
+							<a target="_blank" href="https://www.ypsbengaluru.com" style="color:#A8B0B6; font-weight:bold; font-size:13px; line-height: 20px;">About Youth Photographic Society</a>
+						</td>
+						<td align="right" valign="top">
+							<a target="_blank" href="[server-link]" style="line-height: 20px;color:#A8B0B6; font-size:13px;">Visit Salon Website</a>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+</body>
+</html>

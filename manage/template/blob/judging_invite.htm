@@ -1,0 +1,111 @@
+<html>
+<head>
+</head>
+
+<body style="width: 100%; background-color : #efe6bd;">
+	<table align="center" bgcolor="#f6f6f6" border="0" cellpadding="0" cellspacing="0" style="font-family:helvetica, sans-serif;" width="600" >
+	<tbody>
+		<tr>
+			<td>
+				<table>
+				<tbody>
+					[banner-image]
+					<tr bgcolor="#fff">
+						<td valign="bottom" width="15%">
+							<img alt="[salon-name]"  src="[salon-website]/img/ypsLogo.png" style="max-width: 100%;">
+						</td>
+						<td align="center" bgcolor="#fcab55" style="padding:8px;" colspan="8">
+							<p style="color:#ffffff;font-size:24px;line-height:36px;">
+								<b>[salon-name]</b>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" style="padding: 15px;">
+				<tbody>
+					<tr>
+						<td>
+							<br>
+							<h2>Dear [participant-name],</h2>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							[if_begin:is-judging-remote]
+								<br>
+								<p>Thank you for participating in the [salon-name].</p>
+								<br>
+								<p>We are pleased to invite you to the <b>Open Remote Judging Live</b> webcast to be held as per schedule published on the
+									<a href="[salon-website]">Salon Website</a>. All the jury members will be scoring the pictures concurrently
+									and, as in the past years, the scores will be displayed live through webcast on <b>Facebook</b> and <b>Youtube</b>.
+									You can watch the scores unfold picture-by-picture just as the jury are carrying out scoring.
+								</p><br>
+								<p>Please check the <a href="[salon-website]">Salon Website</a> for instructions for <b>Watching Live Judging Webast.</b></p><br>
+								<br>
+								<p>Please don't miss the opportunity to witness open judging from the comfort and safety of your home. Wish you all the best.</p>
+							[if_end:is-judging-remote]
+
+							[if_begin:is-judging-venue]
+								<br>
+								<p>Thank you for participating in the [salon-name].</p>
+								<br>
+								<p>We are pleased to invite you to the Open Judging event to be held between [judging-start-date] and [judging-end-date] at [judging-venue].
+									Please check <a href="[salon-website]">Salon Website</a> for day-wise schedule.
+								</p><br>
+								<p><b>Judging Venue Address:</b></p>
+								<p style="padding-left: 40px">[judging-venue-address]</p>
+								<p style="padding-left: 40px"><br><a href="[judging-venue-location-map]">View Map</a></p>
+								<br>
+								<p>Looking forward to see you at the judging venue.</p>
+							[if_end:is-judging-venue]
+
+							<br><br>
+							<p>
+								With Best Regards,
+								<br>
+								<b>[salon-secretary]</b>
+								<br>
+								[secretary-role]
+								<br>
+								<a target="_blank" href="[salon-website]" style="color:#A8B0B6;" ><b>[salon-name]</b></a>
+								<br>
+								<br>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody>
+					<tr>
+						<td colspan="2"><img alt="Exhibition Footer" style="max-width: 600px;" src="[footer-image]"></td>
+					</tr>
+					<tr>
+						<td align="left" valign="top">
+							<a target="_blank" href="[yps-website]"
+								style="color:#A8B0B6; font-weight:bold; font-size:13px; line-height: 20px; padding-left: 15px;">About Youth Photographic Society</a>
+						</td>
+						<td align="right" valign="top">
+							<a target="_blank" href="[salon-website]" style="line-height: 20px;color:#A8B0B6; font-size:13px; padding-right: 15px;">Visit Salon Website</a>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>[partner-data]</td>
+		</tr>
+	</tbody>
+	</table>
+</body>
+</html>

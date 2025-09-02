@@ -1,0 +1,239 @@
+<html>
+<head>
+<style type="text/css">
+body {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	margin:0 !important;
+	width: 100% !important;
+	-webkit-text-size-adjust: 100% !important;
+	-ms-text-size-adjust: 100% !important;
+	-webkit-font-smoothing: antialiased !important;
+	background-color : #efe6bd;
+ }
+
+.tableContent img {
+	border: 0 !important;
+	display: block !important;
+	outline: none !important;
+}
+p, ul, li, p a {
+	color:#5C5A5A;
+	font-size:14px;
+	line-height:21px;
+	margin:0;
+}
+h2,h1 {
+	color:#555;
+	font-size:24px;
+	line-height:30px;
+	font-weight:bold;
+	margin: 8px 0px 4px 0px;
+}
+h3 {
+	color:#555;
+	font-size:18px;
+	line-height:24px;
+	font-weight:bold;
+	margin: 8px 0px 4px 0px;
+	text-decoration-line: underline;
+}
+
+table .table-data {
+	margin: 0;
+	width: 100%;
+	padding: 8px;
+	border-collapse: collapse;
+}
+
+table .table-data td, th  {
+	padding: 4px;
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+}
+h2.white {
+	color:#ffffff;
+}
+
+a {
+	color:#000000;
+}
+
+a.link1 {
+	font-size:14px;
+	color:#3892E3;
+}
+a.link2 {
+	padding:8px;
+	background:#fcab55;
+	font-size:14px;
+	color:#ffffff;
+	text-decoration:none;
+	font-weight:bold;
+}
+a.link3 {
+	color:#52619E;
+	font-size:14px;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.pic-title {
+	font-size: 12px;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.award-name {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.profile-name {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.honors {
+	font-size: 8px;
+	font-style: italic;
+}
+
+.address {
+	font-size: 10px;
+}
+
+.bgBody {
+	background: #F6F6F6;
+}
+
+.bgItem {
+	background: #ffffff;
+	border:1px solid #dddddd;
+	padding: 0;
+	margin: 0;
+	vertical-align: top;
+	align: center;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+	font-size: 12px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 50%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+</style>
+</head>
+
+<body>
+	<table align="center" bgcolor="#f6f6f6" border="0" cellpadding="25" cellspacing="0" style="font-family:helvetica, sans-serif;" width="650" class="MainContainer">
+	<tbody>
+		<tr>
+			<td>
+				<table width="100%">
+				<tbody>
+					<tr bgcolor="#fff">
+						<td valign="top">
+							<img alt="YPS Salon" src="[server-address]/img/ypsLogo.png" height="80">
+						</td>
+						<td align="left" bgcolor="#fcab55" style="padding:8px;" colspan="8">
+							<p style="color:#ffffff;font-size:24px;line-height:36px;">
+								<b>[contest-name]</b>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table class="bgItem" width="100%">
+				<tbody>
+					<tr>
+						<td>
+							<p><b>Dear [jury-name],</b></p>
+							<p style='text-align: justify;'>
+								Thank you for being part of the jury panel for [section-name] of [contest-name] and for carrying out online
+								scoring and finalization of awards for the section. We sincerely appreciate the time spent and the
+								participation in picking the most appropriate pictures for awards.
+							</p><br>
+							<p style='text-align: justify;'>
+								After the judging of all sections is completed, we will be finalizing the Acceptance list and then
+								the results will be published on the website and shared with the participants. <b>Till results are
+								published, we request you not to share the results with any one through any means.</b>
+							</p><br>
+							<p style='text-align: justify;'>
+								We would greatly appreciate your feedback on the judging process and judging system helping us to
+								enhance what is working and add/fix what is desirable to have.
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<br>
+							<h2>Results for [section-name]</h2>
+							<p style='text-align: justify;'>
+								<b>This automated email is initiated by you confirming the results online through the jury system and will be
+									treated as your sign-off for the results for this section.</b>
+							</p>
+							[section-results]
+							<br><br>
+							<p>We once again thank you for participating as jury for [section-name] of [contest-name]. We would look for your
+								continued support in future.</p>
+							<br>
+							<p>Have a great day.</p>
+							<br>
+							<p><b>[salon-chairman]</b></p>
+							<p>Salon Chairman</p>
+							<br>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>[recognition-data]</td>
+		</tr>
+	</tbody>
+	</table>
+</body>
+</html>
