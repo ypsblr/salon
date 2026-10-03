@@ -31,7 +31,7 @@
 	$sql .= "   AND section.yearmonth = '$contest_yearmonth' ";
 	$sql .= "   AND assignment.section = section.section ";
 	$sql .= "   AND assignment.user_id = user.user_id ";
-	$sql .= " ORDER BY assignment.section, user.user_name ";
+	$sql .= " ORDER BY section.section_sequence, MID(user.user_name, 4) ";
 	// $sql .= "ORDER BY assignment.section, assignment.jurynumber ";
 	$query = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
 	$jury_matrix = array();
@@ -98,7 +98,7 @@
 	<div class="row">
 		<div class="col-sm-12" >
 			<?php
-				$sql  = "SELECT * FROM user WHERE user_id IN (SELECT DISTINCT user_id FROM assignment WHERE yearmonth = '$contest_yearmonth') ORDER BY MID(user_name, 5)";
+				$sql  = "SELECT * FROM user WHERE user_id IN (SELECT DISTINCT user_id FROM assignment WHERE yearmonth = '$contest_yearmonth') ORDER BY MID(user_name, 4)";
 				$query = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
 				while ($jury = mysqli_fetch_array($query)) {
 			?>

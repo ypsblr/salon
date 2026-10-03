@@ -123,6 +123,17 @@ if(isset($_SESSION['USER_ID'])) {
 										</div>
 									</div>
 								</div>
+								
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6">
+											<label  for="family">FP Number</label>
+											<input type="text" name="fp_number" class="form-control" id="fp_number" placeholder="FIAP Profile Number" value="<?php echo $tr_user['fp_number'];?>" >
+										</div>
+									</div>
+								</div>
+
+
 							</div>
 							<div class="col-sm-4">
 								<div class="row">

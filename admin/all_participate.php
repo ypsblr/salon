@@ -580,6 +580,8 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_yearmonth']) ) {
 									$sql .= "   AND coupon.club_id = '$club_id' ";
 								}
 
+                                echo $sql;
+                                
 								$entry = mysqli_query($DBCON, $sql)or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
 								$row_no = 0;
 								while($tr_entry = mysqli_fetch_array($entry)) {

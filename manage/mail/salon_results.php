@@ -44,15 +44,18 @@ class MailGenerator {
 		}
 		// contest-data
 		$this->contest_data  = "Thank you for participating in this salon hosted by ";
-		$this->contest_data .= "<a href='[yps-website]'>Youth Photographic Society</a>, Bangalore, India. ";
+		$this->contest_data .= "<a href='[yps-website]'>Youth Photographic Society</a>, Bengaluru, India. ";
 		$this->contest_data .= "The Judging event was held between [judging-start-date] and [judging-end-date] to ";
 		$this->contest_data .= "evaluate the pictures and select award winners. The results have been posted on the ";
 		$this->contest_data .= "<a href='[salon-website]/results.php'>Salon Website</a>.";
 		// if ($admin_yearmonth == '202008' || $admin_yearmonth == '202012' || $admin_yearmonth = '202108') {
 		if ($this->salon['judging_mode'] == 'REMOTE') {
-			$this->contest_data .= "<br><br>A remote judging model was used for this salon and the ratings were displayed through ";
+			/*$this->contest_data .= "<br><br>A remote judging model was used for this salon and ratings were displayed live through ";
 			$this->contest_data .= "YPS Facebook Page and YPS Youtube Channel. We thank the members of the jury and the hundreds of patrons ";
-			$this->contest_data .= "who joined the Live webcasts and made the event a grand success. ";
+			$this->contest_data .= "who joined the Live webcasts and made the event a grand success. ";*/
+			
+			$this->contest_data .= "<br><br>A remote judging model was used for this salon and ratings will be webcast through ";
+			$this->contest_data .= "YPS Facebook Page and YPS Youtube Channels subsequently.";
 		}
 	}
 
@@ -241,8 +244,8 @@ class MailGenerator {
 			}
 			if ( ($this->has_picture_awards && $this->salon['has_exhibition'] != 0) ) {
 				$m .= "<tr><td width='30%'><h4>Upload Full Resolution Picture</h4></td>";
-				$m .= "<td><p>We need full resolution JPEG files for pictures that have been awarded medals or ribbons. ";
-				$m .= "Use the <b>UPLOAD PICTURE</b> link in the My Pictures section below to upload these files.</p></td></tr>";
+				$m .= "<td><p>We need full-resolution JPEG files for pictures that have been awarded medals or ribbons. ";
+				$m .= "Use the <b>UPLOAD PICTURE</b> link in the Your Pictures section below to upload these files.</p></td></tr>";
 
 				$m .= "<tr><td width='30%'><h4>Send Short Video</h4></td>";
 				$m .= "<td><p>We will be happy to host a short video not <b>exceeding 20 seconds</b> explaining the story and the ";
@@ -397,7 +400,7 @@ TEMPLATE;
 				<td><p><u>[pic_section]</u></p><p><b>[award_name]</b></p></td>
 			</tr>
 TEMPLATE;
-		$m  = "<br><h3>Pictures with just Acceptances</h3>";
+		$m  = "<br><h3>Pictures with Acceptances</h3>";
 		$m .= "<table class='table-data'><tbody>";
 
 		foreach ($this->picture_awards as $pic) {

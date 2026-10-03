@@ -24,6 +24,7 @@ $sql = "SELECT * FROM contest WHERE yearmonth = '$contest_yearmonth' ";
 $query = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
 $row = mysqli_fetch_array($query);
 
+$contestEdition = $row["contest_edition"];
 $contestName = $row["contest_name"];
 
 $contestIsSalon = ($row["is_salon"] == 1);
@@ -150,7 +151,8 @@ define ("THREE_DAYS_TO_JUDGING", date("Y-m-d", strtotime("-3 days", strtotime($j
 
 // Generate contestSectionList
 //
-$sql  = "SELECT * FROM section WHERE yearmonth = '$contest_yearmonth' ORDER BY section_type, section";
+// $sql  = "SELECT * FROM section WHERE yearmonth = '$contest_yearmonth' ORDER BY section_type, section";
+$sql  = "SELECT * FROM section WHERE yearmonth = '$contest_yearmonth' ORDER BY section_sequence";
 $query = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
 
 $contestSectionList = array();	// Associative array with section name as the key

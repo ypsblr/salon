@@ -661,7 +661,7 @@ function yps_getuserbyemail($email) {
 
 	$sql  = "SELECT * FROM yps_user ";
 	$sql .= " WHERE yps_login_id = '$email' OR email = '$email' ";
-	debug_dump("SQL", $sql, __FILE__, __LINE__);
+	debug_dump("SQL by email", $sql, __FILE__, __LINE__);
 	$query = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
 	if (mysqli_num_rows($query) == 0) {
 		$is_yps_member = false;

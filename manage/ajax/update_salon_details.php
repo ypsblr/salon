@@ -43,6 +43,7 @@ if ( isset($_SESSION['admin_id']) && isset($_REQUEST['yearmonth']) && isset($_RE
 
 	// Assemble values
 	$contest_name = mysqli_real_escape_string($DBCON, $_REQUEST['contest_name']);
+	$contest_edition = $_REQUEST['contest_edition'];
 	$is_salon = isset($_REQUEST['is_salon']) ? "1" : "0";
 	$is_international = isset($_REQUEST['is_international']) ? "1" : "0";
 	$is_no_to_past_acceptance = isset($_REQUEST['is_no_to_past_acceptance']) ? "1" : "0";
@@ -72,6 +73,7 @@ if ( isset($_SESSION['admin_id']) && isset($_REQUEST['yearmonth']) && isset($_RE
 	// *** NOTE - Do not place date variables under quotes - they are already quoted by null_safe_date function
 	$sql  = "UPDATE contest ";
 	$sql .= "   SET contest_name = '$contest_name' ";
+	$sql .= "     , contest_edition = '$contest_edition' ";
 	$sql .= "     , is_salon = '$is_salon' ";
 	$sql .= "     , is_international = '$is_international' ";
 	$sql .= "     , is_no_to_past_acceptance = '$is_no_to_past_acceptance' ";

@@ -16,6 +16,8 @@ $mail_queue = mysqli_fetch_array($query);
 $queue_id = $mail_queue['queue_id'];
 $yearmonth = $mail_queue['yearmonth'];
 $header_image = http_method() . SERVER_ADDRESS . "/salons/" . $yearmonth . "/img/" . $mail_queue['header_img'];
+if (DEBUG_TRACE) echo "Header image: $header_image";
+
 if ($mail_queue['footer_img'] == "")
 	$footer_image = "";
 else

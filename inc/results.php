@@ -1,4 +1,4 @@
-<?php 
+YPS President<?php 
 
 // Check if results have been announced to prevent spurious accesses
 $sql = "SELECT results_ready FROM contest WHERE yearmonth = '$contest_yearmonth' ";
@@ -471,7 +471,7 @@ if($resultsReady) {
 							<div style="max-width:100%"><img class="img-responsive img-rounded" style="margin:4px;min-width:20px;min-height:20px;" src="/img/com/satish.jpg" alt="Satish H"></div>
 						</div>
 						<div class="col-sm-8 col-md-8 col-lg-8">
-							<p><b>H Satish</b> <small>MFIAP, MICS, ARPS, Hon.FICS, Hon.YPS, Hon.ECPA</small></p>
+							<p><b>Manju Vikas Sastry V</b> <small>ESFIP, AFIP</small></p>
 							<p><i>YPS President</i></p>
 						</div>
 					</div>
@@ -480,7 +480,7 @@ if($resultsReady) {
 							<div style="max-width:100%"><img class="img-responsive img-rounded" style="margin:4px;min-width:20px;min-height:20px;" src="/img/com/vikas.jpg" alt="Chandrasekar Srinvasamurthy"></div>
 						</div>
 						<div class="col-sm-8 col-md-8 col-lg-8">
-							<p><b>Manju Vikas Sastry V</b> <small></small></p>
+							<p><b>Prema Kakade</b> <small>ESFIP, EFIAP, EFIP, cMoL, E.CPE</small></p>
 							<p><i>YPS Secretary</i></p>
 						</div>
 					</div>

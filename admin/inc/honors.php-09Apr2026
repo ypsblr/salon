@@ -11,13 +11,10 @@ array("orgn" => "RPS", "group" => "A", "pattern" => "ARPS", "distinction" => "AR
 array("orgn" => "RPS", "group" => "A", "pattern" => "LRPS", "distinction" => "LRPS"),
 
 // PSA
-array("orgn" => "PSA", "group" => "D", "pattern" => "Hon[-.: ]*FPSA", "distinction" => "HonFPSA"),
-array("orgn" => "PSA", "group" => "D", "pattern" => "Hon[-.: ]*PSA", "distinction" => "HonPSA"),
-array("orgn" => "PSA", "group" => "C", "pattern" => "FPSA", "distinction" => "FPSA"),
-array("orgn" => "PSA", "group" => "C", "pattern" => "APSA", "distinction" => "APSA"),
-array("orgn" => "PSA", "group" => "B", "pattern" => "GPSA", "distinction" => "GPSA"),
-array("orgn" => "PSA", "group" => "B", "pattern" => "SPSA", "distinction" => "SPSA"),
-array("orgn" => "PSA", "group" => "B", "pattern" => "BPSA", "distinction" => "BPSA"),
+array("orgn" => "PSA", "group" => "B", "pattern" => "Hon[-.: ]*FPSA", "distinction" => "HonFPSA"),
+array("orgn" => "PSA", "group" => "B", "pattern" => "Hon[-.: ]*PSA", "distinction" => "HonPSA"),
+array("orgn" => "PSA", "group" => "B", "pattern" => "FPSA", "distinction" => "FPSA"),
+array("orgn" => "PSA", "group" => "B", "pattern" => "APSA", "distinction" => "APSA"),
 array("orgn" => "PSA", "group" => "A", "pattern" => "GMPSA[-.: ]*pl", "distinction" => "GMPSA/P"),
 array("orgn" => "PSA", "group" => "A", "pattern" => "GMPSA\/p", "distinction" => "GMPSA/P"),
 array("orgn" => "PSA", "group" => "A", "pattern" => "GMPSA[-.: ]*go", "distinction" => "GMPSA/G"),
@@ -34,10 +31,9 @@ array("orgn" => "PSA", "group" => "A", "pattern" => "PPSA", "distinction" => "PP
 array("orgn" => "PSA", "group" => "A", "pattern" => "QPSA", "distinction" => "QPSA"),
 
 // FIAP
-array("orgn" => "FIAP", "group" => "E", "pattern" => "Hon[-. ]*EFIAP", "distinction" => "HonEFIAP"),
-array("orgn" => "FIAP", "group" => "D", "pattern" => "ES[-. ]*FIAP", "distinction" => "ESFIAP"),
-array("orgn" => "FIAP", "group" => "C", "pattern" => "MFIAP", "distinction" => "MFIAP"),
-array("orgn" => "FIAP", "group" => "B", "pattern" => "pFIAP", "distinction" => "pFIAP"),
+array("orgn" => "FIAP", "group" => "C", "pattern" => "Hon[-. ]*EFIAP", "distinction" => "HonEFIAP"),
+array("orgn" => "FIAP", "group" => "B", "pattern" => "ES[-. ]*FIAP", "distinction" => "ESFIAP"),
+array("orgn" => "FIAP", "group" => "A", "pattern" => "MFIAP", "distinction" => "MFIAP"),
 array("orgn" => "FIAP", "group" => "A", "pattern" => "EFIAP[-.:\/ ]*di[^, ]*3", "distinction" => "EFIAP/d3"),
 array("orgn" => "FIAP", "group" => "A", "pattern" => "EFIAP[-.:\/ ]*d3", "distinction" => "EFIAP/d3"),
 array("orgn" => "FIAP", "group" => "A", "pattern" => "EFIAP[-.:\/ ]*di[^, ]*2", "distinction" => "EFIAP/d2"),
@@ -57,21 +53,14 @@ array("orgn" => "FIAP", "group" => "A", "pattern" => "EFIAP", "distinction" => "
 array("orgn" => "FIAP", "group" => "A", "pattern" => "AFIAP", "distinction" => "AFIAP"),
 
 // FIP
-array("orgn" => "FIP", "group" => "E", "pattern" => "ESEFIP", "distinction" => "ESEFIP"),
-array("orgn" => "FIP", "group" => "D", "pattern" => "Hon[-. ]*FIP", "distinction" => "Hon.FIP"),
-array("orgn" => "FIP", "group" => "C", "pattern" => "EFIP[-.: ]*pl[-.:\/ ]*n", "distinction" => "EFIP/p(Nature)"),
-array("orgn" => "FIP", "group" => "C", "pattern" => "EFIP\/p[-.:\/ ]*n", "distinction" => "EFIP/p(Nature)"),
-array("orgn" => "FIP", "group" => "C", "pattern" => "EFIP[-.: ]*go[-.:\/ ]*n", "distinction" => "EFIP/g(Nature)"),
-array("orgn" => "FIP", "group" => "C", "pattern" => "EFIP\/g[-.:\/ ]*n", "distinction" => "EFIP/g(Nature)"),
-array("orgn" => "FIP", "group" => "B", "pattern" => "MFIP[-.:\/ ]*n", "distinction" => "MFIP Nature"),
-array("orgn" => "FIP", "group" => "B", "pattern" => "MFIP", "distinction" => "MFIP"),
-array("orgn" => "FIP", "group" => "A", "pattern" => "GFIP[-.: ]*st[^n]*[,; ]", "distinction" => "GFIP/st"),
-array("orgn" => "FIP", "group" => "A", "pattern" => "GFIP\/st", "distinction" => "GFIP/st"),
-array("orgn" => "FIP", "group" => "A", "pattern" => "GFIP[-.: ]*ut", "distinction" => "GFIP/ut"),
-array("orgn" => "FIP", "group" => "A", "pattern" => "GFIP\/ut", "distinction" => "GFIP/ut"),
-array("orgn" => "FIP", "group" => "A", "pattern" => "GFIP[-.: ]*pt", "distinction" => "GFIP/pt"),
-array("orgn" => "FIP", "group" => "A", "pattern" => "GFIP\/pt", "distinction" => "GFIP/pt"),
-array("orgn" => "FIP", "group" => "A", "pattern" => "GFIP", "distinction" => "GFIP"),
+array("orgn" => "FIP", "group" => "B", "pattern" => "ESEFIP", "distinction" => "ESEFIP"),
+array("orgn" => "FIP", "group" => "B", "pattern" => "Hon[-. ]*FIP", "distinction" => "Hon.FIP"),
+array("orgn" => "FIP", "group" => "A", "pattern" => "EFIP[-.: ]*pl[-.:\/ ]*n", "distinction" => "EFIP/p(Nature)"),
+array("orgn" => "FIP", "group" => "A", "pattern" => "EFIP\/p[-.:\/ ]*n", "distinction" => "EFIP/p(Nature)"),
+array("orgn" => "FIP", "group" => "A", "pattern" => "EFIP[-.: ]*go[-.:\/ ]*n", "distinction" => "EFIP/g(Nature)"),
+array("orgn" => "FIP", "group" => "A", "pattern" => "EFIP\/g[-.:\/ ]*n", "distinction" => "EFIP/g(Nature)"),
+array("orgn" => "FIP", "group" => "A", "pattern" => "MFIP[-.:\/ ]*n", "distinction" => "MFIP Nature"),
+array("orgn" => "FIP", "group" => "A", "pattern" => "MFIP", "distinction" => "MFIP"),
 array("orgn" => "FIP", "group" => "A", "pattern" => "EFIP[-.: ]*pl[^n]*[,; ]", "distinction" => "EFIP/p"),
 array("orgn" => "FIP", "group" => "A", "pattern" => "EFIP\/p", "distinction" => "EFIP/p"),
 array("orgn" => "FIP", "group" => "A", "pattern" => "EFIP[-.: ]*go[^n]*[,; ]", "distinction" => "EFIP/g"),
@@ -135,6 +124,9 @@ array("orgn" => "IUP", "group" => "A", "pattern" => "HIUP", "distinction" => "HI
 array("orgn" => "IUP", "group" => "A", "pattern" => "MIUP", "distinction" => "MIUP"),
 array("orgn" => "IUP", "group" => "A", "pattern" => "EIUP", "distinction" => "EIUP"),
 
+// OTHERS
+array("orgn" => "IAAP", "group" => "A", "pattern" => "M.IAAP", "distinction" => "M.IAAP"),
+array("orgn" => "FIAP", "group" => "A", "pattern" => "EFIAP[-.:\/ ]*s", "distinction" => "EFIAP/s"),
 ];
 
 $honors_exception_list = [];

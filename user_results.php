@@ -332,8 +332,10 @@ function countChar(val) {
 									</div>
 									<!-- Get Total Rating -->
 									<div class="col-sm-4 col-md-4 col-lg-4 ">
-										<h4 class="text-muted"><?php echo $rpic['section'];?></h4>
-										<h3 class="text-primary" style="margin-bottom: 0px;" id="title-display-<?= $pic_id;?>"><?php echo $rpic['title'];?></h3>
+                                        <h4 class="text-muted">
+                                            <?php echo $rpic['section'] . ' (Cut-Off Score: ' . $rpic['cut_off_score'] . ')'; ?>
+                                        </h4>
+                                        <h3 class="text-primary" style="margin-bottom: 0px;" id="title-display-<?= $pic_id;?>"><?php echo $rpic['title'];?></h3>
 						<?php
 							if ($updateEndDate >= date("Y-m-d")) {
 						?>
@@ -431,6 +433,7 @@ function countChar(val) {
 						?>
 										<span class="pdf-pic-data"
 											  data-section="<?= $rpic['section'];?>"
+											  data-cutoff-score="<?= $rpic['cut_off_score'];?>"
 											  data-title="<?= $rpic['title'];?>"
 											  data-thumbnail="<?= $thumbnail;?>"
 											  data-thumbnail-id="TN_<?= $rpic['pic_id'];?>"
@@ -552,7 +555,12 @@ function countChar(val) {
 		}
 
 		// Generate results for a section
-		function generate_section(section) {
+		function generate_section(section, cut_off_score) {
+		    
+		    let heading = section;
+        	if (cut_off_score !== "" && cut_off_score != null)
+		        heading += " (Cut-Off Score: " + cut_off_score + ")";
+		        
 			// Compute Dimensions
 			const tnWidth = 136;
 			const tnCellWidth = tnWidth;
@@ -563,7 +571,7 @@ function countChar(val) {
 			};
 
 			// Add section heading
-			output.stack.push( { text : section, style : "section_heading", margin : [0, 16, 0, 4], headlineLevel : "section-heading" } );
+			output.stack.push( { text : heading, style : "section_heading", margin : [0, 16, 0, 4], headlineLevel : "section-heading" } );
 
 			// Add section table
 			let results = {
@@ -645,6 +653,7 @@ function countChar(val) {
 			return output;
 		}
 
+/*
 		// Generate the main results
 		function generate_results() {
 			// Create a list of sections
@@ -665,6 +674,32 @@ function countChar(val) {
 
 			return result;
 		}
+*/
+
+// Generate the main results
+function generate_results() {
+	// Create a list of sections and their cut-off scores
+	let sections = [];
+	let cutoff_scores = {};
+	$(".pdf-pic-data").each(function (index, pic) {
+		const section = $(pic).data("section");
+		if ( ! sections.includes(section) ) {
+			sections.push(section);
+			cutoff_scores[section] = $(pic).data("cutoff-score");
+		}
+	});
+
+	// Create result by section
+	let result = {
+		stack : [],
+	};
+
+	sections.forEach(function(section) {
+		result.stack.push(generate_section(section, cutoff_scores[section]));
+	});
+
+	return result;
+}
 
 		// Generate PDF
 		$("#download_results").click(function() {

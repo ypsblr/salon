@@ -181,7 +181,7 @@
 		?>
 		<div class="row">
 			<div class="col-sm-12">
-				<h4 class="headline text-color" id="index-fees">Club/Group Discount</h4>
+				<h4 class="headline text-color" id="index-fees">Club Discount</h4>
 				<p class="text text-justify">Club Discount (or Group Discount) is available for Club/Group participants. This Salon offers
 					standard rates of discount for members of Club and Group depending on the number of participants. Discounts are available
 					for a <b>minimum number group/club size of <?= $discount_min_group_size;?></b> for this Salon.</p>
@@ -292,7 +292,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<!-- Discount Procedure -->
-				<h4 class="headline text-color" id="index-fees">Club/Group Discount</h4>
+				<h4 class="headline text-color" id="index-fees">Club Discount</h4>
 				<p>This Salon offers discount to clubs/groups if the <b>number of participants is <?= $discount_min_group_size;?>
 					or more</b>. The percentage of discount will be fixed by Salon Committee based on information provided by the Club co-ordinator.
 				</p>

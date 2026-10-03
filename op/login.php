@@ -42,9 +42,12 @@ function get_user_profile($email_id, $yps_login_id, $phone = "") {
 		$sql .= " OR phone LIKE '%" . substr($phone, -8) . "%' ";		// check for last 8 digits
 	debug_dump("SQL", $sql, __FILE__, __LINE__);
 	$query = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
+	debug_dump("Executing if", '', __FILE__, __LINE__);
 	if (mysqli_num_rows($query) > 0) {
+    	debug_dump("Inside if", '', __FILE__, __LINE__);
 		$row = mysqli_fetch_array($query, MYSQLI_ASSOC);
 		if ( $row['profile_disabled'] == '1' ) {
+    	    debug_dump("Inside profile disabled", '', __FILE__, __LINE__);
 			if ( $row['profile_merged_with'] == 0)
 				handle_error("This profile has been disabled. Please write to YPS for fixing.", __FILE__, __LINE__);
 			else {
@@ -191,6 +194,7 @@ if (isset($param['sign_up'])) {
 	//
 	$profile_id = 0;
 	if ( $profile == false )	{
+        debug_to_console(5);
 	    echo '<script>console.log("Profile is false")</script>';
 		if (is_an_email(trim($param['login_id'])) && ! empty($param['phone'])) {
 	        echo '<script>console.log("Id is email")</script>';
@@ -201,9 +205,12 @@ if (isset($param['sign_up'])) {
 			die();
 		}
 		else {
+		        debug_to_console(5);
+
 		    echo '<script>console.log("Trying to register with member id and phone")</script>';
 		    list($err_msg, $is_yps_member, $yps_user, $jerr_msg, $jis_yps_member, $juser) = yps_getuserbyemail(trim($param['login_id']));
-			create_new_yps_profile($juser);
+            #create_new_yps_profile($juser);
+			create_new_yps_profile($yps_user);
 			header('Location: /sign_up.php');
 			printf("<script>location.href='/sign_up.php'</script>");
 			echo $yps_user["first_name"];
@@ -212,6 +219,8 @@ if (isset($param['sign_up'])) {
 		}
 	}
 	else {		// Salon profile exists
+	    debug_to_console(6);
+
 	    echo '<script>console.log("In the else part ...")</script>';
 		$profile_id = $profile['profile_id'];
 		debug_to_console($param['login_id']);
@@ -231,6 +240,8 @@ if (isset($param['sign_up'])) {
 			die();
 		}
 		else {	// not YPS member
+		    debug_to_console(6);
+
 		    echo '<script>console.log("Is not YPS member !!")</script>';
 			if (is_an_email(trim($param['login_id'])) && ! empty($param['phone'])) {
 				$_SESSION['email'] = $param['login_id'];

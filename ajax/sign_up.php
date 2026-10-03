@@ -161,7 +161,10 @@ if ( (! empty($_SESSION['SALONBOND'])) && (! empty($_REQUEST['ypsd'])) ) {
 	$profile_name = $first_name . " " . $last_name;
 	$gender = $param['gender'];
 	$date_of_birth = $param['date_of_birth'];
-
+	
+    $fp_number = $param['fp_number'];
+    $fp_country_id = $param['fp_country_id'];
+	
 	$age_proof = $param['age_proof'];
 	if((isset($_FILES['age_proof_file'])) && ! empty($_FILES['age_proof_file']['name']) ) {
 		list($errMSG, $age_proof_file) = uploadAgeProof($email);
@@ -259,12 +262,12 @@ if ( (! empty($_SESSION['SALONBOND'])) && (! empty($_REQUEST['ypsd'])) ) {
 	$sql .= "                   age_proof, age_proof_file, honors, ";
 	$sql .= "                   address_1, address_2, address_3, city, state, pin, country_id, phone, whatsapp, email, club_id, ";
 	$sql .= "                   facebook_account, twitter_account, instagram_account, campaign_media, ";
-	$sql .= "                   yps_login_id, password, verified, avatar, blacklist_match, blacklist_exception) ";
+	$sql .= "                   yps_login_id, password, verified, avatar, blacklist_match, blacklist_exception, fp_number, fp_country_id) ";
 	$sql .= "            VALUES('$salutation', '$first_name', '$last_name', '$profile_name', '$gender','$date_of_birth', ";
 	$sql .= "                   '$age_proof', '$age_proof_file', '$honors', ";
 	$sql .= "                   '$address_1', '$address_2', '$address_3', '$city', '$state', '$pin', '$country_id', '$phone', '$whatsapp', '$email', '$club_id', ";
 	$sql .= "                   '$facebook_account', '$twitter_account', '$instagram_account', '$campaign_media', ";
-	$sql .= "                   '$yps_login_id', '$password', '$verified', '$avatar', '$blacklist_match', '$blacklist_exception') ";
+	$sql .= "                   '$yps_login_id', '$password', '$verified', '$avatar', '$blacklist_match', '$blacklist_exception', '$fp_number', '$fp_country_id') ";
 	mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
 	$profile_id = mysqli_insert_id($DBCON);
 

@@ -17,8 +17,8 @@ color:#fff !important;
 				<h3 class="text-color white"><span class="border-color">Contacts</span></h3>
 				<div class="content">
 					<p>
-						<b><u>YPS President</u></b>: Mr. Manju Vikas Sastry V, ESFIP, AFIP | sastry.vikas@gmail.com"<br>
-						<b><u>YPS Secretary</u></b>: Ms. Prema Kakade, EFIAP, EFIP, cMoL, E.CPE | pmkakade@gmail.com<br><br>
+						<b><u>YPS President</u></b>: Mr. Manju Vikas Sastry V, ESFIP, AFIP | sastry.vikas@gmail.com<br>
+						<b><u>YPS Secretary</u></b>: Ms. Prema Kakade, ESFIP, EFIAP, EFIP, cMoL, E.CPE | pmkakade@gmail.com<br><br>
 						<strong>Youth Photographic Society Bengaluru</strong><br/>
 						TT Hall, 3rd Floor,<br/>
 						State Youth Centre of Karnataka, <br/>

@@ -1,4 +1,4 @@
-<?php
+vi<?php
 // session_start();
 include("inc/session.php");
 include("inc/connect.php");
@@ -305,6 +305,41 @@ if(isset($_SESSION['jury_id']) && $_SESSION['jury_type']=="PROJECTOR"  && isset(
 		$main_query .= " HAVING min_score >= $score ";
 		$main_query .= " ORDER BY total_score DESC, modified_date ASC ";
 	}
+	
+	
+	
+	// Code added by Vikas on 07Mar2026 to add the feature to find the rejects in a particular
+	// Case4a - Maximum Individual Rating filter
+	if (isset($request['maximum_score'])) {
+		$score = $request['maximum_score'];
+		// Find pictures with a score equal to the score entered by atleast one of the Jury
+		$score = trim($score);
+		$cut_off = $request['cut-off'];
+		$filterText = "Filter by Maximum Individual Rating " . $score;
+
+		$main_query  = "SELECT pic.profile_id, pic.pic_id, profile.profile_name, pic.section, pic.title, pic.location, pic.picfile, pic.eseq, ";
+		$main_query .= "       entry.entrant_category, pic.print_received, pic.notifications, pic.modified_date, MAX(pic.modified_date) AS modified_date, ";
+		$main_query .= "       SUM(rating.rating) AS total_score, MIN(rating.rating) AS max_score, MAX(rating.rating) AS min_score, ";
+		$main_query .= "       GROUP_CONCAT(DISTINCT rating.tags SEPARATOR '|') AS jury_notifications ";
+		$main_query .= "  FROM pic, entry, profile, rating ";
+		$main_query .= " WHERE pic.yearmonth = '$jury_yearmonth' ";
+		$main_query .= "   AND pic.section='$sections' ";
+		$main_query .= "   AND CONCAT_WS('|', pic.profile_id, pic.pic_id) NOT IN ($picFilter) ";
+		$main_query .= "   AND entry.yearmonth = pic.yearmonth ";
+		$main_query .= "   AND entry.profile_id = pic.profile_id ";
+		$main_query .= "   AND profile.profile_id = pic.profile_id ";
+		$main_query .= "   AND rating.yearmonth = pic.yearmonth ";
+		$main_query .= "   AND rating.profile_id = pic.profile_id ";
+		$main_query .= "   AND rating.pic_id = pic.pic_id ";
+		$main_query .= $entrant_filter;
+		$main_query .= " GROUP BY pic.profile_id, pic.pic_id ";
+		$main_query .= " HAVING max_score <= $score ";
+		$main_query .= " ORDER BY total_score DESC, modified_date ASC ";
+	}
+	// Code added by Vikas on 07Mar2026 to add the feature to find the rejects in a particular Section
+	
+	
+	
 
 	// Case 5 - View Assigned
 	if (isset($request['view-assign'])) {
@@ -536,6 +571,32 @@ img {
 								</div>
 							</form>
 						</div>
+
+
+
+
+
+    <!--Code added by Vikas on 07Mar2026 to add the feature to find the rejects in a particular section-->
+
+
+<div class="col-lg-2 col-sm-2 col-md-2">
+							<form method="post" action="projector_acc.php?sections=<?php echo encode_string_array($sections);?>">
+								<input type="hidden" name="tn_per_row" value="<?php echo $tn_per_row;?>" class="tn_per_row">	<!-- Will be set in Javascript -->
+								<label>By Maximum Individual Rating</label>
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Max Score" name="maximum_score" value="<?php echo isset($request['maximum_score']) ? $request['maximum_score'] : "";?>" >
+									<div class="input-group-btn">
+										<button class="btn btn-info form-control" type="submit" name="by-maximum-individual-rating"><i class="glyphicon glyphicon-filter small"></i></button>
+									</div>
+								</div>
+							</form>
+						</div>
+
+
+    <!--Code added by Vikas on 07Mar2026 to add the feature to find the rejects in a particular section-->
+
+
+
 
 						<div class="col-lg-2 col-sm-2 col-md-2">
 							<form method="post" action="projector_acc.php?sections=<?php echo encode_string_array($sections);?>">

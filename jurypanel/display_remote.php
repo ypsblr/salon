@@ -5,6 +5,8 @@ include("inc/session.php");
 include("inc/connect.php");
 include("inc/lib.php");
 
+$yps_age = date_diff(date_create("1971-09-01"), date_create());
+
 function debug_to_console($data) {
     $output = $data;
     if (is_array($output))
@@ -254,7 +256,7 @@ if(isset($_SESSION['jury_id']) ) {  // to prevent being run from command line an
 									</a>
 								</div>
 								<div class="col-sm-12" style="height: 20%;">
-									<div class="text-info text-center"><b>53 Years Young</b></div>
+									<div class="text-info text-center"><b><?= $yps_age->format("%y");?> Years Young</b></div>
 								</div>
 							</div>
 						</div>

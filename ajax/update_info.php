@@ -173,6 +173,7 @@ if ( (! empty($_SESSION['SALONBOND'])) && (! empty($_REQUEST['ypsd'])) ) {
 		$age_proof_file = $param['cur_age_proof_file'];
 
 	$honors = mysqli_real_escape_string($DBCON, strtoupper($param['honors']));
+	$fp_number = mysqli_real_escape_string($DBCON, strtoupper($param['fp_number']));
 	$address_1 = mysqli_real_escape_string($DBCON, strtoupper($param['address_1']));
 	$address_2 = mysqli_real_escape_string($DBCON, strtoupper($param['address_2']));
 	$address_3 = mysqli_real_escape_string($DBCON, strtoupper($param['address_3']));
@@ -312,6 +313,7 @@ if ( (! empty($_SESSION['SALONBOND'])) && (! empty($_REQUEST['ypsd'])) ) {
 	$sql .= ",   instagram_account = '$instagram_account' ";
 	$sql .= ",   avatar = '$avatar' ";
 	$sql .= ",   club_id = '$club_id' ";
+	$sql .= ",   fp_number = '$fp_number' ";
 	if (isset($param['require_bank_details']) && $param['require_bank_details'] == "Yes") {
 		$sql .= ",  bank_account_number = '$bank_account_number' ";
 		$sql .= ",  bank_account_name = '$bank_account_name' ";

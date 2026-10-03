@@ -32,7 +32,7 @@ if ( isset($_SESSION['admin_id']) ) {
 
 	// Initialize Empty Salon
 	$salon = array(
-			"yearmonth" => "", "contest_name" => "",
+			"yearmonth" => "", "contest_name" => "", "contest_edition" => "",
 			"is_salon" => "0", "is_international" => "0", "is_no_to_past_acceptance" => "0",
 			"registration_start_date" => NULL, "registration_last_date" => NULL, "submission_timezone" => "", "submission_timezone_name" => "",
 			"contest_description_blob" => "contest_description.htm", "terms_conditions_blob" => "terms_conditions.htm",
@@ -159,7 +159,11 @@ if ( isset($_SESSION['admin_id']) ) {
 						<label for="yearmonth">Salon ID (yyyymm format of month)</label>
 						<input type="number" name="yearmonth" class="form-control" id="yearmonth" value="<?= $salon['yearmonth'];?>" readonly >
 					</div>
-					<div class="col-sm-8">
+					<div class="col-sm-4">
+						<label for="contest_edition">Contest Edition</label>
+						<input type="text" name="contest_edition" class="form-control" id="contest_edition" value="<?= $salon['contest_edition'];?>" >
+					</div>
+					<div class="col-sm-4">
 						<label for="contest_name">Contest Name</label>
 						<input type="text" name="contest_name" class="form-control" id="contest_name" value="<?= $salon['contest_name'];?>" >
 					</div>

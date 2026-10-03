@@ -24,8 +24,6 @@ $profile = array (
 	"avatar" => isset($_SESSION['avatar']) ? $_SESSION['avatar'] : "user.jpg"
 );
 
-// var_dump($profile);
-
 // unset($_SESSION['yps_login_id']);
 // unset($_SESSION['first_name']);
 // unset($_SESSION['last_name']);
@@ -189,30 +187,26 @@ $campaign_media_list = ["cm_email" => "Email", "cm_website" => "Website", "cm_fr
 											<div class="row">
 												<div class="col-sm-6">
 													<label  for="family">FP Number</label>
-													<input type="text" name="fp_number" class="form-control" id="fp_number" placeholder="FIAP Profile Number"
+													<input type="text" name="fp_number" class="form-control" id="fp_number"
 															value="<?=$profile['fp_number'];?>" <?php echo ($profile['fp_number'] != "") ? "readonly" : "";?> >
 												</div>
-												
-												
-												<!--<div class="col-sm-6">-->
-												<!--	<label for="country">FIAP Country</label>-->
-												<!--	<select class="form-control" name="country_id" id="country_id" value="101">-->
+												<div class="col-sm-6">
+													<label for="country">FIAP Country</label>
+													<select class="form-control" name="country_id" id="country_id" value="101">
 													<!--option value="">Select Country</option-->
-    								<!--				<?php-->
-    								<!--						$sql = "SELECT code, country_name FROM fiap_country ORDER BY country_name ASC";-->
-    								<!--						$rs = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);-->
-    								<!--						while($row = mysqli_fetch_array($rs)) {-->
-    								<!--				?>-->
-    								<!--						<option value="<?php echo $row['code'];?>" <?php echo $row['code'] == 104 ? "selected" : "";?> >-->
-    								<!--							<?php echo $row['country_name'];?>-->
-    								<!--						</option>-->
-    								<!--				<?php-->
-    								<!--						}-->
-    								<!--				?>-->
-												<!--	</select>-->
-												<!--</div>-->
-				
-				
+    												<?php
+    														$sql = "SELECT country_id, country_name FROM country ORDER BY country_name ASC";
+    														$rs = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
+    														while($row = mysqli_fetch_array($rs)) {
+    												?>
+    														<option value="<?php echo $row['country_id'];?>" <?php echo $row['country_id'] == 101 ? "selected" : "";?> >
+    															<?php echo $row['country_name'];?>
+    														</option>
+    												<?php
+    														}
+    												?>
+													</select>
+												</div>
 											</div>
 										</div>
 									</div>

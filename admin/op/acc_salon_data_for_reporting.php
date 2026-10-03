@@ -54,13 +54,14 @@ function zip_error($code) {
             if (is_array($output))
                 $output = implode(',', $output);
         
-            echo "<script>alert('Debug Objects: " . $output . "' );</script>";
+            // echo "<script>alert('Debug Objects: " . $output . "' );</script>";
         }
 
 
 if (isset($_SESSION['admin_yearmonth']) && isset($_SESSION['admin_id'])) {
 	// Generate Acceptance Data for Catalog Design
 	$yearmonth = $_SESSION['admin_yearmonth'];
+	debug_to_console($yearmonth);
 	$success_msg = "";
 	// $for = $_REQUEST["for"];
 
@@ -111,7 +112,7 @@ if (isset($_SESSION['admin_yearmonth']) && isset($_SESSION['admin_id'])) {
 
 		// Get Data for the section
 		// Get 1 picture for each author, with preference for picture with just acceptance as other pictures would already have been printed
-		$sql  = "SELECT profile.profile_id, profile.profile_name, profile.first_name, profile.last_name, profile.email, country.country_name, ";
+		$sql  = "SELECT profile.profile_id, profile.profile_name, profile.first_name, profile.last_name, profile.email, country.country_name, profile.fp_number, ";
 		$sql .= "       profile.yps_login_id, profile.club_id, profile.salutation, ";
 		$sql .= "       IFNULL(club.club_name, '') AS club_name, IFNULL(club.club_type, '') AS club_type, ";
 		$sql .= "       pic.title, award.level, award.award_name, award.recognition_code ";
@@ -161,14 +162,15 @@ if (isset($_SESSION['admin_yearmonth']) && isset($_SESSION['admin_id'])) {
 // 		$psaquery = mysqli_query($DBCON, $psasql) or die_with_sql_error($psasql, mysqli_error($DBCON), __FILE__, __LINE__);
 
 
-        $psasql = "SELECT profile.profile_name, profile.first_name, profile.last_name, profile.email, country.country_name, ";
+        $psasql = "SELECT profile.profile_name, profile.first_name, profile.last_name, profile.email, country.country_name, profile.fp_number, ";
         $psasql .= " profile.yps_login_id, profile.club_id, profile.salutation, pic.title FROM `pic`, profile, country ";
-        $psasql .= " where pic.yearmonth=202407 ";
+        $psasql .= " where pic.yearmonth = '$yearmonth' ";
         $psasql .= " and concat(pic.profile_id, pic.pic_id) not in (SELECT concat(profile_id, pic_id) ";
-        $psasql .= " from pic_result where yearmonth=202407) ";
+        $psasql .= " from pic_result where yearmonth = '$yearmonth') ";
         $psasql .= " AND pic.profile_id = profile.profile_id AND profile.country_id = country.country_id ";
         $psasql .= " AND pic.section = '$section_name' ";
         $psasql .= " ORDER BY profile.last_name, profile.first_name, profile.profile_id, pic.title ";
+
         $psaquery = mysqli_query($DBCON, $psasql) or die_with_sql_error($psasql, mysqli_error($DBCON), __FILE__, __LINE__);
 
 		if (mysqli_num_rows($query) > 0) {
@@ -181,27 +183,27 @@ if (isset($_SESSION['admin_yearmonth']) && isset($_SESSION['admin_id'])) {
 				switch ($csv_for) {
 					case "PSA" : {
 						if (isset($csv_file['PSA']))
-							fputcsv($csv_file['PSA'], array("Family Name", "Given Name", "Country", "Image Title", "Email", "Award"));
+							fputcsv($csv_file['PSA'], array("Family Name", "Given Name", "Country", "FP Number", "Image Title", "Email", "Award"));
 						break;
 					}
 					case "REST" : {
 						if (isset($csv_file['REST']))
-							fputcsv($csv_file['REST'], array("Family Name", "Given Name", "Country", "Image Title", "Email", "Award"));
+							fputcsv($csv_file['REST'], array("Family Name", "Given Name", "Country", "FP Number", "Image Title", "Email", "Award"));
 						break;
 					}
 					case "FIAP" : {
 						if (isset($csv_file['FIAP']))
-							fputcsv($csv_file['FIAP'], array("Family Name", "Given Name", "Country", "Image Title", "FIAP Award", "Other Award"));
+							fputcsv($csv_file['FIAP'], array("Family Name", "Given Name", "Country", "FP Number", "Image Title", "FIAP Award", "Other Award"));
 						break;
 					}
 					case "FIP" : {
 						if (isset($csv_file['FIP']))
-							fputcsv($csv_file['FIP'], array("Family Name", "First Name", "Country", "Email", "Image Title", "Award Name", "Club Name"));
+							fputcsv($csv_file['FIP'], array("Family Name", "First Name", "Country", "FP Number", "Email", "Image Title", "Award Name", "Club Name"));
 						break;
 					}
 					case "MOL" : {
 						if (isset($csv_file['MOL']))
-							fputcsv($csv_file['MOL'], array("Salutation", "Family Name", "Given Name", "Country", "Email", "Image Title", "Award"));
+							fputcsv($csv_file['MOL'], array("Salutation", "Family Name", "Given Name", "Country", "FP Number", "Email", "Image Title", "Award"));
 						break;
 					}
 				}
@@ -212,6 +214,7 @@ if (isset($_SESSION['admin_yearmonth']) && isset($_SESSION['admin_id'])) {
 				$last_name = ucwords(strtolower($res['last_name']));
 				$first_name = ucwords(strtolower($res['first_name']));
 				$country = $res['country_name'];
+				$fp_number = $res['fp_number'];
 				$pic_title = ucwords(strtolower($res['title']));
 				$email = $res['email'];
 				$reco = $res['recognition_code'];
@@ -225,7 +228,7 @@ if (isset($_SESSION['admin_yearmonth']) && isset($_SESSION['admin_id'])) {
 					$award_code = ($reco == "PSA" && $level > 1 && $level < 9) ? "P" : $award_code;
 					$award_code = ($reco != "PSA" && $level < 9) ? "M" : $award_code;
 					$award_code = ($level == 9) ? "H" : $award_code;
-					fputcsv($csv_file['PSA'], array($last_name, $first_name, $country, $pic_title, $email, $award_code));
+					fputcsv($csv_file['PSA'], array($last_name, $first_name, $country, $fp_number, $pic_title, $email, $award_code));
 				}
 				// Write CSV for FIAP
 				if (isset($csv_file['FIAP'])) {
@@ -235,7 +238,7 @@ if (isset($_SESSION['admin_yearmonth']) && isset($_SESSION['admin_id'])) {
 						$fiap_award = ($reco == "FIAP") ? $award_name : $fiap_award;
 						$other_award = ($reco != "FIAP") ? $award_name : $other_award;
 					}
-					fputcsv($csv_file['FIAP'], array($last_name, $first_name, $country, $pic_title, $fiap_award, $other_award));
+					fputcsv($csv_file['FIAP'], array($last_name, $first_name, $country, $fp_number, $pic_title, $fiap_award, $other_award));
 				}
 				// Write CSV for FIP
 				if (isset($csv_file['FIP'])) {
@@ -243,13 +246,13 @@ if (isset($_SESSION['admin_yearmonth']) && isset($_SESSION['admin_id'])) {
 					$club_name = ($res['club_type'] == 'CLUB') ? $club_name : "";
 					$club_name = preg_match("/\*\*/", $club_name) ? "" : $club_name;
 					$award_name = ($level < 99) ? $award_name : "";
-					fputcsv($csv_file['FIP'], array($last_name, $first_name, $country, $email, $pic_title, $award_name, $club_name));
+					fputcsv($csv_file['FIP'], array($last_name, $first_name, $country, $fp_number, $email, $pic_title, $award_name, $club_name));
 				}
 				// Write CSV for MOL
 				if (isset($csv_file['MOL'])) {
 					$salutation = $res['salutation'];
 					$award_name = ($level < 99) ? $award_name : "";
-					fputcsv($csv_file['MOL'], array($salutation, $last_name, $first_name, $country, $email, $pic_title, $award_name));
+					fputcsv($csv_file['MOL'], array($salutation, $last_name, $first_name, $country, $fp_number, $email, $pic_title, $award_name));
 				}
 			}
 			
@@ -295,6 +298,7 @@ if (isset($_SESSION['admin_yearmonth']) && isset($_SESSION['admin_id'])) {
 		die_with_error("Error " . zip_error($zip_open) . " while creating $zipfile");
 
 	$zip->close();
+
 
 	// Send headers to download
 	header('Content-Type: application/zip');

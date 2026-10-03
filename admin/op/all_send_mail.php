@@ -612,8 +612,8 @@ CONTEST;
 
 	// if ($admin_yearmonth == '202008' || $admin_yearmonth == '202012' || $admin_yearmonth = '202108') {
 	if ($contest['judging_mode'] == 'REMOTE') {
-		$about .= "<br><br>A remote judging model was used for this salon and scores were displayed live through YPS Facebook Page and YPS Youtube Channel. ";
-		$about .= "We thank all the jury and the hundreds of patrons who joined the Live webcasts and made the event a grand success. ";
+		$about .= "<br><br>A remote judging model was used for this salon and ratings will be webcast through ";
+		$about .= "YPS Facebook Page and YPS Youtube Channels subsequently.";
 	}
 	else {
 	}
@@ -786,8 +786,8 @@ CONTEST;
 		}
 		if ( ($has_picture_awards && $contest['has_exhibition'] != 0) ) {
 			$m .= "<tr><td width='30%'><h4>Upload Full Resolution Picture</h4></td>";
-			$m .= "<td><p>We need full resolution JPEG files for pictures that have won awards. ";
-			$m .= "Use the <b>UPLOAD PICTURE</b> link in the My Pictures section below to upload these files.</p></td></tr>";
+			$m .= "<td><p>We need full-resolution JPEG files for pictures that have won awards. ";
+			$m .= "Use the <b>UPLOAD PICTURE</b> link in the Your Pictures section below to upload these files.</p></td></tr>";
 
 			$m .= "<tr><td width='30%'><h4>Send Short Video</h4></td>";
 			$m .= "<td><p>We will be happy to host a short video not <b>exceeding 20 seconds</b> explaining the story and the ";

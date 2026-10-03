@@ -58,7 +58,7 @@ if( isset($_SESSION['admin_id']) && isset($_REQUEST['user_id']) && isset($_REQUE
 	mysqli_query($DBCON, $sql) or sql_json_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
 
 	// Insert new Jury
-	if ($user_id == 0) {
+	if ($user_id == '') {
 		// Find next jury id
 		$sql = "SELECT MAX(user_id) as last_user_id FROM user ";
 		$query = mysqli_query($DBCON, $sql) or sql_json_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);

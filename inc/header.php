@@ -1,7 +1,7 @@
 <!-- <meta charset="utf-8"> --->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!-- General Tags -->
-<meta name="description" content="16th International Photography Salon by YPS">
+<meta name="description" content="4th National Photography Salon by YPS">
 <meta name="keyword" content="photography, contest, fip, Karnataka, YPS, Youth Photographic Society, India, digital, color, monochrome, travel, nature ">
 <meta name="author" content="Youth Photographic Society, salon@ypsbengaluru.in">
 <meta name="robots" content="index, follow"><meta name="fragment" content="!">
@@ -10,30 +10,30 @@
 <!-- *** UPDATE THESE META TAGS for every Salon *** -->
 
 <!-- Meta Tags for Google+ -->
-<meta itemprop="name" content="YPS International Salon 2025">
-<meta itemprop="description" content="16th International Salon by YPS">
-<meta itemprop="image" content="https://salon.ypsbengaluru.in/img/IDS2025.png">
+<meta itemprop="name" content="YPS National Salon 2026">
+<meta itemprop="description" content="44th National Salon by YPS">
+<meta itemprop="image" content="https://salon.ypsbengaluru.in/img/44NS2026.png">
 
 <!-- Facebook Tags -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://salon.ypsbengaluru.in">
-<meta property="og:title" content="YPS International Salon 2025">
-<meta property="og:description" content="16th International Salon by YPS">
-<meta property="og:image" content="https://salon.ypsbengaluru.in/img/IDS2025.png">
-<!-- <meta property="og:image_alt" content="https://salon.ypsbengaluru.in/img/IDS2025.png"> -->
+<meta property="og:title" content="YPS National Salon 2026">
+<meta property="og:description" content="44th National Salon by YPS">
+<meta property="og:image" content="https://salon.ypsbengaluru.in/img/44NS2026.png">
+<!-- <meta property="og:image_alt" content="https://salon.ypsbengaluru.in/img/IDS2026.png"> -->
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1080">
 <meta property="og:image:height" content="1080">
-<meta property="og:site_name" content="YPS International Salon 2025">
+<meta property="og:site_name" content="YPS National Salon 2026">
 
 <!-- Twitter Tags -->
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@ypsbengaluru">
-<meta name="twitter:title" content="YPS International Salon 2025">
-<meta name="twitter:description" content="16th International Salon by YPS">
+<meta name="twitter:title" content="YPS National Salon 2026">
+<meta name="twitter:description" content="44th National Salon by YPS">
 <meta name="twitter:creator" content="@ypsbengaluru">
-<meta name="twitter:image" content="https://salon.ypsbengaluru.in/img/IDS2025.png">
+<meta name="twitter:image" content="https://salon.ypsbengaluru.in/img/44NS2026.png">
 
 <link rel="shortcut icon" href="favicon.png">
 

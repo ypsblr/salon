@@ -1250,12 +1250,14 @@ function show_exif() {
 	exif_in_progress = true;
 
 	// Load Gallery Element
-	let gallery = $('#blueimp-gallery').data('gallery');		// Get Gallery Object
+	let gallery = $('#blueimp-gallery').data('gallery'); // Get Gallery Object
+	console.log(gallery);
 	let index = gallery.getIndex();
 	let picfile = gallery.list[index].getAttribute('data-picfile');
 	let width = gallery.list[index].getAttribute('data-width');
 	let height = gallery.list[index].getAttribute('data-height');
-	let exif_data = gallery.list[index].getAttribute('data-width');
+	// let exif_data = gallery.list[index].getAttribute('data-width');
+	let exif_data = gallery.list[index].getAttribute('data-exif');
 
 	// Display Description from Rejection Template
 	let html = "<div id='gallery-exif'>" + $("#exif-info").html() + "</div>";

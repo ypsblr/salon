@@ -373,6 +373,7 @@ function show_entry_awards($yearmonth) {
 		if (mysqli_num_rows($results_query) == 0) {
 ?>
 					<p><b>Not awarded to anyone</b></p>
+
 <?php
 		}
 		else {

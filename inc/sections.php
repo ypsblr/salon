@@ -3,7 +3,7 @@
 		<h4 class="text-danger">SALON SECTIONS</h4>
 	</div>
 	<div class="panel-body">
-		<h3 class="headline text-color" id="index-sections">Sections</h3>
+		<!--<h3 class="headline text-color" id="index-sections">Sections</h3>-->
 		<p>Please read the description of each section to understand  the award categories under each section while uploading images to maximize your win chances. Please refer to the 
 			<a href="term_condition.php">Terms and Conditions</a> for restrictions on the content and post-processing for each section. </p>
 		<table class="table table-bordered">

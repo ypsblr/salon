@@ -25,7 +25,8 @@
 <div class="container" style="margin: 0; padding: 0;">
 	<div class="row" style="background-image: url('/img/banner/<?php echo $topPicture;?>'); margin-left: 0; margin-right: 0; margin-bottom: 20px; width:1260px; height:500px;">
 		<div class="col=sm-1"></div>
-		<div class="col-sm-10"><h1 class="animated slideInRight" style="color:yellow"> <?php echo $contestName;?> </h1></div>
+		<div class="col-sm-10"><h2 class="animated slideInRight" style="color:yellow; margin-bottom: 0px; font-style: italic;"> <?php echo $contestEdition;?> </h1></div>
+		<div class="col-sm-10"><h1 class="animated slideInRight" style="color:yellow; margin-top: 10px;"> <?php echo $contestName;?> </h1></div>
 		<div class="col-sm-1"></div>
 	</div>
 </div>

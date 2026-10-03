@@ -18,7 +18,8 @@
 			<li class="<?php echo $first ? 'active' : ''; ?>" id="recognition_pill_<?=$row['short_code'];?>" >
 				<a data-toggle="pill" href="#recognition_fill_<?php echo $row['short_code'];?>" >
 					<div class="thumbnail" style="border:0;"><img src="salons/<?=$contest_yearmonth;?>/img/recognition/<?=$row['logo'];?>" style="width: 80px; "></div>
-					<p class="text-center"><strong><?=$row['recognition_id'];?></strong></p>
+					<p class="text-center"><big><b><?=$row['short_code'];?> - <?=$row['recognition_id'];?></b></big></p>
+					<!--<p class="text-center"><strong><?=$row['recognition_id'];?></strong></p>-->
 				</a>
 			</li>
 		<?php
@@ -42,7 +43,7 @@
 				$query = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
 				if ($row = mysqli_fetch_array($query)) {
 		?>
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-sm-4 col-md-4 col-lg-4"></div>
 					<div class="col-sm-4 col-md-4 col-lg-4 thumbnail" style="border:0;">
 						<a href="<?php echo $row['website'];?>" target="_blank"><img src="salons/<?= $contest_yearmonth;?>/img/recognition/<?=$row['logo'];?>" style="max-width: 180px;"></a><br>
@@ -50,7 +51,7 @@
 						<p class="text-center"><a href="<?=$row['website'];?>" target="_blank"><?=$row['organization_name'];?></a></p>
 					</div>
 					<div class="col-sm-4 col-md-4 col-lg-4"></div>
-				</div>
+				</div> -->
 		<?php
 					if ($row['notification'] != "") {
 		?>

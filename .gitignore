@@ -20,14 +20,19 @@ catalog/
 
 *.zip
 
+blob/
+
 salons/*/upload/
 salons/*/video/
 salons/*/files/
 salons/*/exhibition/
+salons/*/img/
+salons/*/blob/
 
 error_log
 **/error_log
 errors.txt
 img/*.png
+
 
 .DS_Store

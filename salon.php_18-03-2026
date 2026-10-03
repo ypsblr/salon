@@ -220,9 +220,23 @@ if (file_exists("salons/$yearmonth/blob/member_video.php")) {
 										<a data-toggle="collapse" data-parent="#jury-info" href="#jury-details">Distinguished Jury</a>
 									</h2>
 								</div>
-								<div id="jury-details" class="panel-collapse collapse in">
+								<div id="jury-details" class="panel-collapse collapse">
 									<div class="panel-body">
 										<?php show_jury($yearmonth, $salon['sections']); ?>
+									</div>
+								</div>
+							</div>
+
+							<!-- 0.6 PANEL FOR DISPLAYING Results Description -->
+							<div id="salon-results" class="panel panel-warning">
+								<div class="panel-heading">
+									<h2 class="text-center m-t-md">
+										<a data-toggle="collapse" data-parent="#salon-results" href="#salon-result-details">Salon Results</a>
+									</h2>
+								</div>
+								<div id="salon-result-details" class="panel-collapse collapse">
+									<div class="panel-body">
+										<?php echo merge_data($salon['contest']['results_description_blob'], $salon['values'], $yearmonth);?>
 									</div>
 								</div>
 							</div>
@@ -261,20 +275,6 @@ if (file_exists("salons/$yearmonth/blob/member_video.php")) {
 								</div>
 							</div>
 
-							<!-- 0.6 PANEL FOR DISPLAYING Results Description -->
-							<div id="salon-results" class="panel panel-warning">
-								<div class="panel-heading">
-									<h2 class="text-center m-t-md">
-										<a data-toggle="collapse" data-parent="#salon-results" href="#salon-result-details">Salon Results</a>
-									</h2>
-								</div>
-								<div id="salon-result-details" class="panel-collapse collapse in">
-									<div class="panel-body">
-										<?php echo merge_data($salon['contest']['results_description_blob'], $salon['values'], $yearmonth);?>
-									</div>
-								</div>
-							</div>
-
 							<!-- 1 A PANEL GROUP FOR GROUPING SECTIONS -->
 							<div class="panel-group" id="sections">
 								<!-- 1.1 SECTION = CONTEST -->
@@ -284,7 +284,7 @@ if (file_exists("salons/$yearmonth/blob/member_video.php")) {
 											<a data-toggle="collapse" data-parent="#sections" href="#section-contest">OVERALL AWARDS</a>
 										</h2>
 									</div>
-									<div id="section-contest" class="panel-collapse collapse in">
+									<div id="section-contest" class="panel-collapse collapse">
 										<div class="panel-body">
 											<div class="panel-group" id="awards-contest">
 												<!-- 1.1.1 BEST ENTRANT AWARDS -->

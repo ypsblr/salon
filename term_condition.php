@@ -23,8 +23,8 @@ include_once("inc/session.php");
 				<!-- LEFT COLUMN -->
 				<div class="col-sm-8 col-md-8 col-lg-8" style="padding-left:3%">
 					<h3 class="headline text-info">General Terms and Conditions</h3>
-					<p>The web-site enforces a maximum limit on number of pictures per section. The participant can remove a picture and
-					upload a different one any time till the last date for submission.</p>
+					<!--<p>The web-site enforces a maximum limit on number of pictures per section. The participant can remove a picture and
+					upload a different one any time till the last date for submission.</p>-->
 					<?php
 						echo merge_data($termsConditionsBlob, $contest_values);
 					?>

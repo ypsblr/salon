@@ -66,7 +66,7 @@ display: none
 							<?php
 								if ($tr_user['yps_login_id'] == "") {
 									// Check if the participant is a member of a group with GROUP_PAYMENT options
-									$sql  = "SELECT club_entry.payment_mode, profile.salutation, profile.first_name, profile.last_name ";
+									$sql  = "SELECT club_entry.payment_mode, profile.salutation, profile.first_name, profile.last_name, profile.fp_number ";
 									$sql .= "  FROM coupon, club_entry, profile ";
 									$sql .= " WHERE coupon.yearmonth = '$contest_yearmonth' ";
 									$sql .= "   AND coupon.email = '" . $tr_user['email'] . "' ";
@@ -105,11 +105,14 @@ display: none
 								<td><b>Phone:</b> <?=$tr_user['phone'];?></td><td><b>YPS Member ID:</b> <?=$tr_user['yps_login_id'];?></td>
 							</tr>
 							<tr>
-								<td rowspan="3"><b>ADDRESS:</b><br>
+								<td rowspan="4"><b>ADDRESS:</b><br>
 									<div style="padding-left: 40px;">
 										<?php user_print_address($tr_user);?>
 									</div>
 								</td>
+								<td><b>FP Number:</b> <?=$tr_user['fp_number'];?></td>
+							</tr>
+							<tr>
 								<td><i class="fa fa-facebook"></i> <?= $tr_user['facebook_account'];?></td>
 							</tr>
 							<tr>

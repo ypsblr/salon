@@ -11,13 +11,52 @@
 		</p>
 		<h3 class="text-color">From Members of Jury</h3>
 		
+		<!-- Christian Kieffer-->
+		<blockquote class="blockquote">
+			<p class="text text-justify">
+				<img src="/res/jury/christian.png" style="max-height: 120px; max-width: 120px; padding-right: 15px; padding-bottom: 15px; float: left;">
+				<i class="fa fa-quote-left"></i>
+				It has been a privilege to serve on the jury team for this year's YPS International Salon, where I evaluated monochrome and architectural works. I would like to express my gratitude to the outstanding team and organization of the YPS Salon committee. It has been a remarkable group of judges collaborating diligently to select the finest images for the awards. 
+				<i class="fa fa-quote-right"></i>
+				<!--<br><br>-->
+				<!--<button type="button" class="btn btn-color pull-right" data-toggle="modal" data-target="#video-christiankieffer"  style="width: 50%;">
+					<i class="fa fa-video-camera"></i> Listen to Mr. Christian Kieffer
+				</button>-->
+				<!-- Modal Video -->
+				<div class="modal" id="video-christiankieffer" tabindex="-1" role="dialog" aria-labelledby="video-header-label">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="pauseVideo('video-christiankieffer')" >
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<h4 class="modal-title" id="video-header-label">Christian Kieffer, GMPSA</h4>
+							</div>
+							<div class="modal-body">
+								<div class="embed-responsive embed-responsive-16by9">
+									<video controls>
+										<source src="salons/<?= $yearmonth;?>/video/Christian_Kieffer.mp4" type="video/mp4">
+										<source src="salons/<?= $yearmonth;?>/video/Christian_Kieffer.mp4" type="video/mov">
+										Your browser does not support this video
+									</video>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</p>
+			<footer class="blockquote-footer">Christian Kieffer, GMPSA</footer>
+		</blockquote>
+		
 		<!-- Jacky Panhuyzen-->
 		<blockquote class="blockquote">
 			<p class="text text-justify">
 				<img src="/res/jury/jacky.png" style="max-height: 120px; max-width: 120px; padding-right: 15px; padding-bottom: 15px; float: left;">
 				<i class="fa fa-quote-left"></i>
 				Namaskar,
-Thank you YPS for the opportunity to serve as a photo judge in your circuit. It was an enriching experience to witness such diverse creativity and talent. The dedication and passion reflected in each image were truly inspiring. I’m honored to have contributed and learned from this meaningful experience.
+                Thank you YPS for the opportunity to serve as a photo judge in your circuit. It was an enriching experience to witness such diverse
+                creativity and talent. The dedication and passion reflected in each image were truly inspiring. I’m honored to have contributed and 
+                learned from this meaningful experience.
 				<i class="fa fa-quote-right"></i>
 				<!--<br><br>-->
 				<!--<button type="button" class="btn btn-color pull-right" data-toggle="modal" data-target="#video-jackypanhuyzen"  style="width: 50%;">

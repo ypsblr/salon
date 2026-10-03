@@ -32,13 +32,24 @@ function awards_generate_section_list($tab_ag, $columns = 0) {
 	global $DBCON;
 	global $contest_yearmonth;
 
-	$sql  = "SELECT DISTINCT section ";
-	$sql .= "  FROM award ";
-	$sql .= " WHERE yearmonth = '$contest_yearmonth' ";
-	$sql .= "   AND award_group = '$tab_ag' ";
-	$sql .= "   AND award_type = 'pic' ";
-	$sql .= "   AND section != 'CONTEST' ";
-	$sql .= " ORDER BY section";
+// 	$sql  = "SELECT DISTINCT section ";
+// 	$sql .= "  FROM award ";
+// 	$sql .= " WHERE yearmonth = '$contest_yearmonth' ";
+// 	$sql .= "   AND award_group = '$tab_ag' ";
+// 	$sql .= "   AND award_type = 'pic' ";
+// 	$sql .= "   AND section != 'CONTEST' ";
+// 	$sql .= " ORDER BY section";
+
+	$sql  = "SELECT DISTINCT award.section ";
+	$sql .= "  FROM award, section ";
+	$sql .= " WHERE award.yearmonth = '$contest_yearmonth' ";
+	$sql .= "   AND award.award_group = '$tab_ag' ";
+	$sql .= "   AND award.award_type = 'pic' ";
+	$sql .= "   AND award.section != 'CONTEST' ";
+	$sql .= "   AND award.section = section.section ";
+	$sql .= "   AND award.yearmonth = section.yearmonth ";
+	$sql .= " ORDER BY section.section_sequence";
+
 	$query = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
 	$secList = array();
 	$first = true;
@@ -418,4 +429,24 @@ function awards_contest_level_list($award_type, $section = "") {
 	}	// while $row
 
 }
+
+function awards_contest_level_count($award_type, $section = "") {
+	global $DBCON;
+	global $contest_yearmonth;
+
+	$sql  = "SELECT count(*) FROM award ";
+	$sql .= " WHERE yearmonth = '$contest_yearmonth' ";
+	$sql .= "   AND award_type = '$award_type' ";
+
+	if ($section != "")
+		$sql .= "   AND section = '$section' ";
+
+	$query = mysqli_query($DBCON, $sql) 
+		or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
+
+	$row = mysqli_fetch_row($query);
+
+	return (int)$row[0];
+}
+
 ?>
