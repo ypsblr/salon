@@ -70,7 +70,7 @@ if ( (! empty($_SESSION['SALONBOND'])) && (! empty($_REQUEST['ypsd'])) ) {
 
 	if (send_salon_email($email, $subject, 'send_discount_request', $token, $replacement)) {
 		$resArray['success'] = TRUE;
-		$resArray['msg'] = $_SESSION['success_msg'] = "Your query has been forwarded to the YPS Salon/Contest Committee !";
+		$resArray['msg'] = $_SESSION['success_msg'] = "Your query has been forwarded to the " . club_short_name() . " Salon/Contest Committee !";
 		echo json_encode($resArray);
 		die;
 	}

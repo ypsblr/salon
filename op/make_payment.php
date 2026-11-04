@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../inc/club.php");
 /*************************************/
 /** ==============================  **/
 /**  this is a PRODUCTION VERSION   **/
@@ -125,11 +126,11 @@ if ( (! empty($_SESSION['SALONBOND'])) && (! empty($_REQUEST['ypsd'])) ) {
 			 *** THIS IS THE PRODUCTION VERSION         ***
 			 **********************************************/
 			if($param['gateway'] == 'Instamojo'){
-				$msg = initiate_payment('YPS SALON FEE', $balance_payment, $yearmonth, $profile_id, $name, $email, $phone, "user_panel.php");
+				$msg = initiate_payment(club_short_name() . ' SALON FEE', $balance_payment, $yearmonth, $profile_id, $name, $email, $phone, "user_panel.php");
 			}
 			if($param['gateway'] == 'PayPal'){
 				//$return_url = "op/payment.php?msg=OK";
-				$msg = initiate_paypal('YPS SALON FEE', $balance_payment, $currency, $yearmonth, $profile_id, $name, $email, $phone, $return_url, $cancel_url);
+				$msg = initiate_paypal(club_short_name() . ' SALON FEE', $balance_payment, $currency, $yearmonth, $profile_id, $name, $email, $phone, $return_url, $cancel_url);
 			}
 			debug_to_console($msg);
 			/**********************************************

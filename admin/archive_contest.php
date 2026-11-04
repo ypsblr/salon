@@ -64,7 +64,7 @@ if ( ! empty($_SESSION['admin_id']) && ! empty($_SESSION['admin_yearmonth']) ) {
 <div class="splash">
 	<div class="color-line"></div>
 	<div class="splash-title">
-		<h1>   YPS ADMIN PANEL  </h1>
+		<h1>   <?php echo club_short_name_html(); ?> ADMIN PANEL  </h1>
 		<p>Please Wait. </p>
 		<div class="spinner">
 			<div class="rect1"></div>

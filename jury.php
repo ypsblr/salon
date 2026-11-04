@@ -30,9 +30,9 @@ include_once("inc/session.php");
 						<span class="border-color">Back to Judging at Venue</span>
 					</h2>
 					<p style="text-align:justify;">
-						With the pandemic declassified, YPS will get back to Open Judging at Venue. This brings the
+						With the pandemic declassified, <?php echo club_short_name_html(); ?> will get back to Open Judging at Venue. This brings the
 						best of both worlds. Participants in and around Bangalore who can visit the venue will have
-						the pleasure of meeting the members of jury and other participants and enjoy YPS hospitality.
+						the pleasure of meeting the members of jury and other participants and enjoy <?php echo club_short_name_html(); ?> hospitality.
 						They will also have the privilege of witnessing the selection of pictures for awards and
 						the discussions around the reasons for the picture being selected. The live scoring will
 						still be available through webcast. Details will be published aroud the time of judging.
@@ -88,7 +88,7 @@ include_once("inc/session.php");
 	<script>
 		$(document).ready(function() {
 			$("#login_login_id").hide();
-			$("#check_it").attr("placeholder", "Email (or YPS Member ID)");
+			$("#check_it").attr("placeholder", "Email (or <?php echo club_short_name_html(); ?> Member ID)");
 		});
 	</script>
     <script>

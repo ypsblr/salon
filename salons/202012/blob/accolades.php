@@ -1,3 +1,4 @@
+<?php include_once(__DIR__ . "/../../../inc/club.php"); ?>
 <!-- Results Description -->
 <div class="panel panel-default">
 	<div class="panel-heading">
@@ -7,7 +8,7 @@
 		<h2 class="text-color">ACCOLADES</h2>
 		<p class="text text-justify">
 			Youth Photographic Society is happy to share with you the accolades, appreciations and messages from the Salon jury members,
-			participants and others who shared their views with YPS.
+			participants and others who shared their views with <?php echo club_short_name_html(); ?>.
 		</p>
 		<h3 class="text-color">From Members of Jury</h3>
 
@@ -108,7 +109,7 @@
 			<p class="text text-justify">
 				<img src="/res/jury/leifalveen.png" style="max-height: 120px; max-width: 120px; padding-right: 15px; padding-bottom: 15px; float: left;">
 				<i class="fa fa-quote-left"></i>
-				I was very very impressed with the professional way things were handled and the technological solutions that YPS has been presenting has been phenomenal.
+				I was very very impressed with the professional way things were handled and the technological solutions that <?php echo club_short_name_html(); ?> has been presenting has been phenomenal.
 				Also they have the ability to put together a fantastic team of judges which really was a pleasure to work with. I have to say, this one comes highly recommended.
 				<i class="fa fa-quote-right"></i>
 				<br><br>
@@ -154,7 +155,7 @@
 				past it had greater meaning this time.
 				<br>
 				As a traditionalist and from what I have learnt from my peers, I do prefer physical presence of jury along with an interested bunch
-				of local enthusiast. But we all need to adapt with the times and I believe YPS is a trendsetter and a benchmark for others to
+				of local enthusiast. But we all need to adapt with the times and I believe <?php echo club_short_name_html(); ?> is a trendsetter and a benchmark for others to
 				emulate.
 				<br>
 				I am impressed with your collective team work and that includes many others not listed here. You are blessed to have a great
@@ -172,7 +173,7 @@
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="pauseVideo('video-asif')" >
 									<span aria-hidden="true">&times;</span>
 								</button>
-								<h4 class="modal-title" id="video-header-label">Mohammed Arfan Asif, EFIAP/p, MPSA, ARPS, APSA, MICS, FICS, MIUP, c*MoL, Hon.YPS</h4>
+								<h4 class="modal-title" id="video-header-label">Mohammed Arfan Asif, EFIAP/p, MPSA, ARPS, APSA, MICS, FICS, MIUP, c*MoL, Hon.<?php echo club_short_name_html(); ?></h4>
 							</div>
 							<div class="modal-body">
 								<div class="embed-responsive embed-responsive-16by9">
@@ -187,7 +188,7 @@
 					</div>
 				</div>
 			</p>
-			<footer class="blockquote-footer">Mohammed Arfan Asif, EFIAP/p, MPSA, ARPS, APSA, MICS, FICS, MIUP, c*MoL, Hon.YPS</footer>
+			<footer class="blockquote-footer">Mohammed Arfan Asif, EFIAP/p, MPSA, ARPS, APSA, MICS, FICS, MIUP, c*MoL, Hon.<?php echo club_short_name_html(); ?></footer>
 		</blockquote>
 
 		<!-- Subrata Bysack -->
@@ -195,10 +196,10 @@
 			<p class="text text-justify">
 				<img src="/res/jury/subratabysack.png" style="max-height: 120px; max-width: 120px; padding-right: 15px; padding-bottom: 15px; float: left;">
 				<i class="fa fa-quote-left"></i>
-				&quot;Excellent&quot; is the one word to express my judging experience at YPS International Salon, 2020. The marking system, the counter
+				&quot;Excellent&quot; is the one word to express my judging experience at <?php echo club_short_name_html(); ?> International Salon, 2020. The marking system, the counter
 				showing distribution of marks alloted and the discussion process to finalize the awards is very impressive and unique. Overall, I
 				judged the 1309 entries in Photo Travel Division effortlessly and I felt judging more than 5000 entries in one day will not matter in
-				the YPS system. Finally, the transparency in the judging system is a moral booster to the participants.
+				the <?php echo club_short_name_html(); ?> system. Finally, the transparency in the judging system is a moral booster to the participants.
 				<i class="fa fa-quote-right"></i>
 				<br><br>
 				<button type="button" class="btn btn-color pull-right" data-toggle="modal" data-target="#video-subratabysack"  style="width: 50%;">
@@ -235,13 +236,13 @@
 			<p class="text text-justify">
 				<img src="/res/jury/vinayp.png" style="max-height: 120px; max-width: 120px; padding-right: 15px; padding-bottom: 15px; float: left;">
 				<i class="fa fa-quote-left"></i>
-				Our photography art, and outdoor aspects of it have taken a backseat during these pandemic times. I deeply appreciate YPS&apos;s
+				Our photography art, and outdoor aspects of it have taken a backseat during these pandemic times. I deeply appreciate <?php echo club_short_name_html(); ?>&apos;s
 				efforts in bringing back the thrill of international competition and live judging, back into our lives with technology at its heart, aptly
 				so from Bengaluru. Participants from around the globe, being able to witness live critique of their art, by a diverse set of
 				experienced and internationally acclaimed jury members, is a trendsetting and commendable feat.
 				<br>
 				Being a part of this Salon, has been a personally enriching experience for me. Heartiest congratulations to you all for a very well
-				organized and successful salon; and best wishes for all future YPS's endeavors in promotion of our photography art.
+				organized and successful salon; and best wishes for all future <?php echo club_short_name_html(); ?>'s endeavors in promotion of our photography art.
 				<i class="fa fa-quote-right"></i>
 				<br><br>
 				<button type="button" class="btn btn-color pull-right" data-toggle="modal" data-target="#video-vinayparelkar"  style="width: 50%;">
@@ -274,6 +275,6 @@
 		</blockquote>
 		<hr>
 		<br><br>
-		<h2 class="text-info text-center">YPS is grateful to all those who appreciated the efforts</h2>
+		<h2 class="text-info text-center"><?php echo club_short_name_html(); ?> is grateful to all those who appreciated the efforts</h2>
 	</div>
 </div>

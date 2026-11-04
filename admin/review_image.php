@@ -222,7 +222,7 @@ include "inc/master_sidebar.php";
 									$reviewing_till = $pr['modified_date'];
 								$profile_id = $pr['profile_id'];
 								$entry_name = $pr['profile_name'];
-								$club_name = $pr['yps_login_id'] != "" ? ("YPS MEMBER " . $pr['yps_login_id']) : ($pr['club_name'] != NULL ? $pr['club_name'] : "");
+								$club_name = $pr['yps_login_id'] != "" ? (club_short_name() . " MEMBER " . $pr['yps_login_id']) : ($pr['club_name'] != NULL ? $pr['club_name'] : "");
 								$entry_email = $pr['email'];
 								$blacklist_match = $pr['blacklist_match'];
 								$blacklist_exception = $pr['blacklist_exception'];
@@ -393,7 +393,7 @@ include "inc/master_sidebar.php";
 											 data-titles='<?= json_encode($pic_titles);?>'
 											 data-submittedfiles='<?= json_encode($submitted_files);?>' >
 										</div>
-										<br><p><b>Accepted in the Past YPS Salons</b></p>
+										<br><p><b>Accepted in the Past <?php echo club_short_name_html(); ?> Salons</b></p>
 										<div class="past-acceptance" data-profile="<?=$profile_id;?>"
 											 data-titles='<?= json_encode($pic_titles);?>'
 											 data-submittedfiles='<?= json_encode($submitted_files);?>' >

@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../inc/club.php");
 /*
 ** This program is used to generate a FB Share Image for the participant
 */
@@ -97,11 +98,11 @@ else
     $slide_image = $_SERVER['DOCUMENT_ROOT'] . "/salons/$si_yearmonth/img/participant_poster.png";
 
 if (! file_exists($slide_image))
-    handle_error("Image Components missing. Please report to YPS.", __FILE__, __LINE__);
+    handle_error("Image Components missing. Please report to " . club_short_name() . ".", __FILE__, __LINE__);
 
 $sharedef_file = $_SERVER['DOCUMENT_ROOT'] . "/salons/$si_yearmonth/blob/sharedef.json";
 if (! file_exists($slide_image))
-    handle_error("Definition Components missing. Please report to YPS.", __FILE__, __LINE__);
+    handle_error("Definition Components missing. Please report to " . club_short_name() . ".", __FILE__, __LINE__);
 
 $page = [];
 $blocks = [];
@@ -110,7 +111,7 @@ $fields = [];
 $sharedef_json = file_get_contents($sharedef_file);
 $sharedef = json_decode($sharedef_json, true);
 if (json_last_error() != JSON_ERROR_NONE)
-	handle_error("Definition garbled. Please report to YPS.", __FILE__, __LINE__);
+	handle_error("Definition garbled. Please report to " . club_short_name() . ".", __FILE__, __LINE__);
 
 if (isset($sharedef["page"]))
 	$page = $sharedef["page"];
@@ -122,7 +123,7 @@ if (isset($sharedef["fields"]))
 	$fields = $sharedef["fields"];
 
 if (sizeof($page) == 0 || sizeof($blocks) == 0 || sizeof($fields) == 0)
-	handle_error("Page Definition corrupted. Report to YPS", __FILE__, __LINE__);
+	handle_error("Page Definition corrupted. Report to " . club_short_name(), __FILE__, __LINE__);
 
 $slide_width = $page["width"];
 $slide_height = $page["height"];

@@ -27,14 +27,14 @@ function get_file_transfer_error_message($code) {
 		case UPLOAD_ERR_FORM_SIZE : return "File size exceeds maximum specified. Resize and Retry.";
 		case UPLOAD_ERR_PARTIAL : return "File not fully uploadd. Retry.";
 		case UPLOAD_ERR_NO_FILE : return "No file was uploaded. Retry.";
-		case UPLOAD_ERR_NO_TMP_DIR : return "Error in system configuration. Report to YPS.";
-		case UPLOAD_ERR_CANT_WRITE : return "Unable to save uploaded file. Report to YPS.";
-		case UPLOAD_ERR_EXTENSION : return "Error in system program. Report to YPS.";
+		case UPLOAD_ERR_NO_TMP_DIR : return "Error in system configuration. Report to " . club_short_name() . ".";
+		case UPLOAD_ERR_CANT_WRITE : return "Unable to save uploaded file. Report to " . club_short_name() . ".";
+		case UPLOAD_ERR_EXTENSION : return "Error in system program. Report to " . club_short_name() . ".";
 		default : {
 			if ($code == UPLOAD_ERR_OK)
 				return "";
 			else
-				return "Unknown Error (code " . $code . "). Report to YPS.";
+				return "Unknown Error (code " . $code . "). Report to " . club_short_name() . ".";
 		}
 	}
 }
@@ -106,7 +106,7 @@ if( isset($_REQUEST['rurobot']) && $_REQUEST['rurobot'] == 'IamHuman' &&
 				echo json_encode($resArray);
 			}
 			else
-				handle_error("Error saving uploaded file in salon folder. Report to YPS");
+				handle_error("Error saving uploaded file in salon folder. Report to " . club_short_name());
 		}
 		else
 			handle_error(get_file_transfer_error_message($_FILES['photo']['error']));

@@ -872,7 +872,7 @@ label {
 	<script src="plugin/validate/js/jquery.validate.min.js"></script>
 
 	<!-- Custom Validation Functions -->
-	<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
+	<script>var CLUB_NAME = <?= json_encode(club_name()) ?>; var CLUB_SHORT_NAME = <?= json_encode(club_short_name()) ?>;</script>
 	<script src="custom/js/validate.js"></script>
 
 	<!-- Form Validation -->
@@ -928,7 +928,7 @@ label {
 							$('#loader_img').hide();
 							// Restore Member Table
 							member_table = $('#member-table').DataTable({"lengthChange": false, "searching": false, "ordering": false});
-							swal("Updation Failed", "Updation Failed due to Server Error. Retry operation. Report to YPS if the error persists!", "error");
+							swal("Updation Failed", "Updation Failed due to Server Error. Retry operation. Report to <?php echo club_short_name_html(); ?> if the error persists!", "error");
 							$('html, body').animate({ scrollTop: $("#myTab").offset().top-150 }, 500);
 						}
 				});

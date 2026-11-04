@@ -102,7 +102,7 @@ display: none
 								<td><b>Honors:</b> <?=$tr_user['honors'];?></td>
 							</tr>
 							<tr>
-								<td><b>Phone:</b> <?=$tr_user['phone'];?></td><td><b>YPS Member ID:</b> <?=$tr_user['yps_login_id'];?></td>
+								<td><b>Phone:</b> <?=$tr_user['phone'];?></td><td><b><?php echo club_short_name_html(); ?> Member ID:</b> <?=$tr_user['yps_login_id'];?></td>
 							</tr>
 							<tr>
 								<td rowspan="4"><b>ADDRESS:</b><br>
@@ -186,7 +186,7 @@ display: none
 							    ($tr_user['email'] != $yps_user['email'] || $tr_user['first_name'] != $yps_user['first_name'] ||
 									$tr_user['last_name'] != $yps_user['last_name']) ) {
 						?>
-						<p class="text-danger">Your YPS profile has changed as follows. Use <b>Edit Profile</b> to sync the details:</p>
+						<p class="text-danger">Your <?php echo club_short_name_html(); ?> profile has changed as follows. Use <b>Edit Profile</b> to sync the details:</p>
 						<ul>
 						<?php
 								if ($tr_user['email'] != $yps_user['email']) {

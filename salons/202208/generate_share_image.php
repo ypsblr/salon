@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 /*
 ** This program is used to generate a FB Share Image for the participant
 */
@@ -95,7 +96,7 @@ else
     $slide_image = $_SERVER['DOCUMENT_ROOT'] . "/salons/$si_yearmonth/img/participant_poster.png";
 
 if (! file_exists($slide_image))
-    handle_error("Components missing. Please report to YPS.", __FILE__, __LINE__);
+    handle_error("Components missing. Please report to " . club_short_name() . ".", __FILE__, __LINE__);
 
 $slide_width = 1080;
 $slide_height = 1080;

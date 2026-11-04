@@ -303,7 +303,7 @@ function fmtd ($str) {
 					</h2>
 					<p style="text-align:justify;"><?php echo club_name_html(); ?> has a rich heritage of conducting Salons since 1977.
 						We could finally pull together all the old Salon Catalogs in one place. You can see from these catalogs
-						how YPS was nurtured into a healthy Photography Club by some of the top names in the field of photography
+						how <?php echo club_short_name_html(); ?> was nurtured into a healthy Photography Club by some of the top names in the field of photography
 						at that time.
 					</p>
 					<div class="row">
@@ -393,7 +393,7 @@ function fmtd ($str) {
 	<script>
 		$(document).ready(function() {
 			$("#login_login_id").hide();
-			$("#check_it").attr("placeholder", "Email (or YPS Member ID)");
+			$("#check_it").attr("placeholder", "Email (or <?php echo club_short_name_html(); ?> Member ID)");
 		});
 	</script>
 

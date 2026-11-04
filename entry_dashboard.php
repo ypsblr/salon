@@ -1,4 +1,5 @@
-<?php 
+<?php
+include_once(__DIR__ . "/inc/club.php");
 session_start();
 include("inc/connect.php");
 include("inc/lib.php");
@@ -141,7 +142,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_yearmonth']) ) {
 <body class="fixed-navbar fixed-sidebar">
 
 <!-- Simple splash screen-->
-<div class="splash"> <div class="color-line"></div><div class="splash-title"><h1>   YPS ADMIN PANEL  </h1><p>Please Wait. </p><div class="spinner"> <div class="rect1"></div> <div class="rect2"></div> <div class="rect3"></div> <div class="rect4"></div> <div class="rect5"></div> </div> </div> </div>
+<div class="splash"> <div class="color-line"></div><div class="splash-title"><h1>   <?php echo club_short_name_html(); ?> ADMIN PANEL  </h1><p>Please Wait. </p><div class="spinner"> <div class="rect1"></div> <div class="rect2"></div> <div class="rect3"></div> <div class="rect4"></div> <div class="rect5"></div> </div> </div> </div>
 
 <?php 
 include "inc/master_topbar.php";

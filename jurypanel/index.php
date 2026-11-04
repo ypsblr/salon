@@ -78,7 +78,7 @@ session_start();
 		<div class="row">
 			<div class="col-md-12 text-center">
 				<strong><?php echo club_name_html(); ?></strong> <br/>
-				&copy; YPS 2K16 | Design &amp; Developed by <a href="http://www.imcanny.com/" target="_blank">www.imcanny.com</a>
+				&copy; <?php echo club_short_name_html(); ?> 2K16 | Design &amp; Developed by <a href="http://www.imcanny.com/" target="_blank">www.imcanny.com</a>
 			</div>
 		</div>
 	</div>  <!-- Container -->

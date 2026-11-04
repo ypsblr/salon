@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../inc/club.php");
 //
 // Display Categories either in Table or Modal Dialog Form
 //
@@ -61,7 +62,7 @@ function ec_print_ec_details($row) {
 			}
 		}
 ?>
-		<li><b>Membership</b> - A YPS <?php echo expand_list($yps_member_types, 'or');?> Member.</li>
+		<li><b>Membership</b> - A <?php echo club_short_name_html(); ?> <?php echo expand_list($yps_member_types, 'or');?> Member.</li>
 <?php
 	}
 	if ($row['gender_must_match']) {

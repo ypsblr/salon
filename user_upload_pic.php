@@ -441,7 +441,7 @@ if(isset($_SESSION['USER_ID']) && ($tr_user['fee_waived'] ||
 																if ($contestIsNoToPastAcceptance > 0) {
 															?>
 															<li>Pictures that have won acceptances in the previous Salons of <?php echo club_name_html(); ?> are not eligible for upload
-																in this salon. The list of pictures that have won in acceptances in the past salons of YPS shown below is for reference only.</li>
+																in this salon. The list of pictures that have won in acceptances in the past salons of <?php echo club_short_name_html(); ?> shown below is for reference only.</li>
 															<?php
 																}
 															?>
@@ -699,7 +699,7 @@ if(isset($_SESSION['USER_ID']) && ($tr_user['fee_waived'] ||
 																$query = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
 																if (mysqli_num_rows($query) == 0) {
 															?>
-																	TO BE ANNONCED<br>Get in touch with YPS
+																	TO BE ANNONCED<br>Get in touch with <?php echo club_short_name_html(); ?>
 															<?php
 																}
 																else {
@@ -865,15 +865,15 @@ if(isset($_SESSION['USER_ID']) && ($tr_user['fee_waived'] ||
 										<div class="panel panel-default">
 											<div class="panel-heading">
 												<h5 class="panel-title" style="color:red;">
-													<a data-toggle="collapse" href="#past_acceptances"><b>Pictures accepted in recent YPS Digital Salons</b></a>
+													<a data-toggle="collapse" href="#past_acceptances"><b>Pictures accepted in recent <?php echo club_short_name_html(); ?> Digital Salons</b></a>
 												</h5>
 											</div>
 											<div class="panel-collapse <?php echo ($hide_past_acceptances ? 'collapse' : 'in');?>" id="past_acceptances">
 												<div class="panel-body">
 													<p class="text text-justified">As per Salon Terms and Conditions and as per generally accepted practices of the organizations
 															providing patronage to this Salon, your pictures that have won Acceptances (including awards / certificates of merits /
-															honorable mentions) in the past Salons of YPS are not eligible to be uploaded in this Salon. For your convenience, we
-															have listed below the pictures submitted by you in the salons of YPS since 2016.
+															honorable mentions) in the past Salons of <?php echo club_short_name_html(); ?> are not eligible to be uploaded in this Salon. For your convenience, we
+															have listed below the pictures submitted by you in the salons of <?php echo club_short_name_html(); ?> since 2016.
 															These are meant to serve you as reference and are by no means exhaustive.</p>
 													<p class="text text-justify">You have the ultimate responsibility to adhere to the Terms and Conditions of the Salon and that of the
 															organizations providing patronage, to whom you may apply for honors. Please verify the submissions in the past before
@@ -1360,7 +1360,7 @@ if(isset($_SESSION['USER_ID']) && ($tr_user['fee_waived'] ||
 	<script src="plugin/validate/js/jquery.validate.min.js"></script>
 
 	<!-- Custom Validation Functions -->
-	<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
+	<script>var CLUB_NAME = <?= json_encode(club_name()) ?>; var CLUB_SHORT_NAME = <?= json_encode(club_short_name()) ?>;</script>
 	<script src="custom/js/validate.js"></script>
 
 	<!-- Form Validation & Submission -->

@@ -13,12 +13,12 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_yearmonth']) &&
 	if (isset($_FILES) && $_FILES['member-file']['error'] != UPLOAD_ERR_NO_FILE) {
 		// debug_dump("FILES", $_FILES, __FILE__, __LINE__);
 		if (! ($_FILES['member-file']['error'] == UPLOAD_ERR_OK))
-			return_error("Error in uploading YPS Member CSV file. Try again", __FILE__, __LINE__, true);
+			return_error("Error in uploading " . club_short_name() . " Member CSV file. Try again", __FILE__, __LINE__, true);
 
 		$target_file = "../../salons/$yearmonth/blob/yps_member.csv";
 
 		if (! move_uploaded_file($_FILES['member-file']['tmp_name'], $target_file))
-			return_error("Error in copying YPS Member upload file", __FILE__, __LINE__, true);
+			return_error("Error in copying " . club_short_name() . " Member upload file", __FILE__, __LINE__, true);
 	}
 	$csv = fopen($target_file, "r");
 	if (! $csv) {

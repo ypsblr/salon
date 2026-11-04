@@ -875,7 +875,7 @@ if (isset($_SESSION['admin_id']) ) {
 	<div class="splash">
 		<div class="color-line"></div>
 		<div class="splash-title">
-			<h1>    YPS ADMIN PANEL  </h1>
+			<h1>    <?php echo club_short_name_html(); ?> ADMIN PANEL  </h1>
 			<p>Please Wait. </p>
 			<div class="spinner">
 				<div class="rect1"></div>
@@ -1018,7 +1018,7 @@ if (isset($_SESSION['admin_id']) ) {
 															<label><input type="radio" name="filter_profiles" id="include_foreigners" <?= ($cr_include_foreigners && (! $cr_include_indians)) ? "checked" : "";?> > Foreigners</label>
 														</span>
 														<span style="margin-left: 10px;">
-															<label><input type="checkbox" name="filter_yps_members" id="include_yps_members" <?= $cr_include_yps_members ? "checked" : "";?> > Include YPS Members</label>
+															<label><input type="checkbox" name="filter_yps_members" id="include_yps_members" <?= $cr_include_yps_members ? "checked" : "";?> > Include <?php echo club_short_name_html(); ?> Members</label>
 														</span>
 													</div>
 													<div class="col-sm-12">
@@ -1323,7 +1323,7 @@ if (isset($_SESSION['admin_id']) ) {
 <!-- Form Validation -->
 <script src="plugin/validate/js/jquery.validate.min.js"></script>
 <!-- Custom Validation Functions -->
-<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
+<script>var CLUB_NAME = <?= json_encode(club_name()) ?>; var CLUB_SHORT_NAME = <?= json_encode(club_short_name()) ?>;</script>
 <script src="custom/js/validate.js"></script>
 
 <?php include("inc/blob_modal_script.php");?>
@@ -1427,7 +1427,7 @@ if (isset($_SESSION['admin_id']) ) {
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
 							$('#loader_img').hide();
-							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to YPS", "error");
+							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to <?php echo club_short_name_html(); ?>", "error");
 						}
 				});
 			}
@@ -1479,7 +1479,7 @@ if (isset($_SESSION['admin_id']) ) {
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
 							$('#loader_img').hide();
-							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to YPS", "error");
+							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to <?php echo club_short_name_html(); ?>", "error");
 						}
 				});
 			}
@@ -1645,7 +1645,7 @@ if (isset($_SESSION['admin_id']) ) {
 			include_foreigners(include_yps_members);
 		});
 
-		// Handle toggling of YPS Member Inclusion
+		// Handle toggling of <?php echo club_short_name_html(); ?> Member Inclusion
 		$("#include_yps_members").change(function(){
 			let include_yps_members = $("#include_yps_members").prop("checked");
 			if ($("#include_indians").prop("checked"))
@@ -1736,7 +1736,7 @@ if (isset($_SESSION['admin_id']) ) {
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
 							$('#loader_img').hide();
-							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to YPS", "error");
+							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to <?php echo club_short_name_html(); ?>", "error");
 						}
 				});		// ajax
 			}	// delete_confirmed
@@ -1843,7 +1843,7 @@ if (isset($_SESSION['admin_id']) ) {
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
 							$('#loader_img').hide();
-							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to YPS", "error");
+							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to <?php echo club_short_name_html(); ?>", "error");
 						}
 				});
 				return false;
@@ -1881,7 +1881,7 @@ if (isset($_SESSION['admin_id']) ) {
 					},
 					error: function(jqXHR, textStatus, errorThrown) {
 						$('#loader_img').hide();
-						swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to YPS", "error");
+						swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to <?php echo club_short_name_html(); ?>", "error");
 					}
 			});		// ajax
 		});
@@ -1988,7 +1988,7 @@ function validate() {
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
 							$('#loader_img').hide();
-							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to YPS", "error");
+							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to <?php echo club_short_name_html(); ?>", "error");
 						}
 				});		// ajax
 			}	// delete_confirmed

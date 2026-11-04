@@ -239,8 +239,8 @@ function send_salon_email($email_id, $subject, $email_code, $text, $replace_text
                 $mail->Port       = 25;                                 // For GoDaddy
 
                 //Recipients
-                $mail->setFrom(salon_email(), 'YPS Salons');
-                $mail->addReplyTo(salon_email(), 'YPS Salons');
+                $mail->setFrom(salon_email(), club_short_name() . ' Salons');
+                $mail->addReplyTo(salon_email(), club_short_name() . ' Salons');
                 // $mail->addCC(salon_email());
 
                 // Add additional CC recipients (comma separated list of emails)
@@ -312,7 +312,7 @@ function log_sql_error($sql, $errmsg, $phpfile, $phpline) {
 
 function sql_error($sql, $errmsg, $phpfile, $phpline) {
 	log_sql_error($sql, $errmsg, $phpfile, $phpline);
-	handle_error("Data Operation failed. Please report to YPS.", $phpfile, $phpline);
+	handle_error("Data Operation failed. Please report to " . club_short_name() . ".", $phpfile, $phpline);
 }
 
 //

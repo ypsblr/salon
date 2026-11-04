@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../inc/club.php");
 /*************************************/
 /** ==============================  **/
 /**  this is a PRODUCTION VERSION   **/
@@ -190,11 +191,11 @@ if(isset($_REQUEST["order_catalog"]) &&
 		 *** THIS IS THE PRODUCTION VERSION         ***
 		 **********************************************/
 		if($_REQUEST['gateway'] == 'Instamojo'){
-			$msg = initiate_payment('YPS CATALOG ORDER', $total_due, $yearmonth, $profile_id, $name, $email, $phone, "catalog_order.php?mode=" . $launch_mode);
+			$msg = initiate_payment(club_short_name() . ' CATALOG ORDER', $total_due, $yearmonth, $profile_id, $name, $email, $phone, "catalog_order.php?mode=" . $launch_mode);
 		}
 		if($_REQUEST['gateway'] == 'PayPal'){
 			//$return_url = "op/payment.php?msg=OK";
-			$msg = initiate_paypal('YPS CATALOG_ORDER', $total_due, $yearmonth, $profile_id, $name, $email, $phone, $return_url, $cancel_url);
+			$msg = initiate_paypal(club_short_name() . ' CATALOG_ORDER', $total_due, $yearmonth, $profile_id, $name, $email, $phone, $return_url, $cancel_url);
 		}
 		/**********************************************
 		 *** THIS IS THE PRODUCTION VERSION         ***

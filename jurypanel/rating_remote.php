@@ -42,11 +42,11 @@ if ( isset($_SESSION['jury_id']) && isset($_SESSION['jury_type']) && $_SESSION['
 	$sql .= "   AND assignment.user_id = '$jury_id' ";
 	$query = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
 	if (mysqli_num_rows($query) == 0) {
-		die_with_error("Judging for $award_group under $jury_section is yet to open. Contact YPS !", __FILE__, __LINE__);
+		die_with_error("Judging for $award_group under $jury_section is yet to open. Contact " . club_short_name() . " !", __FILE__, __LINE__);
 	}
 	$assignment = mysqli_fetch_array($query);
 	if ($assignment['session_open'] == '0') {
-		die_with_error("Judging for $award_group under $jury_section is yet to open. Contact YPS !", __FILE__, __LINE__);
+		die_with_error("Judging for $award_group under $jury_section is yet to open. Contact " . club_short_name() . " !", __FILE__, __LINE__);
 	}
 	if ($assignment['status'] == 'COMPLETED') {
 		die_with_error("Judging for $jury_section has been completed. Contact score again !", __FILE__, __LINE__);
@@ -418,7 +418,7 @@ div.histogram-info {
 			<div class="well" id="score-board" style="height: 100%; width: 600px; margin: 0 auto;" >
 				<h3 class="test-info text-center">  LET US PROVIDE THE RIGHT SCORES  </h3>
 				<p class="text-justified">
-					Please review the scoring pattern that YPS uses which is consistent with global practices.
+					Please review the scoring pattern that <?php echo club_short_name_html(); ?> uses which is consistent with global practices.
 					Please provide the right scores so that we can provide adequate acceptances.
 				</p>
 				<table class="table" style="padding-left: 20px; padding-right: 20px;">

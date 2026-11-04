@@ -18,18 +18,18 @@ color:#fff !important;
 				<h3 class="text-color white"><span class="border-color">Contacts</span></h3>
 				<div class="content">
 					<p>
-						<b><u>YPS President</u></b>: Mr. Manju Vikas Sastry V, ESFIP, AFIP | sastry.vikas@gmail.com<br>
-						<b><u>YPS Secretary</u></b>: Ms. Prema Kakade, ESFIP, EFIAP, EFIP, cMoL, E.CPE | pmkakade@gmail.com<br><br>
+						<b><u><?php echo club_short_name_html(); ?> President</u></b>: Mr. Manju Vikas Sastry V, ESFIP, AFIP | sastry.vikas@gmail.com<br>
+						<b><u><?php echo club_short_name_html(); ?> Secretary</u></b>: Ms. Prema Kakade, ESFIP, EFIAP, EFIP, cMoL, E.CPE | pmkakade@gmail.com<br><br>
 						<strong><?php echo club_name_html(); ?> Bengaluru</strong><br/>
 						TT Hall, 3rd Floor,<br/>
 						State Youth Centre of Karnataka, <br/>
 						Nrupathanga Road, Bengaluru - 560001.<br/>
 						Email: <a href="mailto:<?php echo salon_email_html(); ?>" class="white"><?php echo salon_email_html(); ?></a><br/>
-						Phone: +91-9513-YPS-BLR (+91-9513-977-257)
+						Phone: +91-9513-<?php echo club_short_name_html(); ?>-BLR (+91-9513-977-257)
 						<br><br>
 						<a href="<?php echo yps_website_without_www_html(); ?>" target="_blank"  class="white"><i class="fa fa-globe"></i> ypsbengaluru.com</a><br/>
 						<a href="https://www.facebook.com/ypsbengaluru/" target="_blank" class="white"><i class="fa fa-facebook-square"></i> /ypsbengaluru</a><br/>
-						<a href="<?php echo yps_website_with_www_html(); ?>/membership-join/" target="_blank" class="white"><i class="fa fa-globe"></i> Become a Member of YPS</a>
+						<a href="<?php echo yps_website_with_www_html(); ?>/membership-join/" target="_blank" class="white"><i class="fa fa-globe"></i> Become a Member of <?php echo club_short_name_html(); ?></a>
 					</p>
 				</div>
 				<div class="content social">
@@ -40,9 +40,9 @@ color:#fff !important;
 			<div class="col-sm-6">
 				<a href="<?php echo yps_website_without_www_html(); ?>" target="_blank"><h3 class="text-color white"><span><?php echo club_name_html(); ?></span></h3></a>
 				<div class="content">
-					<p><a href="<?php echo yps_website_without_www_html(); ?>" target="_blank" class="white"><?php echo club_name_html(); ?> (YPS) Bengaluru</a>,
+					<p><a href="<?php echo yps_website_without_www_html(); ?>" target="_blank" class="white"><?php echo club_name_html(); ?> (<?php echo club_short_name_html(); ?>) Bengaluru</a>,
 						the hosts for this contest, is a not-for-profit organization started in 1971 to further the Art of Photography.
-						With over 600 members, YPS is among the largest Photography Clubs in India and also boasts of hosting 50 National and
+						With over 600 members, <?php echo club_short_name_html(); ?> is among the largest Photography Clubs in India and also boasts of hosting 50 National and
 						International Salons. It has been nurtured by doyens of Indian Photography like Late Mr. T N A Perumal,
 						Late Mr. E Hanumantha Rao and Late Mr. C Rajagopal. The club conducts regular slide-shows on every first and
 						third Saturday of the month, alongside exhibitions and workshops, for the benefit of its members.
@@ -59,8 +59,8 @@ color:#fff !important;
         <div class="row">
 			<div class="col-sm-12">
 				<p>
-					&copy; YPS 2016. <a href="term_condition.php" target="_blank" class="white">Terms &amp; Conditions</a>
-					 | Design &amp; Developed by YPS Bangalore in consultation with <a href="http://www.imcanny.com/"  target="_blank" class="white">www.imcanny.com</a>
+					&copy; <?php echo club_short_name_html(); ?> 2016. <a href="term_condition.php" target="_blank" class="white">Terms &amp; Conditions</a>
+					 | Design &amp; Developed by <?php echo club_short_name_html(); ?> Bangalore in consultation with <a href="http://www.imcanny.com/"  target="_blank" class="white">www.imcanny.com</a>
 				</p>
 			</div>
         </div>

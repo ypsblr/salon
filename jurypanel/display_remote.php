@@ -247,7 +247,7 @@ if(isset($_SESSION['jury_id']) ) {  // to prevent being run from command line an
 				<!-- Information Carousel 20% -->
 				<div class="row" style="height: <?= round($carousel_height * 100, 0);?>%; ">
 					<div class="col-sm-12 " style="padding: 8px; height: 100%; text-align: center;" >
-						<!-- YPS Logo Displaying When Started -->
+						<!-- <?php echo club_short_name_html(); ?> Logo Displaying When Started -->
 						<div class="centered info-carousel" id="carousel-yps">
 							<div class="row" style="width: 100%; height: 100%; padding-bottom: 15px;">
 								<div class="col-sm-12" style="height: 80%;">
@@ -398,7 +398,7 @@ if(isset($_SESSION['jury_id']) ) {  // to prevent being run from command line an
 						</p>
 						<p>Press <b>CTRL-S</b> to start from the last displayed picture.</p>
 						<p>Press <b>CTRL-I</b> to bring up this instruction page.</p>
-						<p>Click on the rolling YPS Logo on the top right to close and exit.</p>
+						<p>Click on the rolling <?php echo club_short_name_html(); ?> Logo on the top right to close and exit.</p>
 						<p>Other keys that can be used are:</p>
 						<div style="width: 100%; padding-left: 30px; padding-right: 30px;">
 							<div class="row">

@@ -14,7 +14,7 @@ function error_exit($errmsg, $phpfile, $phpline, $logout = false) {
 
 function sql_error_exit($sql, $errmsg, $phpfile, $phpline) {
 	log_sql_error($sql, $errmsg, $phpfile, $phpline);
-	$_SESSION['err_msg'] = "SQL Operation failed. Please report to YPS to check using Contact Us page.";
+	$_SESSION['err_msg'] = "SQL Operation failed. Please report to " . club_short_name() . " to check using Contact Us page.";
     header("Location: /jurypanel/projector_home.php");
 	print("<script>location.href='/jurypanel/projector_home.php'</script>");
 	die($errmsg);

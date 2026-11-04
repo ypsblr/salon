@@ -1,9 +1,10 @@
 <?php
+include_once(__DIR__ . "/../../../inc/club.php");
 // Custom list of actions for each award winner
 $action_email = "<a href='mailto:" . salon_email() . "'>" . salon_email() . "</a>";
 $full_file_action = "We are yet to receive your high resolution files of awarded pictures. Please send the same by email to $action_email.";
 $avatar_action = "Please send a printable version of your latest profile picture (your portrait) to $action_email.";
-$video_action = "YPS hosts author video, on the results page, explaining how the awarded picture was shot. " .
+$video_action = club_short_name() . " hosts author video, on the results page, explaining how the awarded picture was shot. " .
                 "If you are in a position to send a 20 second video we will be happy to publish it on the result page " .
                 "after the award function. Please send your video to $action_email.";
 $acct_action = "We need your account number details to be able to remit your award money. Please send the details to $action_email.";

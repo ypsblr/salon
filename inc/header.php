@@ -2,8 +2,8 @@
 <!-- <meta charset="utf-8"> --->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!-- General Tags -->
-<meta name="description" content="4th National Photography Salon by YPS">
-<meta name="keyword" content="photography, contest, fip, Karnataka, YPS, <?php echo club_name_html(); ?>, India, digital, color, monochrome, travel, nature ">
+<meta name="description" content="4th National Photography Salon by <?php echo club_short_name_html(); ?>">
+<meta name="keyword" content="photography, contest, fip, Karnataka, <?php echo club_short_name_html(); ?>, <?php echo club_name_html(); ?>, India, digital, color, monochrome, travel, nature ">
 <meta name="author" content="<?php echo club_name_html(); ?>, <?php echo salon_email_html(); ?>">
 <meta name="robots" content="index, follow"><meta name="fragment" content="!">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -11,34 +11,34 @@
 <!-- *** UPDATE THESE META TAGS for every Salon *** -->
 
 <!-- Meta Tags for Google+ -->
-<meta itemprop="name" content="YPS National Salon 2026">
-<meta itemprop="description" content="44th National Salon by YPS">
+<meta itemprop="name" content="<?php echo club_short_name_html(); ?> National Salon 2026">
+<meta itemprop="description" content="44th National Salon by <?php echo club_short_name_html(); ?>">
 <meta itemprop="image" content="https://salon.ypsbengaluru.in/img/44NS2026.png">
 
 <!-- Facebook Tags -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://salon.ypsbengaluru.in">
-<meta property="og:title" content="YPS National Salon 2026">
-<meta property="og:description" content="44th National Salon by YPS">
+<meta property="og:title" content="<?php echo club_short_name_html(); ?> National Salon 2026">
+<meta property="og:description" content="44th National Salon by <?php echo club_short_name_html(); ?>">
 <meta property="og:image" content="https://salon.ypsbengaluru.in/img/44NS2026.png">
 <!-- <meta property="og:image_alt" content="https://salon.ypsbengaluru.in/img/IDS2026.png"> -->
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1080">
 <meta property="og:image:height" content="1080">
-<meta property="og:site_name" content="YPS National Salon 2026">
+<meta property="og:site_name" content="<?php echo club_short_name_html(); ?> National Salon 2026">
 
 <!-- Twitter Tags -->
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@ypsbengaluru">
-<meta name="twitter:title" content="YPS National Salon 2026">
-<meta name="twitter:description" content="44th National Salon by YPS">
+<meta name="twitter:title" content="<?php echo club_short_name_html(); ?> National Salon 2026">
+<meta name="twitter:description" content="44th National Salon by <?php echo club_short_name_html(); ?>">
 <meta name="twitter:creator" content="@ypsbengaluru">
 <meta name="twitter:image" content="https://salon.ypsbengaluru.in/img/44NS2026.png">
 
 <link rel="shortcut icon" href="favicon.png">
 
-<title>YPS Salons</title>
+<title><?php echo club_short_name_html(); ?> Salons</title>
 
 <!-- CSS Global -->
 <link href="plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">

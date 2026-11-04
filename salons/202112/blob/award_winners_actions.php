@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../../inc/club.php");
 // Query to generate the custom list
 // SELECT CONCAT('"', profile.profile_id, '" => array("profile_id" => "', profile.profile_id, '", "profile_name" => "' , profile.profile_name, '", "actions" => [$video_action',  IF(profile.avatar = 'user.jpg', ', $avatar_action', ''), ']),')
 //   FROM profile
@@ -17,7 +18,7 @@ $action_email = "<a href='mailto:" . salon_email() . "'>" . salon_email() . "</a
 // $full_file_action = "We are yet to receive your high resolution files of awarded pictures. Please send the same by email to $action_email.";
 $avatar_action = "You have not updated your profile picture (Avatar) on your profile page. Please update your profile with the latest photo of yourselves. " .
                 " The Certificates and Slideshows will carry your profile picture. ";
-$video_action = "YPS salon website offers an opportunity to the authors to share their ideas and experience in making their award winning pictures. The author can " .
+$video_action = club_short_name() . " salon website offers an opportunity to the authors to share their ideas and experience in making their award winning pictures. The author can " .
                 "shoot a short video, not exceeding 20 seconds, for each of his/her picture winning a medal or ribbon. Pick up your phone and shoot the video and " .
                 "mail to $action_email. The videos will be published on the Results page after the award function. ";
 // $acct_action = "We need your account number details to be able to remit your award money. Please send the details to $action_email.";

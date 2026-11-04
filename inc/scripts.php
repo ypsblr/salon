@@ -604,7 +604,7 @@ function tz_offest($tz) {
 	<script>
 		$(document).ready(function() {
 			$("input[name='login_login_id']").hide();
-			$("input[name='check_it']").attr("placeholder", "Email (or YPS Member ID)");
+			$("input[name='check_it']").attr("placeholder", "Email (or <?php echo club_short_name_html(); ?> Member ID)");
 			$("#reset_form").find("input[name='check_it']").attr("placeholder", "Email");
 		});
 	</script>
@@ -631,7 +631,7 @@ function tz_offest($tz) {
 
 			// Validate
 			if (! (data.login_id && data.login_id.trim() != "")) {
-				$("#login_err_msg").html("Enter Email (or YPS Member Id)");
+				$("#login_err_msg").html("Enter Email (or <?php echo club_short_name_html(); ?> Member Id)");
 				return;
 			}
 			if (! data.login_password) {
@@ -658,7 +658,7 @@ function tz_offest($tz) {
 
 			// Validate
 			if (data.login_id.trim() == "" || data.phone.trim() == "" || data.phone == 0) {
-				$("#login_err_msg").html("Enter Email (or YPS Member Id) and Phone Number");
+				$("#login_err_msg").html("Enter Email (or <?php echo club_short_name_html(); ?> Member Id) and Phone Number");
 				return;
 			}
 

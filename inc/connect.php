@@ -2,7 +2,8 @@
 
 if (preg_match("/localhost/i", $_SERVER['SERVER_NAME'])) {
 	// For *** localhost ***
-	$DBCON = mysqli_connect("localhost", "ypsin_salondbadm", "MCnLOT8045FVzC1Y", "yps_salondb");
+	// $DBCON = mysqli_connect("localhost", "ypsin_salondbadm", "MCnLOT8045FVzC1Y", "yps_salondb");
+	$DBCON = mysqli_connect("localhost", "root", "Marines1@", "ypsin_salondb");
 }
 else if (preg_match("/192\.168\.1/i", $_SERVER['SERVER_NAME'])) {
 	// For *** local network testing ***

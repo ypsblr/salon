@@ -85,7 +85,7 @@ if(isset($_POST['btn_send'])) {
 
 			if (send_salon_email($email, $subject, 'contact_us', $token, $replacement)) {
 				$resArray['success'] = TRUE;
-				$resArray['msg'] = $_SESSION['success_msg'] = "Your query has been forwarded to the YPS Salon/Contest Committee !";
+				$resArray['msg'] = $_SESSION['success_msg'] = "Your query has been forwarded to the " . club_short_name() . " Salon/Contest Committee !";
 				echo json_encode($resArray);
 				die;
 			}

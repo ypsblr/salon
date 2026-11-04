@@ -16,7 +16,7 @@ $query = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __F
 if (mysqli_num_rows($query) > 0)
 	$sponsor = mysqli_fetch_array($query, MYSQLI_ASSOC);
 else {
-	$_SESSION['err_msg'] = "Sponsor Not Found. Report to YPS if the issue repeats.";
+	$_SESSION['err_msg'] = "Sponsor Not Found. Report to " . club_short_name() . " if the issue repeats.";
 	die();
 }
 
@@ -27,7 +27,7 @@ $query = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __F
 if (mysqli_num_rows($query) > 0)
 	$sponsor_contest = mysqli_fetch_array($query, MYSQLI_ASSOC);
 else {
-	$_SESSION['err_msg'] = "Salon Not Found. Report to YPS if the issue repeats.";
+	$_SESSION['err_msg'] = "Salon Not Found. Report to " . club_short_name() . " if the issue repeats.";
 	die();
 }
 

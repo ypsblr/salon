@@ -213,9 +213,9 @@ if (mysqli_num_rows($fc) == 0)
 							<ul>
 								<li>Our Club is keen on participating in this Salon.</li>
 								<li>I represent the Club members as Group Coordinator for this Salon.</li>
-								<li>We request YPS to offer us the best discount possible for the participation specified above.</li>
+								<li>We request <?php echo club_short_name_html(); ?> to offer us the best discount possible for the participation specified above.</li>
 								<li>We have read and understood the Salon's terms of conditions, dates and normal fee structure.</li>
-								<li>We understand that if the club participation falls short of the numbers promised above, YPS has the right
+								<li>We understand that if the club participation falls short of the numbers promised above, <?php echo club_short_name_html(); ?> has the right
 									to,
 									<ol>
 										<li>demand payment of non-discounted fee,</li>
@@ -230,7 +230,7 @@ if (mysqli_num_rows($fc) == 0)
 										<div class="checkbox pull-right">
 											<label>
 												<input type="checkbox" name="verified" id="verified" value="1" required>
-												<b>I have understood the conditions under which discount is offered and request YPS to extend the best discount possible. *</b>
+												<b>I have understood the conditions under which discount is offered and request <?php echo club_short_name_html(); ?> to extend the best discount possible. *</b>
 											</label>
 										</div>
 										<br>
@@ -303,7 +303,7 @@ if (mysqli_num_rows($fc) == 0)
 	<script src="plugin/validate/js/jquery.validate.min.js"></script>
 
 	<!-- Custom Validation Functions -->
-	<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
+	<script>var CLUB_NAME = <?= json_encode(club_name()) ?>; var CLUB_SHORT_NAME = <?= json_encode(club_short_name()) ?>;</script>
 	<script src="custom/js/validate.js"></script>
 
 	<script>

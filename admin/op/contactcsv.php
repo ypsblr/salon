@@ -43,7 +43,7 @@ if ( (! empty($_SESSION['admin_id'])) && (! empty($_SESSION['admin_yearmonth']))
 	$output = fopen('php://output', 'w');
 
 	// Write First Line
-	fputcsv($output, array('Entry#', 'Name', 'Email', 'Country', 'Phone', 'YPS Mem ID', 'No of Salons', 'First Salon', 'Last Salon'));
+	fputcsv($output, array('Entry#', 'Name', 'Email', 'Country', 'Phone', club_short_name() . ' Mem ID', 'No of Salons', 'First Salon', 'Last Salon'));
 
 	// Select Rows from ENTRY table
 	$sql  = "SELECT profile_id, profile_name, email, country_name, phone, yps_login_id  ";

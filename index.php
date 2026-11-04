@@ -36,9 +36,9 @@ table th, td {
 							include("salons/$contest_yearmonth/blob/$contestAnnouncementBlob");
 					?>
 					<p style="text-align:justify;">
-						<b><?php echo club_name_html(); ?></b> (YPS) is one of the oldest photo clubs in India with <?= $yps_age->format("%y");?>
-						successful years behind it. Over the last few years, YPS has gone through a digital transformation modernizing its services.
-						Visit <a href="<?php echo yps_website_without_www_html(); ?>" target="_blank">YPS Website</a> to know more. We are pleased to welcome you
+						<b><?php echo club_name_html(); ?></b> (<?php echo club_short_name_html(); ?>) is one of the oldest photo clubs in India with <?= $yps_age->format("%y");?>
+						successful years behind it. Over the last few years, <?php echo club_short_name_html(); ?> has gone through a digital transformation modernizing its services.
+						Visit <a href="<?php echo yps_website_without_www_html(); ?>" target="_blank"><?php echo club_short_name_html(); ?> Website</a> to know more. We are pleased to welcome you
 						to <b><?=$contestName;?></b>. Find more details of the salon below. We aim to make your participation experience seamless
 						and memorable.
 					</p>

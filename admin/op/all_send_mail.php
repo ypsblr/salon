@@ -329,10 +329,11 @@ TEMPLATE;
 	$m = "<br><h2>Special Picture Awards</h2>";
 	if ($contest['has_exhibition']) {
 		if ($include_instructions) {
+$club_short_html = club_short_name_html();
 			$m .= <<<HTML
-					<p>YPS requires <b>Full Resolution JPEG files of pictures winning Awards/Honorable Mentions</b>
+					<p>{$club_short_html} requires <b>Full Resolution JPEG files of pictures winning Awards/Honorable Mentions</b>
 						for publishing in catalog. They are also used for printing and display at the Salon Exhibition.
-						YPS prefers <b>3600 x 5400 pixels sRGB JPEGs</b> for the 12x18 prints at 300 DPI.
+						{$club_short_html} prefers <b>3600 x 5400 pixels sRGB JPEGs</b> for the 12x18 prints at 300 DPI.
 						Click on the <b>UPLOAD PICTURE</b> link next to each of your award winning pictures
 						and upload your high-resolution pictures directly to the Salon website. You can also do this
 						from <b>My Results Page</b> on the Salon website.
@@ -614,7 +615,7 @@ CONTEST;
 	// if ($admin_yearmonth == '202008' || $admin_yearmonth == '202012' || $admin_yearmonth = '202108') {
 	if ($contest['judging_mode'] == 'REMOTE') {
 		$about .= "<br><br>A remote judging model was used for this salon and ratings will be webcast through ";
-		$about .= "YPS Facebook Page and YPS Youtube Channels subsequently.";
+		$about .= club_short_name() . " Facebook Page and " . club_short_name() . " Youtube Channels subsequently.";
 	}
 	else {
 	}
@@ -1400,7 +1401,7 @@ function send_judging_mail($profile_id) {
 	$entry = mysqli_fetch_array($query);
 	$banner_file = SALON_ROOT . "/salons/" . $admin_yearmonth . "/img/judging-invite-banner.jpg";
 	if (file_exists("../../salons/$admin_yearmonth/img/judging-invite-banner.jpg")) {
-		$banner_html = "<tr><td colspan='2'><img src='" . $banner_file . "' style='max-width: 100%;' alt='YPS Remote judging schedule'></td></tr>";
+		$banner_html = "<tr><td colspan='2'><img src='" . $banner_file . "' style='max-width: 100%;' alt='" . club_short_name() . " Remote judging schedule'></td></tr>";
 	}
 	else
 		$banner_html = "";
@@ -1666,7 +1667,7 @@ function send_earlybird_mail($profile_id) {
 		$m .= "If you make the payment on or before " . $early_bird_end_date . " you can avail concessional Early Bird rates. You can upload images any time till the last date ";
 		$m .= "for upload and even increase number of sections any time later.</p><br>";
 		$m .= "<p><b>Login and make the payment today.</b></p><br>";
-		$m .= "<p><b>YPS Salon Committee</b></p>";
+		$m .= "<p><b>" . club_short_name() . " Salon Committee</b></p>";
 		$m .= "<p>" . $contest['contest_name'] . "</p><br>";
 		$m .= "</body></html>";
 

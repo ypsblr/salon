@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../inc/club.php");
 include_once("inc/categories.php");
 include_once("inc/user_lib.php");
 $php_file = basename($_SERVER['PHP_SELF']);
@@ -154,7 +155,7 @@ function menu_list($tr_user) {
 	}
 	else if($tr_user['yps_login_id'] != "") {
 		$menu["GRD"]["state"] = "hidden";
-		$menu["GRD"]["reason"] = "Not available for YPS Members";
+		$menu["GRD"]["reason"] = "Not available for " . club_short_name() . " Members";
 	}
 	else if(! $contestHasDiscounts){
 		$menu["GRD"]["state"] = "hidden";
@@ -196,7 +197,7 @@ function menu_list($tr_user) {
 	}
 	else if($tr_user['yps_login_id'] != "") {
 		$menu["GRP"]["state"] = "hidden";
-		$menu["GRP"]["reason"] = "Not available for YPS Members";
+		$menu["GRP"]["reason"] = "Not available for " . club_short_name() . " Members";
 	}
 	else if(! $contestHasDiscounts){
 		$menu["GRP"]["state"] = "hidden";
@@ -236,7 +237,7 @@ function menu_list($tr_user) {
 	}
 	else if($tr_user['yps_login_id'] != "") {
 		$menu["GPAY"]["state"] = "hidden";
-		$menu["GPAY"]["reason"] = "Not available for YPS Members";
+		$menu["GPAY"]["reason"] = "Not available for " . club_short_name() . " Members";
 	}
 	else if(! $contestHasDiscounts){
 		$menu["GPAY"]["state"] = "hidden";

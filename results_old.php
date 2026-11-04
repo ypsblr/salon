@@ -503,8 +503,8 @@ if($resultsReady) {
 							<div style="max-width:100%"><img class="img-responsive img-rounded" style="margin:4px;min-width:20px;min-height:20px;" src="/img/com/satish.jpg" alt="Satish H"></div>
 						</div>
 						<div class="col-sm-8 col-md-8 col-lg-8">
-							<p><b>H Satish</b> <small>MFIAP, MICS, ARPS, Hon.FICS, Hon.YPS, Hon.ECPA</small></p>
-							<p><i>YPS President</i></p>
+							<p><b>H Satish</b> <small>MFIAP, MICS, ARPS, Hon.FICS, Hon.<?php echo club_short_name_html(); ?>, Hon.ECPA</small></p>
+							<p><i><?php echo club_short_name_html(); ?> President</i></p>
 						</div>
 					</div>
 					<div class="row">
@@ -513,7 +513,7 @@ if($resultsReady) {
 						</div>
 						<div class="col-sm-8 col-md-8 col-lg-8">
 							<p><b>Manju Vikas Sastry V</b> <small></small></p>
-							<p><i>YPS Secretary</i></p>
+							<p><i><?php echo club_short_name_html(); ?> Secretary</i></p>
 						</div>
 					</div>
 				</div>	<!-- Right Column - Sponsors etc -->

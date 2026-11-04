@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 	$self = basename($_SERVER['PHP_SELF']);
 
 	// Get Section List
@@ -92,7 +93,7 @@ div#loader_img img {
 
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
-                        <small class="text-muted">Admin Panel for YPS Salon<b class="caret"></b></small>
+                        <small class="text-muted">Admin Panel for <?php echo club_short_name_html(); ?> Salon<b class="caret"></b></small>
                     </a>
                     <ul class="dropdown-menu animated flipInX m-t-xs">
                         <li><a href="javascript:void(0)" id="sidebar" class="right-sidebar-toggle">Change Password</a></li>
@@ -260,7 +261,7 @@ div#loader_img img {
 				}
 			?>
 
-			<!-- Reconcile Member Profiles with YPS Member Database -->
+			<!-- Reconcile Member Profiles with <?php echo club_short_name_html(); ?> Member Database -->
 			<!-- Open to to admin only -->
 			<?php
 				if (has_permission($member_permissions, ["admin", "manager"])) {
@@ -419,14 +420,14 @@ div#loader_img img {
 				}
 			?>
 
-			<!-- Download YPS Member List with proper permission -->
+			<!-- Download <?php echo club_short_name_html(); ?> Member List with proper permission -->
 			<?php
 			if ( ( has_permission($member_permissions, ["admin", "chairman", "secretary", "manager", "admin"]) ) ) {
 			?>
 			<li class="">
 				<li class="">
 	                <a href="<?php echo yps_website_without_www_html(); ?>/svc/yps_member_csv.php?magic=<?= encode_string_array("ypsmagic1971onwards");?>" target="_blank">
-						<span class="nav-label"><i class="fa fa-archive"></i> Download YPS Member List </span>
+						<span class="nav-label"><i class="fa fa-archive"></i> Download <?php echo club_short_name_html(); ?> Member List </span>
 					</a>
 	            </li>
             </li>
@@ -434,13 +435,13 @@ div#loader_img img {
 			   }
 			?>
 
-			<!-- Upload YPS Member List with proper permission -->
+			<!-- Upload <?php echo club_short_name_html(); ?> Member List with proper permission -->
 			<?php
 			if ( ( has_permission($member_permissions, ["admin", "chairman", "secretary", "manager", "admin"]) ) ) {
 			?>
 			<li class="">
 				<li class="<?php echo ($self == 'upload_yps_member.php') ? 'active' : '';?>">
-	                <a href="upload_yps_member.php"> <span class="nav-label"><i class="fa fa-archive"></i> Upload YPS Member List </span></a>
+	                <a href="upload_yps_member.php"> <span class="nav-label"><i class="fa fa-archive"></i> Upload <?php echo club_short_name_html(); ?> Member List </span></a>
 	            </li>
             </li>
 			<?php

@@ -28,10 +28,10 @@
 	<div class="panel-body">
 		<div class="row">
 			<div class="col-sm-8">
-				<p>If you had participated in the YPS Salon in the past, your profile must already be available. You can login using your email and your last
+				<p>If you had participated in the <?php echo club_short_name_html(); ?> Salon in the past, your profile must already be available. You can login using your email and your last
 					registered password. If you do not know the password, you can enter your email ID and click on <i>Reset Password</i> button.</p>
-				<p>Members of <?php echo club_name_html(); ?> should login using email registered with YPS or using the YPS Member ID along with YPS Member password entered on YPS Website.
-					If you do not remember the YPS Member password, you can visit <a href="<?php echo yps_website_with_www_html(); ?>" target="_blank">YPS Website</a>,
+				<p>Members of <?php echo club_name_html(); ?> should login using email registered with <?php echo club_short_name_html(); ?> or using the <?php echo club_short_name_html(); ?> Member ID along with <?php echo club_short_name_html(); ?> Member password entered on <?php echo club_short_name_html(); ?> Website.
+					If you do not remember the <?php echo club_short_name_html(); ?> Member password, you can visit <a href="<?php echo yps_website_with_www_html(); ?>" target="_blank"><?php echo club_short_name_html(); ?> Website</a>,
 					reset member password using the <a href="<?php echo yps_website_with_www_html(); ?>/membership-login/password-reset/" target="_blank">Forgot Password?</a> link,
 					and then login here using the password sent to you through email.</p>
 				<p>The following restrictions are enforced on uploaded pictures.</p>
@@ -58,7 +58,7 @@
 					}
 				?>
 					<li class="list-group-item"><a href="term_condition.php">Terms &amp; Conditions</a></li>
-					<li class="list-group-item"><a href="<?php echo yps_website_with_www_html(); ?>/membership-join/" target="_blank">Join YPS</a></li>
+					<li class="list-group-item"><a href="<?php echo yps_website_with_www_html(); ?>/membership-join/" target="_blank">Join <?php echo club_short_name_html(); ?></a></li>
 				</ul>
 			</div>
 			<div class="col-sm-4">
@@ -67,7 +67,7 @@
 					<img src="/video/video_non_member.gif" style="max-width: 100%;">
 				</a>
 				<hr>
-				<p><big><b>Video Guide for YPS Members</b></big></p>
+				<p><big><b>Video Guide for <?php echo club_short_name_html(); ?> Members</b></big></p>
 				<a data-toggle="modal" data-target="#video-member" href="#">
 					<img src="/video/video_member.gif" style="max-width: 100%;">
 				</a>
@@ -79,7 +79,7 @@
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="pauseVideo('video-member')" >
 									<span aria-hidden="true">&times;</span>
 								</button>
-								<h4 class="modal-title">Quick Guide for YPS Members</h4>
+								<h4 class="modal-title">Quick Guide for <?php echo club_short_name_html(); ?> Members</h4>
 							</div>
 							<div class="modal-body">
 								<div class="embed-responsive embed-responsive-16by9">

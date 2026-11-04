@@ -279,10 +279,10 @@ if ( (! empty($_SESSION['SALONBOND'])) && (! empty($_REQUEST['ypsd'])) ) {
 	// Prepare Email
 	$url = http_method() . $_SERVER['HTTP_HOST'];
 	if ($yps_login_id != "") {
-		$email_prompt = "Email (or) YPS Member ID";
-		$password_msg 	= "Login using the Email or YPS Member ID and YPS Password. ";
+		$email_prompt = "Email (or) " . club_short_name() . " Member ID";
+		$password_msg 	= "Login using the Email or " . club_short_name() . " Member ID and " . club_short_name() . " Password. ";
 		$password_msg .= "In case you forgot the password, use the <i>Forgot Password</i> link on ";
-		$password_msg .= "<a href='" . yps_website_with_www_html() . "/membership-login/password-reset/'>YPS Website</a> ";
+		$password_msg .= "<a href='" . yps_website_with_www_html() . "/membership-login/password-reset/'>" . club_short_name() . " Website</a> ";
 		$password_msg .= "to receive the password through email.";
 	}
 	else {

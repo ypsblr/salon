@@ -114,10 +114,10 @@ function refreshCaptcha(){
 						Nrupathunga Road, Bengaluru - 560001.<br/>
 						Website: <a href="<?php echo yps_website_with_www_html(); ?>" target="_blank">www.ypsbengaluru.com</a><br />
 						Email: <a href="mailto:<?php echo contact_email_html(); ?>"><?php echo contact_email_html(); ?></a><br/>
-						Phone: +91-9513-YPS-BLR (+91-9513-977-257)
+						Phone: +91-9513-<?php echo club_short_name_html(); ?>-BLR (+91-9513-977-257)
 					</p>
-					<p>YPS President: Mr. Manju Vikas Sastry V, AFIP, sastry.vikas@gmail.com</p>
-					<p>YPS Secretary: Ms. Prema Kakade, EFIAP, EFIP, cMoL, A.CPE, pmkakade@gmail.com</p>
+					<p><?php echo club_short_name_html(); ?> President: Mr. Manju Vikas Sastry V, AFIP, sastry.vikas@gmail.com</p>
+					<p><?php echo club_short_name_html(); ?> Secretary: Ms. Prema Kakade, EFIAP, EFIP, cMoL, A.CPE, pmkakade@gmail.com</p>
 					<h2 class="headline text-color">
 						<span class="border-color">Google Map</span>
 					</h2>
@@ -165,7 +165,7 @@ function refreshCaptcha(){
 	</script>
 
 	<!-- Custom Validation Functions -->
-	<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
+	<script>var CLUB_NAME = <?= json_encode(club_name()) ?>; var CLUB_SHORT_NAME = <?= json_encode(club_short_name()) ?>;</script>
 	<script src="custom/js/validate.js"></script>
 	<!-- Form Validation -->
 	<script>
@@ -223,7 +223,7 @@ function refreshCaptcha(){
 							contentType: false,
 							error: function() {
 								$('#loader_img').hide();
-								swal("Operation failed!", "Server Error: Please report to YPS using the Contact US page for rectification. You should be able to do other operations !", "error");
+								swal("Operation failed!", "Server Error: Please report to <?php echo club_short_name_html(); ?> using the Contact US page for rectification. You should be able to do other operations !", "error");
 							},
 							success: function(response) {
 								$('#loader_img').hide();

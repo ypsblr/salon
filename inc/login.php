@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../inc/club.php");
 session_save_path(__DIR__ . "/../inc/session");
 session_start();
 include_once("../inc/connect.php");
@@ -37,7 +38,7 @@ function get_user_profile($email_id, $yps_login_id, $phone = "") {
 		$row = mysqli_fetch_array($query, MYSQLI_ASSOC);
 		if ( $row['profile_disabled'] == '1' ) {
 			if ( $row['profile_merged_with'] == 0)
-				handle_error("This profile has been disabled. Please write to YPS for fixing.", __FILE__, __LINE__);
+				handle_error("This profile has been disabled. Please write to " . club_short_name() . " for fixing.", __FILE__, __LINE__);
 			else {
 				$profile_id = $row['profile_merged_with'];
 				$sql = "SELECT * FROM profile WHERE profile_id = '$profile_id' ";
@@ -178,11 +179,11 @@ if(isset($param['login_reset_password'])) {
 
 	// Check if the profile exists
 	if (! ($row = get_user_profile($login_email, $login_id))) {
-		handle_error("Incorrect Email/YPS Login ID. Please Sign Up if not already registered.", __FILE__, __LINE__);
+		handle_error("Incorrect Email/" . club_short_name() . " Login ID. Please Sign Up if not already registered.", __FILE__, __LINE__);
 	}
 
 	if ($row['yps_login_id'] != "") {
-		handle_error("Dear YPS Member, please use password reset facilities on YPS website (www.ypsbengaluru.com).", __FILE__, __LINE__);
+		handle_error("Dear " . club_short_name() . " Member, please use password reset facilities on " . club_short_name() . " website (www.ypsbengaluru.com).", __FILE__, __LINE__);
 	}
 
 	// Check if a new password was generated today. If so, send the same. Else Generate new Password.
@@ -248,7 +249,7 @@ if(isset($param['login_check']) && (! empty($param['login_id'])) && (! empty($pa
 		}
 	}
 	if ($profile_id == 0) {
-		handle_error("You are yet to Sign Up. Please Sign Up now using your Email or YPS Member ID.", __FILE__, __LINE__);
+		handle_error("You are yet to Sign Up. Please Sign Up now using your Email or " . club_short_name() . " Member ID.", __FILE__, __LINE__);
 	}
 
 	// Matching profile found
@@ -282,8 +283,8 @@ if(isset($param['login_check']) && (! empty($param['login_id'])) && (! empty($pa
 		$url = http_method() . $_SERVER['HTTP_HOST'];
 		$replace_text = array($profile['profile_name'], $profile['email'], $new_password, $url);
 		$text = array('{{NAME}}', '{{EMAIL}}', '{{PASSWORD}}', '{{URL}}');
-		send_salon_email($profile['email'], "YPS Membership status and password have been reset", 'password_reset', $text, $replace_text);
-		handle_error("Your YPS membership is no more valid. Hence a temporary password has been generated and sent to your email. Please wait for the email and login using this password.", __FILE__, __LINE__);
+		send_salon_email($profile['email'], club_short_name() . " Membership status and password have been reset", 'password_reset', $text, $replace_text);
+		handle_error("Your " . club_short_name() . " membership is no more valid. Hence a temporary password has been generated and sent to your email. Please wait for the email and login using this password.", __FILE__, __LINE__);
 	}
 	// Retrieve latest profile
 	$sql = "SELECT * FROM profile WHERE profile_id = '$profile_id' ";
@@ -299,7 +300,7 @@ if(isset($param['login_check']) && (! empty($param['login_id'])) && (! empty($pa
 	if ($profile['yps_login_id'] != "") {
 		list($err_msg) = yps_login($profile['yps_login_id'], $password, $profile['email']);
 		if ($err_msg != "")
-			handle_error("Unable to Log-in using YPS Credentials : " . $err_msg, __FILE__, __LINE__);
+			handle_error("Unable to Log-in using " . club_short_name() . " Credentials : " . $err_msg, __FILE__, __LINE__);
 	}
 	// Check against black_list
 	$blacklist_in_vogue = false;

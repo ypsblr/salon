@@ -165,16 +165,16 @@ if ( isset($_SESSION['admin_id']) ) {
 										"has_gift" => "0", "has_certificate" => "1" ),
 					];
 		$award_config["YPS"] = [
-					"1" => array ( "name" => "YPS Gold", "weight" => ($award['is_international'] == '1' ? "1" : "6" ), "sequence" => "9",
+					"1" => array ( "name" => club_short_name() . " Gold", "weight" => ($award['is_international'] == '1' ? "1" : "6" ), "sequence" => "9",
 									"has_medal" => "1", "has_pin" => "0", "has_ribbon" => "0", "has_memento" => "0",
 									"has_gift" => "0", "has_certificate" => "1" ),
-					"2" => array ( "name" => "YPS Silver", "weight" => ($award['is_international'] == '1' ? "1" : "5" ), "sequence" => "9",
+					"2" => array ( "name" => club_short_name() . " Silver", "weight" => ($award['is_international'] == '1' ? "1" : "5" ), "sequence" => "9",
 									"has_medal" => "1", "has_pin" => "0", "has_ribbon" => "0", "has_memento" => "0",
 									"has_gift" => "0", "has_certificate" => "1" ),
-					"3" => array ( "name" => "YPS Bronze", "weight" => ($award['is_international'] == '1' ? "1" : "4" ), "sequence" => "9",
+					"3" => array ( "name" => club_short_name() . " Bronze", "weight" => ($award['is_international'] == '1' ? "1" : "4" ), "sequence" => "9",
 									"has_medal" => "1", "has_pin" => "0", "has_ribbon" => "0", "has_memento" => "0",
 									"has_gift" => "0", "has_certificate" => "1" ),
-					"9" => array ( "name" => "YPS Honorable Mention", "weight" => ($award['is_international'] == '1' ? "1" : "2" ), "sequence" => "9",
+					"9" => array ( "name" => club_short_name() . " Honorable Mention", "weight" => ($award['is_international'] == '1' ? "1" : "2" ), "sequence" => "9",
 									"has_medal" => "0", "has_pin" => "0", "has_ribbon" => "1", "has_memento" => "0",
 									"has_gift" => "0", "has_certificate" => "1" ),
 				];
@@ -391,7 +391,7 @@ if ( isset($_SESSION['admin_id']) ) {
 	<div class="splash">
 		<div class="color-line"></div>
 		<div class="splash-title">
-			<h1>    YPS SALON MANAGEMENT PANEL  </h1>
+			<h1>    <?php echo club_short_name_html(); ?> SALON MANAGEMENT PANEL  </h1>
 			<p>Please Wait. </p>
 			<div class="spinner">
 				<div class="rect1"></div>
@@ -852,7 +852,7 @@ if ( isset($_SESSION['admin_id']) ) {
 <script src="plugin/validate/js/jquery.validate.min.js"></script>
 
 <!-- Custom Validation Functions -->
-<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
+<script>var CLUB_NAME = <?= json_encode(club_name()) ?>; var CLUB_SHORT_NAME = <?= json_encode(club_short_name()) ?>;</script>
 <script src="custom/js/validate.js"></script>
 
 <!-- Include Tiny MCE Editor for notices -->
@@ -1024,7 +1024,7 @@ if ( isset($_SESSION['admin_id']) ) {
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
 							$('#loader_img').hide();
-							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to YPS", "error");
+							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to <?php echo club_short_name_html(); ?>", "error");
 						}
 				});
 				return false;

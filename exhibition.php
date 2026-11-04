@@ -273,7 +273,7 @@ if (date("Y-m-d") >= $salon['contest']['exhibition_start_date'] && date("Y-m-d")
 <script src="plugin/validate/js/jquery.validate.min.js"></script>
 
 <!-- Custom Validation Functions -->
-<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
+<script>var CLUB_NAME = <?= json_encode(club_name()) ?>; var CLUB_SHORT_NAME = <?= json_encode(club_short_name()) ?>;</script>
 <script src="custom/js/validate.js"></script>
 
 <!-- Custom Validation for updateInfoForm -->

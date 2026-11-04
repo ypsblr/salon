@@ -25,6 +25,17 @@ if (!function_exists("club_config")) {
 		return htmlspecialchars(strtoupper(club_name()), ENT_QUOTES, "UTF-8");
 	}
 
+	function club_short_name() {
+		$name = club_config("club_short_name");
+		if ($name === "")
+			$name = "YPS";
+		return $name;
+	}
+
+	function club_short_name_html() {
+		return htmlspecialchars(club_short_name(), ENT_QUOTES, "UTF-8");
+	}
+
 	function yps_website_without_www() {
 		$url = club_config("yps_website_without_www");
 		if ($url === "")

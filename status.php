@@ -127,7 +127,7 @@ function rejection_text($notifications) {
                                         if ($pr['honors'] != "")
                                             $name = $name . "<br><span class='text-muted'><small><small>" . $pr['honors'] . "</small></small></span>";
                                         if ($pr['yps_login_id'] != "")
-                                            $name = $name . "<br><span class='text-muted'><small><small>" . "Club: " . club_name_html() . " (YPS)" . "</small></small></span>";
+                                            $name = $name . "<br><span class='text-muted'><small><small>" . "Club: " . club_name_html() . " (" . club_short_name() . ")" . "</small></small></span>";
                                         elseif ($pr['club_name'] != "")
                                             $name = $name . "<br><span class='text-muted'><small><small>" . "Club: " . $pr['club_name'] . "</small></small></span>";
                                 ?>
@@ -176,7 +176,7 @@ function rejection_text($notifications) {
                     <div class="row">
                         <div class="col-sm-12">
                             <div style="text-align: justify; margin: 15px;">
-                                <b><span class='text-danger'>PENDING ACTIONS</span></b> - Pictures uploaded are reviewed by YPS Review team
+                                <b><span class='text-danger'>PENDING ACTIONS</span></b> - Pictures uploaded are reviewed by <?php echo club_short_name_html(); ?> Review team
                                 to help the participants submit qualifying pictures. If the review team identifies any compliance issues or
                                 opportunities for improvement with the pictures uploaded, an email notification is generated to the
                                 participant. If the participant does not address the issue by replacing the picture / title, the picture may
@@ -248,7 +248,7 @@ function rejection_text($notifications) {
             });
 
 			$("#login_login_id").hide();
-			$("#check_it").attr("placeholder", "Email (or YPS Member ID)");
+			$("#check_it").attr("placeholder", "Email (or <?php echo club_short_name_html(); ?> Member ID)");
 		});
 	</script>
 </body>

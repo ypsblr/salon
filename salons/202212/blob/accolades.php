@@ -1,3 +1,4 @@
+<?php include_once(__DIR__ . "/../../../inc/club.php"); ?>
 <!-- Results Description -->
 <div class="panel panel-default">
 	<div class="panel-heading">
@@ -7,7 +8,7 @@
 		<h2 class="text-color">ACCOLADES</h2>
 		<p class="text text-justify">
 			Youth Photographic Society is happy to share with you the accolades, appreciations and messages from the Salon jury members,
-			participants and others who shared their views with YPS.
+			participants and others who shared their views with <?php echo club_short_name_html(); ?>.
 		</p>
 		<h3 class="text-color">From Members of Jury</h3>
 
@@ -16,7 +17,7 @@
 			<p class="text text-justify">
 				<img src="/res/jury/adit.png" style="max-height: 120px; max-width: 120px; padding-right: 15px; padding-bottom: 15px; float: left;">
 				<i class="fa fa-quote-left"></i>
-				YPS provided a great judging platform that was very user friendly and was very useful to jury members to evaluate the
+				<?php echo club_short_name_html(); ?> provided a great judging platform that was very user friendly and was very useful to jury members to evaluate the
 				images in a very short period of time.
 				<i class="fa fa-quote-right"></i>
 				<br><br>
@@ -92,7 +93,7 @@
 			<p class="text text-justify">
 				<img src="/res/jury/adelarusu.png" style="max-height: 120px; max-width: 120px; padding-right: 15px; padding-bottom: 15px; float: left;">
 				<i class="fa fa-quote-left"></i>
-				I want to thank the organisers of YPS Salon. It was a great experience, nice photos, nice awards and I want to congratulate
+				I want to thank the organisers of <?php echo club_short_name_html(); ?> Salon. It was a great experience, nice photos, nice awards and I want to congratulate
 				all the winners.
 				<i class="fa fa-quote-right"></i>
 				<br><br>
@@ -130,7 +131,7 @@
 			<p class="text text-justify">
 				<img src="/res/jury/srmandal.jpg" style="max-height: 120px; max-width: 120px; padding-right: 15px; padding-bottom: 15px; float: left;">
 				<i class="fa fa-quote-left"></i>
-				My entire thanks to the YPS Team for conducting such a wonderful YPS International Salon 2022. Congratulations to the winner and
+				My entire thanks to the <?php echo club_short_name_html(); ?> Team for conducting such a wonderful <?php echo club_short_name_html(); ?> International Salon 2022. Congratulations to the winner and
 				I hope this will be a successful exhibition.
 				<i class="fa fa-quote-right"></i>
 				<br><br>
@@ -179,6 +180,6 @@
 
 		<hr>
 		<br><br>
-		<h4 class="text-info text-center">The YPS Salon Committee is grateful to the opportunity provided to us to work with a great team of jury members</h2>
+		<h4 class="text-info text-center">The <?php echo club_short_name_html(); ?> Salon Committee is grateful to the opportunity provided to us to work with a great team of jury members</h2>
 	</div>
 </div>

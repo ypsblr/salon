@@ -156,7 +156,7 @@ include_once("inc/session.php");
 		<script>
 		$(document).ready(function() {
 			$("#login_login_id").hide();
-			$("#check_it").attr("placeholder", "Email (or YPS Member ID)");
+			$("#check_it").attr("placeholder", "Email (or <?php echo club_short_name_html(); ?> Member ID)");
 		});
 	</script>
 

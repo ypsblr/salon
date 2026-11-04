@@ -35,7 +35,7 @@ tinymce.PluginManager.add('yps_tags', function(editor, url) {
   	return {
     	getMetadata: function () {
       		return  {
-        		name: 'YPS Tag Salon Name',
+        		name: (typeof CLUB_SHORT_NAME === "string" && CLUB_SHORT_NAME ? CLUB_SHORT_NAME : "YPS") + " Tag Salon Name",
         		url: '#'
       		};
 		}

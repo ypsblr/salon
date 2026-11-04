@@ -22,7 +22,7 @@ function return_error($errmsg) {
 
 function return_sql_error($sql, $errmsg, $phpfile, $phpline) {
 	log_sql_error($sql, $errmsg, $phpfile, $phpline);
-	return_error("Data operation failed. Report to YPS");
+	return_error("Data operation failed. Report to " . club_short_name());
 }
 
 function video_file($profile_id, $pic_id) {

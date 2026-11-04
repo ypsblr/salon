@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../inc/club.php");
 // Import PHPMailer classes into the global namespace
 // These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -330,8 +331,8 @@ function send_salon_email($email_id, $subject, $email_code, $text, $replace_text
 				// $mail->Port          = 25;                                    	// Regular SMTP port
 
                 //Recipients
-                $mail->setFrom(salon_email(), 'YPS Salons');
-                $mail->addReplyTo(salon_email(), 'YPS Salons');
+                $mail->setFrom(salon_email(), club_short_name() . ' Salons');
+                $mail->addReplyTo(salon_email(), club_short_name() . ' Salons');
                 // $mail->addCC(salon_email());
 
                 // Add additional CC recipients (comma separated list of emails)
@@ -433,7 +434,7 @@ function log_sql_error($sql, $errmsg, $phpfile, $phpline) {
 
 function sql_error($sql, $errmsg, $phpfile, $phpline) {
 	log_sql_error($sql, $errmsg, $phpfile, $phpline);
-	handle_error("Data Operation failed. Please report to YPS.", $phpfile, $phpline);
+	handle_error("Data Operation failed. Please report to " . club_short_name() . ".", $phpfile, $phpline);
 }
 
 //
@@ -611,7 +612,7 @@ function yps_users() {
 	$query = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
 	if (mysqli_num_rows($query) == 0) {
 		$data->status = "ERR";
-		$data->errmsg = "YPS Member List returned empty !";
+		$data->errmsg = club_short_name() . " Member List returned empty !";
 		echo json_encode($data);
 	}
 	else {
@@ -665,7 +666,7 @@ function yps_getuserbyemail($email) {
 	$query = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
 	if (mysqli_num_rows($query) == 0) {
 		$is_yps_member = false;
-		$err_msg = 'Cannot Login. Not active YPS Account';
+		$err_msg = 'Cannot Login. Not active ' . club_short_name() . ' Account';
 	}
 
 	$is_yps_member = false;

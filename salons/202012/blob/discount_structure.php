@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../../inc/club.php");
 	// Computations
 ?>
 <div class="panel panel-default">
@@ -6,7 +7,7 @@
 		<h4 class="text-danger">DISCOUNT</h4>
 	</div>
 	<div class="panel-body">
-		<p class="text text-justify">YPS encourages group/club participation and offers discounts on case-to-case basis depending on the number of participants. 
+		<p class="text text-justify"><?php echo club_short_name_html(); ?> encourages group/club participation and offers discounts on case-to-case basis depending on the number of participants. 
 			To request discount, follow these simple steps:</p>
 		<ol>
 			<li>The Club coordinator register himself/herself for the Salon.</li>

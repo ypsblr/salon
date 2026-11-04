@@ -143,6 +143,8 @@ function club_name_ok (club_name) {
 		return;
 	if (typeof CLUB_NAME === "string" && CLUB_NAME !== "" && club_name.toLowerCase().indexOf(CLUB_NAME.toLowerCase()) !== -1)
 		return;
+	if (typeof CLUB_SHORT_NAME === "string" && CLUB_SHORT_NAME !== "" && club_name.toLowerCase().indexOf(CLUB_SHORT_NAME.toLowerCase()) !== -1)
+		return;
 
 	return true;
 }
@@ -152,7 +154,7 @@ jQuery.validator.addMethod(
 	function(value, element, params) {
 		return this.optional(element) || club_name_ok(value);
 	},
-	"Incorrect Club name ! Club names like YPS or " + (typeof CLUB_NAME === "string" ? CLUB_NAME : "") + " are not allowed !"
+	"Incorrect Club name ! Club names like " + (typeof CLUB_SHORT_NAME === "string" ? CLUB_SHORT_NAME : "") + " or " + (typeof CLUB_NAME === "string" ? CLUB_NAME : "") + " are not allowed !"
 );
 
 /*

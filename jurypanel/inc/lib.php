@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 
 function encode_string_array ($stringArray) {
     $s = strtr(base64_encode(addslashes(gzcompress(serialize($stringArray),2))), '+/=', '_,');
@@ -45,7 +46,7 @@ function log_sql_error($sql, $errmsg, $phpfile, $phpline) {
 
 function sql_error($sql, $errmsg, $phpfile, $phpline) {
 	log_sql_error($sql, $errmsg, $phpfile, $phpline);
-	$_SESSION['err_msg'] = "SQL Operation failed. Please report to YPS to check using Contact Us page.";
+	$_SESSION['err_msg'] = "SQL Operation failed. Please report to " . club_short_name() . " to check using Contact Us page.";
     if (basename($phpfile) == basename($_SERVER['HTTP_REFERER'])) {
         header("Location: /jurypanel/index.php");
     	print("<script>location.href='/jurypanel/index.php'</script>");

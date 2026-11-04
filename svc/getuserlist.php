@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../inc/club.php");
 /*** UNCOMMENT THIS LINE TO DISPLAY ALL PHP ERRORS ***/
 //error_reporting(E_ALL);
 
@@ -21,7 +22,7 @@ if (isset($_REQUEST['magic']) && $_REQUEST['magic'] == "ypsmagic1971onwards") {
 	$data = (object) array();
 	if (sizeof($userlist) == 0) {
 		$data->status = "ERR";
-		$data->errmsg = "YPS Member List returned empty !";
+		$data->errmsg = club_short_name() . " Member List returned empty !";
 		echo json_encode($data);
 	}
 	else {

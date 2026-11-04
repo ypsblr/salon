@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../inc/club.php");
 session_save_path(__DIR__ . "/../inc/session");
 session_start();
 
@@ -124,7 +125,7 @@ if (isset($_REQUEST['profile_id']) && isset($_REQUEST['pic_id']) && isset($_REQU
 
 				$headers = "MIME-Version: 1.0" . "\r\n";
 				$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-				$headers .= 'From: YPS Salon <' . salon_email() . '>' . "\r\n";
+				$headers .= 'From: ' . club_short_name() . ' Salon <' . salon_email() . '>' . "\r\n";
 				$headers .= 'Cc: ' . salon_email() . "\r\n";
 
 				$send = mail($email, $subject, $msg, $headers);
@@ -133,7 +134,7 @@ if (isset($_REQUEST['profile_id']) && isset($_REQUEST['pic_id']) && isset($_REQU
 				handle_error("Error copying uploaded photo", __FILE__, __LINE__);
 		}
 		else
-			handle_error("File could not be uploaded. Contact YPS Salon Committee !", __FILE__, __LINE__);
+			handle_error("File could not be uploaded. Contact " . club_short_name() . " Salon Committee !", __FILE__, __LINE__);
 	}
 	else
 		handle_error("Invalid Upload Code", __FILE__, __LINE__);
@@ -145,6 +146,6 @@ if (isset($_REQUEST['profile_id']) && isset($_REQUEST['pic_id']) && isset($_REQU
 }
 else {
 	// Parameter error - go home
-	handle_error("File Upload failed. Possibly file is large. Please contact YPS for action !", __FILE__, __LINE__);
+	handle_error("File Upload failed. Possibly file is large. Please contact " . club_short_name() . " for action !", __FILE__, __LINE__);
 }
 ?>

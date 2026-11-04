@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 ?>
 
 <!-- Edit Posting Data Action Handlers -->
@@ -209,7 +210,7 @@
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
 							$('#loader_img').hide();
-							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to YPS", "error");
+							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to <?php echo club_short_name_html(); ?>", "error");
 						}
 				});
 				return false;

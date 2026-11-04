@@ -7,97 +7,97 @@ function fmtd ($str) {
 	return date("F jsi", strtotime($str));
 }
 $catalog_list = array(
-					array("year" => 2021, "salon_name" => "YPS All India Salon 2021", "patronage" => "FIP 2021/FIP/127/2021",
+					array("year" => 2021, "salon_name" => club_short_name() . " All India Salon 2021", "patronage" => "FIP 2021/FIP/127/2021",
 						  "chairman" => "Prema Kakade", "secretary" => "Krishna Bhat",
 						  "jury" => "A G Lakshminarayan, AG Gangadhar, Digwas Bellemane, Hira Punjabi, Ravindranath Mallula, Sudhir Saxena, Vaibhav Shrikant Jaguste",
 						  "exhibition_venue" => "Chitrakala Parishath", "exhibition_from" => "2021-08-20", "exhibition_to" => "2021-08-22",
 						  "img" => "YPS_2021_AIS_039.jpg", "catalog" => "YPS_2021_AIS_039.pdf", "download" => "YPS_2021_AIS_039_D.pdf"),
 
-					array("year" => 2020, "salon_name" => "YPS International Salon 2020", "patronage" => "FIAP 2020/525, PSA 2020-5466, GPU L200175, MoL 2020/59, FIP 2020/FIP/189/2020",
+					array("year" => 2020, "salon_name" => club_short_name() . " International Salon 2020", "patronage" => "FIAP 2020/525, PSA 2020-5466, GPU L200175, MoL 2020/59, FIP 2020/FIP/189/2020",
 		  				  "chairman" => "H Satish", "secretary" => "Manju Vikas Sastry V",
 		  				  "jury" => "Susan Cowles, Barbara Schmidt, Ana Joveva, Leif Alveen, Mohammed Arfan Asif, Pandula Bandara, B Srinivasa, Barun Sinha, Vinay Parelkar, Elena McTighe, Larry Cowles, Subrata Bysack",
 		  				  "exhibition_venue" => "Virtual", "exhibition_from" => "2021-01-16", "exhibition_to" => "2021-01-31",
 		  				  "img" => "YPS_2020_IS_011.jpg", "catalog" => "YPS_2020_IS_011.pdf", "download" => "YPS_2020_IS_011_D.pdf"),
 
-					array("year" => 2020, "salon_name" => "YPS All India Digital Salon 2020", "patronage" => "FIP 2020/FIP/99/2020",
+					array("year" => 2020, "salon_name" => club_short_name() . " All India Digital Salon 2020", "patronage" => "FIP 2020/FIP/99/2020",
 					  	  "chairman" => "Girish Ananthamurthy", "secretary" => "Prema Kakade",
 					  	  "jury" => "Digwas Bellemane, Dinesh Allamaprabhu, Gurdas Dua, K S Srinivas, Parthasarathy Sarkar, Pinaki Ranjan Talukder, Santosh K Jana, Sunil Kapadia, Vinay Parelkar",
 					  	  "exhibition_venue" => "Virtual", "exhibition_from" => "2020-07-26", "exhibition_to" => "2020-08-31",
 					  	  "img" => "YPS_2020_AIS_038.jpg", "catalog" => "YPS_2020_AIS_038.pdf", "download" => "YPS_2020_AIS_038_D.pdf"),
 
-					array("year" => 2019, "salon_name" => "YPS 37th All India Digital Salon 2019", "patronage" => "FIP 2019/FIP/210/2019",
+					array("year" => 2019, "salon_name" => club_short_name() . " 37th All India Digital Salon 2019", "patronage" => "FIP 2019/FIP/210/2019",
 		  				  "chairman" => "Manju Vikas Sastry V", "secretary" => "Girish Ananthamurthy",
 		  				  "jury" => "A G Lakshminarayan, B Srinivasa, Krishna Bhat, T A Jayakumar, Threesh Kapoor, Anitha Mysore",
 		  				  "exhibition_venue" => "Chitrakala Parishath", "exhibition_from" => "2019-12-21", "exhibition_to" => "2019-12-22",
 		  				  "img" => "YPS_2019_AIS_037.jpg", "catalog" => "YPS_2019_AIS_037.pdf", "download" => "YPS_2019_AIS_037_D.pdf"),
 
-		  			array("year" => 2019, "salon_name" => "YPS International Salon 2019", "patronage" => "FIAP 2019/294, PSA 2019-212, GPU L190057, MoL 2019/24, FIP 2019/FIP/44/2019",
+		  			array("year" => 2019, "salon_name" => club_short_name() . " International Salon 2019", "patronage" => "FIAP 2019/294, PSA 2019-212, GPU L190057, MoL 2019/24, FIP 2019/FIP/44/2019",
 		  				  "chairman" => "H Satish", "secretary" => "Murali Santhanam",
 		  				  "jury" => "Mohammed Arfan Asif, S R Mandal, Suniel Marathe, S Thippeswamy, A K Raju, Diinesh Kumble",
 		  				  "exhibition_venue" => "Chitrakala Parishath", "exhibition_from" => "2019-08-24", "exhibition_to" => "2019-08-25",
 		  				  "img" => "YPS_2019_IS_010.jpg", "catalog" => "YPS_2019_IS_010.pdf", "download" => "YPS_2019_IS_010_D.pdf"),
 
-					array("year" => 2018, "salon_name" => "YPS 36th All India Digital Salon 2018", "patronage" => "FIP 2018/FIP/142/2018",
+					array("year" => 2018, "salon_name" => club_short_name() . " 36th All India Digital Salon 2018", "patronage" => "FIP 2018/FIP/142/2018",
 						  "chairman" => "Manju Vikas Sastry V", "secretary" => "Girish Ananthamurthy",
 						  "jury" => "A G Gangadhar, Astro Mohan, C R Sathyanarayana, Digwas Bellemane, Nagendra Muthmurdu, Prasanna Venkatesh Gubbi",
 						  "exhibition_venue" => "Chitrakala Parishath", "exhibition_from" => "2019-01-05", "exhibition_to" => "2019-01-06",
 						  "img" => "YPS_2018_AIS_036.jpg", "catalog" => "YPS_2018_AIS_036.pdf", "download" => "YPS_2018_AIS_036.pdf"),
 
-				  	array("year" => 2018, "salon_name" => "YPS International Salon 2018", "patronage" => "FIAP 2018/328, ICS 2018/171, GPU L180062, IUP 2018/020, FIP 2018/FIP/25/2018",
+				  	array("year" => 2018, "salon_name" => club_short_name() . " International Salon 2018", "patronage" => "FIAP 2018/328, ICS 2018/171, GPU L180062, IUP 2018/020, FIP 2018/FIP/25/2018",
 						  "chairman" => "H Satish", "secretary" => "Murali Santhanam",
 						  "jury" => "Adit Agarwala, Dr. Shivji Joshi, A G Lakshminarayan, M N Jayakumar, B Srinivasa, Dr. Manoj Sindagi",
 						  "exhibition_venue" => "Chitrakala Parishath", "exhibition_from" => "2018-08-17", "exhibition_to" => "2018-08-19",
 						  "img" => "YPS_2018_IS_009.jpg", "catalog" => "YPS_2018_IS_009.pdf", "download" => "YPS_2018_IS_009_D.pdf"),
 
-					array("year" => 2017, "salon_name" => "35th YPS All India Salon 2017", "patronage" => "FIP/146/2017",
+					array("year" => 2017, "salon_name" => "35th " . club_short_name() . " All India Salon 2017", "patronage" => "FIP/146/2017",
 					  	  "chairman" => "Manju Vikas Sastry V", "secretary" => "Murali Santhanam",
 						  "jury" => "A G Lakshminarayan, Dr. Barun Kumar Sinha, Dr. Bhupesh C Little, Diinesh Kumble, Prasanna Venkatesh G, Praveen Kumar H V",
 						  "exhibition_venue" => "Chitrakala Parishath", "exhibition_from" => "2018-01-13", "exhibition_to" => "2018-01-14",
 						  "img" => "YPS_2017_AIS_035.jpg", "catalog" => "YPS_2017_AIS_035.pdf", "download" => "YPS_2017_AIS_035_D.pdf"),
 
-				  	array("year" => 2017, "salon_name" => "YPS International Digital Salon 2017", "patronage" => "FIAP 2017/334, PSA 2017-223, FIP 2017/FIP/07/2017",
+				  	array("year" => 2017, "salon_name" => club_short_name() . " International Digital Salon 2017", "patronage" => "FIAP 2017/334, PSA 2017-223, FIP 2017/FIP/07/2017",
 						  "chairman" => "H Satish", "secretary" => "Murali Santhanam",
 						  "jury" => "M N Jayakumar, Dhritiman Mukherjee, Sudhir Shivaram, Susanta Banerjee, Anil Risal Singh, Mohammed Arfan Asif",
 						  "exhibition_venue" => "Chitrakala Parishath", "exhibition_from" => "2017-08-19", "exhibition_to" => "2017-08-21",
 						  "img" => "YPS_2017_IS_008.jpg", "catalog" => "YPS_2017_IS_008.pdf", "download" => "YPS_2017_IS_008.pdf"),
 
-				  array("year" => 2016, "salon_name" => "34th YPS All India Digital Salon of Photography 2016", "patronage" => "FIP/47/2016",
+				  array("year" => 2016, "salon_name" => "34th " . club_short_name() . " All India Digital Salon of Photography 2016", "patronage" => "FIP/47/2016",
 					  	  "chairman" => "K S Srinivas", "secretary" => "H V Ramachandran",
 						  "jury" => "Dr. Manoj C Sindagi, A K Raju, A G Gangadhar, T Kempanna, K Gopinath, H K Rajashekar, U B Pavanaja",
 						  "exhibition_venue" => "Venkatappa Art Gallery", "exhibition_from" => "2016-11-18", "exhibition_to" => "2016-11-20",
 						  "img" => "YPS_2016_AIS_034.jpg", "catalog" => "YPS_2016_AIS_034.pdf", "download" => "YPS_2016_AIS_034.pdf"),
 
-					array("year" => 2011, "salon_name" => "33rd YPS All India Salon of Photography 2011", "patronage" => "FIP/41/2011",
+					array("year" => 2011, "salon_name" => "33rd " . club_short_name() . " All India Salon of Photography 2011", "patronage" => "FIP/41/2011",
 						  "chairman" => "K S Srinivas", "secretary" => "H V Ramachandran",
 						  "jury" => "H N Allama Prabhu, Anil Risal Singh, M S Hebbar, A G Lakshminarayana, TNA Perumal, A K Raju",
 						  "exhibition_venue" => "Venkatappa Art Gallery", "exhibition_from" => "2012-03-08", "exhibition_to" => "2012-03-12",
 						  "img" => "YPS_2011_AIS_033.jpg", "catalog" => "YPS_2011_AIS_033.pdf", "download" => "YPS_2011_AIS_033.pdf"),
 
-					array("year" => 2010, "salon_name" => "32nd YPS All India Salon of Photography 2010", "patronage" => "FIP/29/2010",
+					array("year" => 2010, "salon_name" => "32nd " . club_short_name() . " All India Salon of Photography 2010", "patronage" => "FIP/29/2010",
 						  "chairman" => "H V Praveen Kumar", "secretary" => "L Narasimha Prakash",
 						  "jury" => "H V Praveen Kumar, T N A Perumal, CR Sathyanarayana, B Rajan Babu, G Harinarayana",
 						  "exhibition_venue" => "Venkatappa Art Gallery", "exhibition_from" => "2011-02-10", "exhibition_to" => "2011-02-13",
 						  "img" => "YPS_2010_AIS_032.jpg", "catalog" => "YPS_2010_AIS_032.pdf", "download" => "YPS_2010_AIS_032.pdf"),
 
-					array("year" => 2009, "salon_name" => "31st YPS All India Salon of Photography 2009", "patronage" => "FIP/25/2009",
+					array("year" => 2009, "salon_name" => "31st " . club_short_name() . " All India Salon of Photography 2009", "patronage" => "FIP/25/2009",
 						  "chairman" => "H V Praveen Kumar", "secretary" => "L Narasimha Prakash",
 						  "jury" => "H V Praveen Kumar, T N A Perumal, CR Sathyanarayana, B Rajan Babu, G Harinarayana",
 						  "exhibition_venue" => "Venkatappa Art Gallery", "exhibition_from" => "2010-02-05", "exhibition_to" => "2010-02-08",
 						  "img" => "YPS_2009_AIS_031.jpg", "catalog" => "YPS_2009_AIS_031.pdf", "download" => "YPS_2009_AIS_031.pdf"),
 
-					array("year" => 2008, "salon_name" => "30th YPS All India Salon of Photography 2008", "patronage" => "FIP/23/2008",
+					array("year" => 2008, "salon_name" => "30th " . club_short_name() . " All India Salon of Photography 2008", "patronage" => "FIP/23/2008",
 						  "chairman" => "C R Sathyanarayana", "secretary" => "K S Srinivas",
 						  "jury" => "B Srinivasa, H V Praveen Kumar, G S Ravi, M N Jayakumar, Gautam Basak",
 						  "exhibition_venue" => "Venkatappa Art Gallery", "exhibition_from" => "2009-02-21", "exhibition_to" => "2009-02-24",
 						  "img" => "YPS_2008_AIS_030.jpg", "catalog" => "YPS_2008_AIS_030.pdf", "download" => "YPS_2008_AIS_030.pdf"),
 
-					array("year" => 2007, "salon_name" => "29th YPS All India Salon of Photography 2007", "patronage" => "FIP",
+					array("year" => 2007, "salon_name" => "29th " . club_short_name() . " All India Salon of Photography 2007", "patronage" => "FIP",
 						  "chairman" => "H V Praveen Kumar", "secretary" => "G Harinarayana",
 						  "jury" => "B Srinivasa, Anil Risal Singh, H Satish, A G Lakshminarayana, H V Praveen Kumar",
 						  "exhibition_venue" => "Kannada Bhavan", "exhibition_from" => "2007-12-21", "exhibition_to" => "2007-12-25",
 						  "img" => "YPS_2007_AIS_029.jpg", "catalog" => "YPS_2007_AIS_029.pdf", "download" => "YPS_2007_AIS_029.pdf"),
 
-					array("year" => 2005, "salon_name" => "28th YPS All India Salon of Photography 2005", "patronage" => "FIP",
+					array("year" => 2005, "salon_name" => "28th " . club_short_name() . " All India Salon of Photography 2005", "patronage" => "FIP",
 						  "chairman" => "K A Suryaprakash", "secretary" => "K S Srinivas",
 						  "jury" => "TNA Preumal, B Srinivasa, H Satish, M S Hebbar, M Janardhan, Dr. T Shivanandappa, V Nagaraja",
 						  "exhibition_venue" => "Venkatappa Art Gallery", "exhibition_from" => "2005-03-11", "exhibition_to" => "2005-03-13",
@@ -150,7 +150,7 @@ $catalog_list = array(
 						  "jury" => "B S Sundaram, G S Ravi, H Satish, R Dev, K Jayaram, Thakur Dalip Singh",
 						  "img" => "YPS_1996_AIS_020.jpg", "catalog" => "YPS_1996_AIS_020.pdf", "download" => "YPS_1996_AIS_020.pdf"),
 
-					array("year" => 1995, "salon_name" => "19th YPS All India Salon of Photography 1995", "patronage" => "FIP/95/11",
+					array("year" => 1995, "salon_name" => "19th " . club_short_name() . " All India Salon of Photography 1995", "patronage" => "FIP/95/11",
 						  "chairman" => "G S Krishnamurthy", "secretary" => "S Nagesh",
 						  "jury" => "S Nagaraj, TNA Perumal, AK Raju, Sridhar, N Sundarraj",
 						  "exhibition_venue" => "Venkatappa Art Gallery", "exhibition_from" => "1995-09-04", "exhibition_to" => "1995-09-07",
@@ -297,7 +297,7 @@ $catalog_list = array(
 					</h2>
 					<p style="text-align:justify;"><?php echo club_name_html(); ?> has a rich heritage of conducting Salons since 1977.
 						We could finally pull together all the old Salon Catalogs in one place. You can see from these catalogs
-						how YPS was nurtured into a healthy Photography Club by some of the top names in the field of photography
+						how <?php echo club_short_name_html(); ?> was nurtured into a healthy Photography Club by some of the top names in the field of photography
 						at that time.
 					</p>
 					<div class="row">
@@ -384,7 +384,7 @@ $catalog_list = array(
 	<script>
 		$(document).ready(function() {
 			$("#login_login_id").hide();
-			$("#check_it").attr("placeholder", "Email (or YPS Member ID)");
+			$("#check_it").attr("placeholder", "Email (or <?php echo club_short_name_html(); ?> Member ID)");
 		});
 	</script>
 

@@ -256,7 +256,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_yearmonth']) ) {
 	<div class="splash">
 		<div class="color-line"></div>
 		<div class="splash-title">
-			<h1>    YPS ADMIN PANEL  </h1>
+			<h1>    <?php echo club_short_name_html(); ?> ADMIN PANEL  </h1>
 			<p>Please Wait. </p>
 			<div class="spinner">
 				<div class="rect1"></div>
@@ -343,7 +343,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_yearmonth']) ) {
 													<label><input type="radio" name="filter_profiles" id="include_foreigners" <?= ($cr_include_foreigners && (! $cr_include_indians)) ? "checked" : "";?> > Foreigners</label>
 												</span>
 												<span style="margin-left: 10px;">
-													<label><input type="checkbox" name="filter_yps_members" id="include_yps_members" <?= $cr_include_yps_members ? "checked" : "";?> > Include YPS Members</label>
+													<label><input type="checkbox" name="filter_yps_members" id="include_yps_members" <?= $cr_include_yps_members ? "checked" : "";?> > Include <?php echo club_short_name_html(); ?> Members</label>
 												</span>
 											</div>
 											<div class="col-sm-4">
@@ -599,7 +599,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_yearmonth']) ) {
 			include_foreigners(table, include_yps_members);
 		});
 
-		// Handle toggling of YPS Member Inclusion
+		// Handle toggling of <?php echo club_short_name_html(); ?> Member Inclusion
 		$("#include_yps_members").change(function(){
 			let table = $("#entry_table").DataTable();
 			let include_yps_members = $("#include_yps_members").prop("checked");

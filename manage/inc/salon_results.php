@@ -56,7 +56,7 @@ class MailGenerator {
 			$this->contest_data .= "who joined the Live webcasts and made the event a grand success. ";*/
 			
 			$this->contest_data .= "<br><br>A remote judging model was used for this salon and ratings will be webcast through ";
-			$this->contest_data .= "YPS Facebook Page and YPS Youtube Channels subsequently.";
+			$this->contest_data .= club_short_name() . " Facebook Page and " . club_short_name() . " Youtube Channels subsequently.";
 		}
 	}
 
@@ -313,10 +313,11 @@ TEMPLATE;
 TEMPLATE;
 		$m = "<br><h2>Special Picture Awards</h2>";
 		if ($this->salon['has_exhibition']) {
+$club_short_html = club_short_name_html();
 			$m .= <<<HTML
-					<p>YPS requires <b>Full Resolution JPEG files of pictures awarded with medals and ribbons</b>
+					<p>{$club_short_html} requires <b>Full Resolution JPEG files of pictures awarded with medals and ribbons</b>
 						for publishing in catalog. They are also used for printing and display at the Salon Exhibition.
-						YPS prefers <b>3600 x 5400 pixels sRGB JPEGs</b> for making 12x18 prints at 300 DPI.
+						{$club_short_html} prefers <b>3600 x 5400 pixels sRGB JPEGs</b> for making 12x18 prints at 300 DPI.
 						Use the <b>UPLOAD PICTURE</b> link next to each of your awarded pictures
 						and upload your high-resolution pictures directly to the Salon website. You can also do this
 						from <b>My Results Page</b> on the Salon website. Check salon website for details of

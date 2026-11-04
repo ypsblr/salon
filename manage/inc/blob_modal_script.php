@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 function tag_to_name ($tag) {
 	$name = str_replace("-", " ", $tag);
 	return ucwords($name);
@@ -47,7 +48,7 @@ function tag_to_name ($tag) {
 			// valid_children : '+html[head|body],+head[style]',
 			menu : {
 				yps_tags : {
-					title : "YPS TAGS",
+					title : "<?php echo club_short_name_html(); ?> TAGS",
 					items : "yps_salon yps_judging yps_exhibition yps_others <?= sizeof($yps_custom_tags) > 0 ? 'yps_custom' : '';?>",
 				},
 			},
@@ -67,7 +68,7 @@ function tag_to_name ($tag) {
 							},
 							{
 								type: 'menuitem',
-								text : 'YPS Website',
+								text : '<?php echo club_short_name_html(); ?> Website',
 								onAction : function(){
 									editor.insertContent(' [yps-website] ');
 								},
@@ -598,7 +599,7 @@ function tag_to_name ($tag) {
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
 							$('#loader_img').hide();
-							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to YPS", "error");
+							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to <?php echo club_short_name_html(); ?>", "error");
 						}
 				});
 				return false;

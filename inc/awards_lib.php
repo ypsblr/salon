@@ -40,7 +40,7 @@ function awards_generate_section_list($tab_ag, $columns = 0) {
 // 	$sql .= "   AND section != 'CONTEST' ";
 // 	$sql .= " ORDER BY section";
 
-	$sql  = "SELECT DISTINCT award.section ";
+	$sql  = "SELECT DISTINCT award.section, section.section_sequence ";
 	$sql .= "  FROM award, section ";
 	$sql .= " WHERE award.yearmonth = '$contest_yearmonth' ";
 	$sql .= "   AND award.award_group = '$tab_ag' ";

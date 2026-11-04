@@ -114,7 +114,7 @@ if ( isset($_SESSION['jury_id']) && isset($_SESSION['jury_type']) && isset($_SES
 		<div class="content">
 			<div class="row">
 				<div class="col-lg-12 text-center m-t-md">
-					<h2>Welcome to YPS Remote Rating</h2>
+					<h2>Welcome to <?php echo club_short_name_html(); ?> Remote Rating</h2>
 				</div>
 			</div>
 			<div class="row">

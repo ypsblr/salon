@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 /*
 ** customs_declaration.php - Contains Print Definitions for generating CN23 Customs Declaration Forms
 ** A separate file is created for each person
@@ -204,7 +205,7 @@ class ImageMerge {
 		$log_file = $_SERVER["DOCUMENT_ROOT"] . "/logs/sql_errlog.txt";
 		file_put_contents($log_file, date("Y-m-d H:i") . ": SQL operation failed with message '$errmsg' in line $phpline of '$phpfile'" . chr(13) . chr(10), FILE_APPEND);
 		file_put_contents($log_file, "Failing SQL: " . $sql . chr(13) . chr(10), FILE_APPEND);
-		$_SESSION['err_msg'] = "SQL Operation failed. Please report to YPS to check using Contact Us page.";
+		$_SESSION['err_msg'] = "SQL Operation failed. Please report to " . club_short_name() . " to check using Contact Us page.";
 		die();
 
 	}

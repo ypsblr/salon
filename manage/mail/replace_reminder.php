@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 include_once("connect.php");
 include_once("lib.php");
 
@@ -106,7 +107,7 @@ class MailGenerator {
 	protected function generate_notifications($pic, $rejection_text) {
 		// First time there is something to generate
 		if ($this->pic_notifications == "")
-			$this->pic_notifications .= "<h2>Pictures rejected during YPS reviews</h2> ";
+			$this->pic_notifications .= "<h2>Pictures rejected during " . club_short_name() . " reviews</h2> ";
 
 		// Generate Notifications
 		$this->pic_notifications .= "<hr>";
@@ -116,13 +117,13 @@ class MailGenerator {
 		$embed = "[salon-website]/salons/[yearmonth]/upload/" . $pic['section'] . "/tn/" . $pic['picfile'];
 		$this->pic_notifications .= "<p><img src='$embed' style='max_width: 120px;' alt='" . $pic['title'] .= "' ></p><br>";
 		if ( date_tz("now", $this->contest['submission_timezone']) > date("Y-m-d", strtotime($pic['submission_last_date'] . " +1 day")) ) {
-			$this->pic_notifications .= "<p>The picture has been marked as rejected by YPS reviewers for the following reasons :</p>";
+			$this->pic_notifications .= "<p>The picture has been marked as rejected by " . club_short_name() . " reviewers for the following reasons :</p>";
 			$this->pic_notifications .= "<p>\t\t<b>" . $rejection_text . "</b></p>";
 			$this->pic_notifications .= "<p>Please note that the last date for replacing the picture is over. This is for your Information.</p>";
 		}
 		else {
 			$rectify_link = encode_string_array(implode("|", [$this->yearmonth, $this->profile_id, $pic['pic_id'], $this->profile['profile_name']]));
-			$this->pic_notifications .= "<p>The picture has been marked as rejected by YPS reviewers for the following reasons :</p>";
+			$this->pic_notifications .= "<p>The picture has been marked as rejected by " . club_short_name() . " reviewers for the following reasons :</p>";
 			$this->pic_notifications .= "<p>\t\t<b>" . $rejection_text . "</b></p>";
 			$this->pic_notifications .= "<br><p><a href='[salon-website]/upload_rectified.php?code=" . $rectify_link . " '>";
 			$this->pic_notifications .= "Click to Replace Picture</a></p>";

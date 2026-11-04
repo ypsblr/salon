@@ -123,7 +123,7 @@ table th, td {
 			<div class="row">
 				<div class="col-sm-12">
 					<h2 class="primary-font">Upload Full Resolution File</h2>
-					<p>YPS Salon Committee requires full resolution JPEG file for printing 12x18 inch prints in 300 DPI for display at the exhibition
+					<p><?php echo club_short_name_html(); ?> Salon Committee requires full resolution JPEG file for printing 12x18 inch prints in 300 DPI for display at the exhibition
 						and/or for compiling the Salon Catalog. Please upload the highest resolution possible. Picture should not be less than <?= MIN_UPLOAD_SIZE;?>
 						pixels on any of the two sides. If you face any challenges, please
 						write to <a href="mailto:<?php echo salon_email_html(); ?>"><?php echo salon_email_html(); ?></a> with details of the file and error message.</p>
@@ -256,7 +256,7 @@ table th, td {
 	<script src="plugin/validate/js/jquery.validate.min.js"></script>
 
 	<!-- Custom Validation Functions -->
-	<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
+	<script>var CLUB_NAME = <?= json_encode(club_name()) ?>; var CLUB_SHORT_NAME = <?= json_encode(club_short_name()) ?>;</script>
 	<script src="custom/js/validate.js"></script>
 	<!-- Form Validation -->
 	<script>
@@ -297,7 +297,7 @@ table th, td {
 						error: function() {
 							$('#loader_img').hide();
 							suspend_ticker = false;		// defined scripts.php to run a ticker every minute
-							swal("Upload Failed!", "File is being rejected by server. Please report to YPS using the Contact US page for rectification. ", "error");
+							swal("Upload Failed!", "File is being rejected by server. Please report to <?php echo club_short_name_html(); ?> using the Contact US page for rectification. ", "error");
 						},
 						success: function(response) {
 							$('#loader_img').hide();

@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../../inc/club.php");
 	// Computations
 ?>
 <div class="panel panel-default">
@@ -18,8 +19,8 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td>YPS Members</td>
-							<td><div class="text-center">Any Number<br><a href="<?php echo yps_website_with_www_html(); ?>/membership-join/" target="_blank"><small>Become a YPS Member</small></a> </div></td>
+							<td><?php echo club_short_name_html(); ?> Members</td>
+							<td><div class="text-center">Any Number<br><a href="<?php echo yps_website_with_www_html(); ?>/membership-join/" target="_blank"><small>Become a <?php echo club_short_name_html(); ?> Member</small></a> </div></td>
 							<td><div class="text-center">30 %</div></td>
 						</tr>
 						<tr>

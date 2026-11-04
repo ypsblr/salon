@@ -468,7 +468,7 @@ if ( isset($_SESSION['USER_ID']) && isset($tr_user['profile_id']) ) {
 <script src="plugin/validate/js/jquery.validate.min.js"></script>
 
 <!-- Custom Validation Functions -->
-<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
+<script>var CLUB_NAME = <?= json_encode(club_name()) ?>; var CLUB_SHORT_NAME = <?= json_encode(club_short_name()) ?>;</script>
 <script src="custom/js/validate.js"></script>
 
 

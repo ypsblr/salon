@@ -300,7 +300,7 @@ if(isset($_SESSION['admin_yearmonth']) && isset($_SESSION['admin_id']) && preg_m
 				fprintf($output, "Error copying avatar : " . $rpic['avatar'] . " of " . $profile_name . " under " . $section . chr(13) . chr(10));
 		}
 	}
-	printf("Copied %d awarded pictures under YPS\r\n", $num_pics);
+	printf("Copied %d awarded pictures under " . club_short_name() . "\r\n", $num_pics);
 
 	fclose($output);
 }

@@ -1,3 +1,5 @@
+<?php include_once(__DIR__ . "/../../../inc/club.php"); ?>
+$club_short_html = club_short_name_html();
 <?php
 // List of Announcements
 $ann_postpone_exhibition = <<<HTML
@@ -9,7 +11,7 @@ $ann_postpone_exhibition = <<<HTML
     <!-- <p class="text-justify">Please note that the details related to the exhibition are subject to change based on any Government guidelines
         that may be issued.
     </p>
-    <p class="text-justify">YPS Salon Committee welcomes everyone to attend the Salon Exhibition. Please familiarize yourselves with <thead>
+    <p class="text-justify">{$club_short_html} Salon Committee welcomes everyone to attend the Salon Exhibition. Please familiarize yourselves with <thead>
         the protocols to be followed at the Exhibition Venue.
     </p> -->
 HTML;

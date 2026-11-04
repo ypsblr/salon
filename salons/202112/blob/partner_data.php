@@ -1,10 +1,11 @@
 <?php
+include_once(__DIR__ . "/../../../inc/club.php");
 	$partners = array(
 					array("name" => "Technova Novalife", "website" => "www.technovaworld.com", "phone" => "1800-267-7474",
 							"email" => "corp@technovaworld.com", "logo" => "technova_logo.png", "img" => "technova_novalife.gif", "text" => ""),
 					array("name" => "Technova Photo Select", "website" => "photoselect.technovaworld.com", "phone" => "1800-267-7474",
 							"email" => "pss@technovaindia.com", "logo" => "technova_photoselect_logo.png", "img" => "technova_photo_select.gif", "text" => ""),
-					array("name" => "YPS Salon Group", "website" => "", "phone" => "",
+					array("name" => club_short_name() . " Salon Group", "website" => "", "phone" => "",
 							"email" => "salongroup@ypsbengaluru.com", "logo" => "ypsLogo.png", "img" => "salon_group.png", "text" => "Contributions from members of Salon Participation Group - Winners of over 230 Best Club Awards"),
 					array("name" => "Mahesh Viswanadha", "website" => "", "phone" => "",
 							"email" => "", "logo" => "mahesh_viswanadha_logo.png", "img" => "mahesh_viswanadha.png", "text" => "In memory of Raja Dhanrajgirji Bahadur, Hyderabad"),

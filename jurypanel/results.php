@@ -95,7 +95,7 @@ img {
 			<div class="row">
 				<div class="col-lg-12 text-center m-t-md">
 					<h2>
-						YPS International Salon - Consolidated Results
+						<?php echo club_short_name_html(); ?> International Salon - Consolidated Results
 					</h2>
 						<?php
 							$sql  = "SELECT count(*) AS num_entries FROM entry ";

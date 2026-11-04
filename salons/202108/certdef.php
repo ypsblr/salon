@@ -269,7 +269,7 @@ class Certificate {
 									    	"align" => "L", "line_spacing" => 1.0, "height" => 0, "group" => "", ),
 
 						"thomas_honors" => array("nodetype" => "text", "type" => "label",
-											"value" => "FPSA, FRPS, Hon.FPSA, Hon.FRPS, Hon.EFIAP, Hon.FNPAS, Hon.PSI, Hon.YPS",
+											"value" => "FPSA, FRPS, Hon.FPSA, Hon.FRPS, Hon.EFIAP, Hon.FNPAS, Hon.PSI, Hon.[[CLUB_SHORT_NAME]]",
 											"block" => "thomas_block", "sequence" => 2,
 										  	"font_family" => self::FONT_FAMILY, "font_style" => "I", "font_size" => 8, "font_color" => self::COLOR_LOGO_GRAY,
 									    	"align" => "L", "line_spacing" => 1.1, "height" => 0, "group" => "" ),
@@ -300,7 +300,7 @@ class Certificate {
 									    	"align" => "L", "line_spacing" => 1.0, "height" => 0, "group" => "", ),
 
 						"craj_honors" => array("nodetype" => "text", "type" => "label",
-											"value" => "MFIAP, FRPS, FPSA, Hon.FRPS, Hon.FPSA, Hon.EFIAP, Hon.YPS",
+											"value" => "MFIAP, FRPS, FPSA, Hon.FRPS, Hon.FPSA, Hon.EFIAP, Hon.[[CLUB_SHORT_NAME]]",
 											"block" => "craj_block", "sequence" => 2,
 										  	"font_family" => self::FONT_FAMILY, "font_style" => "I", "font_size" => 8, "font_color" => self::COLOR_LOGO_GRAY,
 									    	"align" => "L", "line_spacing" => 1.1, "height" => 0, "group" => "" ),
@@ -331,7 +331,7 @@ class Certificate {
 									    	"align" => "L", "line_spacing" => 1.0, "height" => 0, "group" => "", ),
 
 						"tnap_honors" => array("nodetype" => "text", "type" => "label",
-											"value" => "MFIAP, FRPS, Hon.FIP, Hon.FIIPC, Hon.YPS",
+											"value" => "MFIAP, FRPS, Hon.FIP, Hon.FIIPC, Hon.[[CLUB_SHORT_NAME]]",
 											"block" => "tnap_block", "sequence" => 2,
 										  	"font_family" => self::FONT_FAMILY, "font_style" => "I", "font_size" => 8, "font_color" => self::COLOR_LOGO_GRAY,
 									    	"align" => "L", "line_spacing" => 1.1, "height" => 0, "group" => "" ),
@@ -393,7 +393,7 @@ class Certificate {
 									    	"align" => "L", "line_spacing" => 1.0, "height" => 0, "group" => "", ),
 
 						"hrao_honors" => array("nodetype" => "text", "type" => "label",
-											"value" => "AFIAP, Hon.YPS",
+											"value" => "AFIAP, Hon.[[CLUB_SHORT_NAME]]",
 											"block" => "hrao_block", "sequence" => 2,
 										  	"font_family" => self::FONT_FAMILY, "font_style" => "I", "font_size" => 8, "font_color" => self::COLOR_LOGO_GRAY,
 									    	"align" => "L", "line_spacing" => 1.1, "height" => 0, "group" => "" ),
@@ -486,7 +486,7 @@ class Certificate {
 									    	"align" => "L", "line_spacing" => 1.0, "height" => 0, "group" => "", ),
 
 						"dvrao_honors" => array("nodetype" => "text", "type" => "label",
-											"value" => "ESFIAP, Hon.EFIAP, FPSA, FNPAS, Hon.YPS",
+											"value" => "ESFIAP, Hon.EFIAP, FPSA, FNPAS, Hon.[[CLUB_SHORT_NAME]]",
 											"block" => "dvrao_block", "sequence" => 2,
 										  	"font_family" => self::FONT_FAMILY, "font_style" => "I", "font_size" => 8, "font_color" => self::COLOR_LOGO_GRAY,
 									    	"align" => "L", "line_spacing" => 1.1, "height" => 0, "group" => "" ),
@@ -511,7 +511,7 @@ class Certificate {
 											   	"align" => "left", "bordertype" => "border", "borderwidth" => 0, "bordercolor" => self::COLOR_BLACK,
 											   	"float" => "right" ),
 
-						"accept_title" => array("nodetype" => "text", "type" => "label", "value" => "The New YPS Logo",
+						"accept_title" => array("nodetype" => "text", "type" => "label", "value" => "The New [[CLUB_SHORT_NAME]] Logo",
 											"block" => "accept_block", "sequence" => 1,
 										  	"font_family" => self::FONT_FAMILY, "font_style" => "B", "font_size" => 14, "font_color" => self::COLOR_LOGO_RED,
 									    	"align" => "L", "line_spacing" => 1.0, "height" => 0, "group" => "", ),
@@ -521,10 +521,10 @@ class Certificate {
 									    	"align" => "L", "line_spacing" => 1.0, "height" => 0, "group" => "", ),
 
 						"accept_about" => array("nodetype" => "text", "type" => "label",
-											"value" => "July 11, 2021 was an important milestone in the history of YPS. After 45+ years of being the identity " .
+											"value" => "July 11, 2021 was an important milestone in the history of [[CLUB_SHORT_NAME]]. After 45+ years of being the identity " .
 											 			"of [[CLUB_NAME]], the logo was replaced by a new and contemporary logo that you see " .
 														"on the left. The new logo is based on the photographer's action of framing using both hands. A " .
-														"a few more lines and a diamond was added to make the lines come to life with the letter YPS. The " .
+														"a few more lines and a diamond was added to make the lines come to life with the letter [[CLUB_SHORT_NAME]]. The " .
 														"new logo was designed by Life Member Mr. Rajasimha Sathyanarayana. The logo was launched on ".
 														"July 11th with Shri. Adit Agarawla, President as Chief Guest, FIP and Dr. Barun K Sinha, " .
 														"as Guest of Honor.",
@@ -539,7 +539,11 @@ class Certificate {
 	function __construct($json = null) {
 		foreach ($this->nodes as $name => $node) {
 			if (isset($node["value"]) && is_string($node["value"]))
-				$this->nodes[$name]["value"] = str_replace("[[CLUB_NAME]]", club_name(), $node["value"]);
+				$this->nodes[$name]["value"] = str_replace(
+					array("[[CLUB_NAME]]", "[[CLUB_SHORT_NAME]]"),
+					array(club_name(), club_short_name()),
+					$node["value"]
+				);
 		}
 	}
 

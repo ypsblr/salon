@@ -140,7 +140,7 @@ function countChar(val) {
 				<div class="col-sm-9" id="myTab">
 					<div class="row">
 						<div class="col-sm-12 shopping-cart user-cart">
-							<h4 class="primary-font">My Participation in YPS Salons</h4>
+							<h4 class="primary-font">My Participation in <?php echo club_short_name_html(); ?> Salons</h4>
 						<?php
 						$first = true;
 						foreach($salons_participated as $salon_yearmonth) {

@@ -80,7 +80,7 @@ function log_sql_error($sql, $errmsg, $phpfile, $phpline) {
 
 function sql_error($sql, $errmsg, $phpfile, $phpline) {
 	log_sql_error($sql, $errmsg, $phpfile, $phpline);
-	$_SESSION['err_msg'] = "SQL Operation failed. Please report to YPS to check using Contact Us page.";
+	$_SESSION['err_msg'] = "SQL Operation failed. Please report to " . club_short_name() . " to check using Contact Us page.";
 	header("Location: ".$_SERVER['HTTP_REFERER']);
 	print("<script>location.href='" . $_SERVER['HTTP_REFERER'] . "'</script>");
 	die();

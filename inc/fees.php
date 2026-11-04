@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../inc/club.php");
 	// Computations
 	// Determine if discounts are available for this Salon
 	$sql  = "SELECT * FROM discount ";
@@ -189,7 +190,7 @@
 				<ol>
 					<li>Club co-ordinator registers himself/herself as a participant.</li>
 					<li>After logging in, the co-ordinator clicks on "Request Group Discount" option and enters number of promised participants and payment mode (Group/Individual).</li>
-					<li>YPS Admin will look at the request and set up a group discount for the club and this will initiate an email to the co-ordinator.</li>
+					<li><?php echo club_short_name_html(); ?> Admin will look at the request and set up a group discount for the club and this will initiate an email to the co-ordinator.</li>
 					<li>The co-ordinator will now be able to use "Generate Club Discount" option and enter emails of club members.</li>
 					<li>If payment is done individually, Emails with discount codes are sent to each member. When the member registers using the email,
 							discounted rates will automatically be applied.</li>
@@ -301,7 +302,7 @@
 					<li>Club co-ordinator registers himself/herself as a participant.</li>
 					<li>After logging in, the co-ordinator clicks on "Request Group Discount" option and enters number of promised participants
 						and payment mode (Group/Individual).</li>
-					<li>YPS Admin will look at the request and set up a group discount for the club and this will initiate an email to the co-ordinator.</li>
+					<li><?php echo club_short_name_html(); ?> Admin will look at the request and set up a group discount for the club and this will initiate an email to the co-ordinator.</li>
 					<li>The co-ordinator will now be able to use "Generate Club Discount" option and enter emails of club members.</li>
 					<li>If payment is done individually, Emails with discount codes are sent to each member. When the member registers using the email,
 							discounted rates will automatically be applied.</li>

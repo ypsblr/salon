@@ -12,7 +12,7 @@ if( isset($_SESSION['admin_id']) && isset($_REQUEST['yearmonth']) && isset($_REQ
 	$yps_membership_required = isset($_REQUEST['yps_membership_required']) ? "1" : "0";
 	if ($yps_membership_required == "1") {
 		if (sizeof($_REQUEST['yps_member_prefixes']) == 0)
-			return_error("You have not selected types of YPS members who can participate", __FILE__, __LINE__);
+			return_error("You have not selected types of " . club_short_name() . " members who can participate", __FILE__, __LINE__);
 		$yps_member_prefixes = implode(",", $_REQUEST['yps_member_prefixes']);
 	}
 	else {

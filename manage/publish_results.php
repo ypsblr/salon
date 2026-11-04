@@ -224,7 +224,7 @@ if ( isset($_SESSION['admin_id']) ) {
 	<div class="splash">
 		<div class="color-line"></div>
 		<div class="splash-title">
-			<h1>    YPS SALON MANAGEMENT PANEL  </h1>
+			<h1>    <?php echo club_short_name_html(); ?> SALON MANAGEMENT PANEL  </h1>
 			<p>Please Wait. </p>
 			<div class="spinner">
 				<div class="rect1"></div>
@@ -760,7 +760,7 @@ if ( isset($_SESSION['admin_id']) ) {
 <script src="plugin/validate/js/jquery.validate.min.js"></script>
 
 <!-- Custom Validation Functions -->
-<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
+<script>var CLUB_NAME = <?= json_encode(club_name()) ?>; var CLUB_SHORT_NAME = <?= json_encode(club_short_name()) ?>;</script>
 <script src="custom/js/validate.js"></script>
 
 <!-- Select 2 for Country Codes -->
@@ -966,7 +966,7 @@ jQuery.validator.addMethod(
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
 							$('#loader_img').hide();
-							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to YPS", "error");
+							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to <?php echo club_short_name_html(); ?>", "error");
 						}
 				});
 			}
@@ -1019,7 +1019,7 @@ jQuery.validator.addMethod(
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
 							$('#loader_img').hide();
-							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to YPS", "error");
+							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to <?php echo club_short_name_html(); ?>", "error");
 						}
 				});
 			}
@@ -1072,7 +1072,7 @@ jQuery.validator.addMethod(
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
 							$('#loader_img').hide();
-							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to YPS", "error");
+							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to <?php echo club_short_name_html(); ?>", "error");
 						}
 				});
 			}
@@ -1125,7 +1125,7 @@ jQuery.validator.addMethod(
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
 							$('#loader_img').hide();
-							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to YPS", "error");
+							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to <?php echo club_short_name_html(); ?>", "error");
 						}
 				});
 			}
@@ -1178,7 +1178,7 @@ jQuery.validator.addMethod(
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
 							$('#loader_img').hide();
-							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to YPS", "error");
+							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to <?php echo club_short_name_html(); ?>", "error");
 						}
 				});
 			}
@@ -1243,7 +1243,7 @@ jQuery.validator.addMethod(
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
 							$('#loader_img').hide();
-							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to YPS", "error");
+							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to <?php echo club_short_name_html(); ?>", "error");
 						}
 				});
 				return false;

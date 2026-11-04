@@ -1,4 +1,6 @@
-YPS President<?php 
+<?php
+include_once(__DIR__ . "/../inc/club.php");
+echo club_short_name_html(); ?> President<?php 
 
 // Check if results have been announced to prevent spurious accesses
 $sql = "SELECT results_ready FROM contest WHERE yearmonth = '$contest_yearmonth' ";
@@ -472,7 +474,7 @@ if($resultsReady) {
 						</div>
 						<div class="col-sm-8 col-md-8 col-lg-8">
 							<p><b>Manju Vikas Sastry V</b> <small>ESFIP, AFIP</small></p>
-							<p><i>YPS President</i></p>
+							<p><i><?php echo club_short_name_html(); ?> President</i></p>
 						</div>
 					</div>
 					<div class="row">
@@ -481,7 +483,7 @@ if($resultsReady) {
 						</div>
 						<div class="col-sm-8 col-md-8 col-lg-8">
 							<p><b>Prema Kakade</b> <small>ESFIP, EFIAP, EFIP, cMoL, E.CPE</small></p>
-							<p><i>YPS Secretary</i></p>
+							<p><i><?php echo club_short_name_html(); ?> Secretary</i></p>
 						</div>
 					</div>
 				</div>	<!-- Right Column - Sponsors etc -->

@@ -77,11 +77,11 @@ if ( isset($_SESSION['jury_id']) && isset($_SESSION['jury_type']) && $_SESSION['
 	$sql .= "   AND assignment.user_id = '$jury_id' ";
 	$query = mysqli_query($DBCON, $sql) or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
 	if (mysqli_num_rows($query) == 0)
-		die_with_error("Judging for $award_group under $jury_section is yet to open. Contact YPS !", __FILE__, __LINE__);
+		die_with_error("Judging for $award_group under $jury_section is yet to open. Contact " . club_short_name() . " !", __FILE__, __LINE__);
 
 	$assignment = mysqli_fetch_array($query);
 	if ($assignment['session_open'] == '0') {
-		die_with_error("Judging for $award_group under $jury_section is yet to open. Contact YPS !", __FILE__, __LINE__);
+		die_with_error("Judging for $award_group under $jury_section is yet to open. Contact " . club_short_name() . " !", __FILE__, __LINE__);
 	}
 	// if ($assignment['status'] == 'COMPLETED') {
 	// 	die_with_error("Judging for $jury_section has been completed. Contact YPS to score again !", __FILE__, __LINE__);

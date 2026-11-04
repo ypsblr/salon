@@ -634,7 +634,7 @@ class PDF extends tFPDF {
 // SQL Error handler, just sets SESSION message as we cannot return a value
 function cert_sql_error($sql, $errmsg, $phpfile, $phpline) {
 	log_sql_error($sql, $errmsg, $phpfile, $phpline);
-	$_SESSION['err_msg'] = "SQL Operation failed. Please report to YPS to check using Contact Us page.";
+	$_SESSION['err_msg'] = "SQL Operation failed. Please report to " . club_short_name() . " to check using Contact Us page.";
 	die($errmsg);
 }
 

@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../inc/club.php");
 /*
 ** New certificate.php
 ** Generic program to generate certificate as PDF using redefined format specifications using Blocks and Nodes
@@ -139,7 +140,7 @@ function create_pdf_page_from_certificate (&$pdf, $cert, $data) {
 		    toConsole('finished isBlockPrintable');
 			if (! create_pdf_block($pdf, $cert, $block_name)) {
 			    toConsole('errors occured while generating certificate');
-				cert_error("Certificate design has errors. Printing $block_name Failed. Report to YPS!", __FILE__, __LINE__);
+				cert_error("Certificate design has errors. Printing $block_name Failed. Report to " . club_short_name() . "!", __FILE__, __LINE__);
 				die();
 			}
 		}

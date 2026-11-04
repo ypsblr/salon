@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 // header('Content-Type: text/csv');
 header('Content-Type: text/csv; charset=utf-8');
 header('Content-Disposition: attachment; filename=yps_member.csv');
@@ -68,7 +69,7 @@ function log_sql_error($sql, $errmsg, $phpfile, $phpline) {
 
 function sql_error($sql, $errmsg, $phpfile, $phpline) {
 	log_sql_error($sql, $errmsg, $phpfile, $phpline);
-	$_SESSION['err_msg'] = "SQL Operation failed. Please report to YPS to check using Contact Us page.";
+	$_SESSION['err_msg'] = "SQL Operation failed. Please report to " . club_short_name() . " to check using Contact Us page.";
 	header("Location: ".$_SERVER['HTTP_REFERER']);
 	print("<script>location.href='" . $_SERVER['HTTP_REFERER'] . "'</script>");
 	die();
@@ -88,7 +89,7 @@ if (isset($_REQUEST['magic']) && decode_string_array($_REQUEST['magic']) == "yps
 
 	$data = (object) array();
 	if (is_null($userlist) || sizeof($userlist) == 0) {
-		die("YPS Member List returned empty !");
+		die(club_short_name() . " Member List returned empty !");
 		echo json_encode($data);
 	}
 	else {
@@ -101,7 +102,6 @@ if (isset($_REQUEST['magic']) && decode_string_array($_REQUEST['magic']) == "yps
 				// Get avatar file name from the html
 				$yps_avatar_url = get_img_src($yps_avatar);
 				// debug_dump("yps_avatar_url", $yps_avatar_url, __FILE__, __LINE__);
-				}
 			}
 			if($swpm_user->account_state == "active") {
 				fputcsv($output, array($user->user_login, $swpm_user->first_name, $swpm_user->last_name, $user->user_pass, $user->user_email, $swpm_user->phone,

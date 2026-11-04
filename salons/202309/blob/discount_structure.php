@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../../inc/club.php");
 	// Computations
 ?>
 <div class="panel panel-default">
@@ -6,7 +7,7 @@
 		<h4 class="text-danger">DISCOUNT</h4>
 	</div>
 	<div class="panel-body">
-		<p class="text text-justify">YPS encourages group/club participation and offers discounts depending
+		<p class="text text-justify"><?php echo club_short_name_html(); ?> encourages group/club participation and offers discounts depending
 			on the number of participants. The following discount will be awarded uniformly for all groups/clubs
 			approaching us for discounts:</p>
 		<table class="table table-bordered" style="max-width: 80%; margin-left: 20px; margin-right: 20px;">
@@ -42,7 +43,7 @@
 			no payment will be requested.
 		</p>
 		<p class="text"><a href="mailto:<?php echo salon_email_html(); ?>">Write to us</a> for any clarifications.</p>
-		<p class="text text-justify">Members of YPS will be automatically eligible for 20% discount. They can participate in 2 sections or
+		<p class="text text-justify">Members of <?php echo club_short_name_html(); ?> will be automatically eligible for 20% discount. They can participate in 2 sections or
 			in all sections.</p>
 	</div>
 </div>

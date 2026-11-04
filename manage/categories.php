@@ -127,7 +127,7 @@ if ( isset($_SESSION['admin_id']) ) {
 	<div class="splash">
 		<div class="color-line"></div>
 		<div class="splash-title">
-			<h1>    YPS SALON MANAGEMENT PANEL  </h1>
+			<h1>    <?php echo club_short_name_html(); ?> SALON MANAGEMENT PANEL  </h1>
 			<p>Please Wait. </p>
 			<div class="spinner">
 				<div class="rect1"></div>
@@ -220,15 +220,15 @@ if ( isset($_SESSION['admin_id']) ) {
 					</div>
 				</div>
 
-				<!-- YPS Membership Match -->
+				<!-- <?php echo club_short_name_html(); ?> Membership Match -->
 				<div class="row form-group">
 					<div class="col-sm-6">
-						<label>Is YPS Membership Required ?</label>
+						<label>Is <?php echo club_short_name_html(); ?> Membership Required ?</label>
 						<div class="input-group">
 							<span class="input-group-addon">
 								<input type="checkbox" name="yps_membership_required" id="yps_membership_required" value="1" >
 							</span>
-							<input type="text" class="form-control" readonly value="Must be a YPS Member" >
+							<input type="text" class="form-control" readonly value="Must be a <?php echo club_short_name_html(); ?> Member" >
 						</div>
 					</div>
 					<div class="col-sm-6" id="div_yps_member_prefixes" style="display : none;">
@@ -239,7 +239,7 @@ if ( isset($_SESSION['admin_id']) ) {
 									<span class="input-group-addon">
 										<input type="checkbox" name="yps_member_prefixes[]" id="yps_member_prefix_lm" value="LM" >
 									</span>
-									<input type="text" class="form-control" readonly value="YPS Life Member" >
+									<input type="text" class="form-control" readonly value="<?php echo club_short_name_html(); ?> Life Member" >
 								</div>
 							</div>
 						</div>
@@ -249,7 +249,7 @@ if ( isset($_SESSION['admin_id']) ) {
 									<span class="input-group-addon">
 										<input type="checkbox" name="yps_member_prefixes[]" id="yps_member_prefix_im" value="IM" >
 									</span>
-									<input type="text" class="form-control" readonly value="YPS Individual Member" >
+									<input type="text" class="form-control" readonly value="<?php echo club_short_name_html(); ?> Individual Member" >
 								</div>
 							</div>
 						</div>
@@ -259,7 +259,7 @@ if ( isset($_SESSION['admin_id']) ) {
 									<span class="input-group-addon">
 										<input type="checkbox" name="yps_member_prefixes[]" id="yps_member_prefix_ja" value="JA" >
 									</span>
-									<input type="text" class="form-control" readonly value="YPS Junior Associate" >
+									<input type="text" class="form-control" readonly value="<?php echo club_short_name_html(); ?> Junior Associate" >
 								</div>
 							</div>
 						</div>
@@ -484,7 +484,7 @@ if ( isset($_SESSION['admin_id']) ) {
 							<thead>
 								<tr>
 									<th>Name</th>
-									<th>YPS Membership</th>
+									<th><?php echo club_short_name_html(); ?> Membership</th>
 									<th>Gender Match</th>
 									<th>Age Match</th>
 									<th>Country Match</th>
@@ -576,7 +576,7 @@ if ( isset($_SESSION['admin_id']) ) {
 <script src="plugin/validate/js/jquery.validate.min.js"></script>
 
 <!-- Custom Validation Functions -->
-<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
+<script>var CLUB_NAME = <?= json_encode(club_name()) ?>; var CLUB_SHORT_NAME = <?= json_encode(club_short_name()) ?>;</script>
 <script src="custom/js/validate.js"></script>
 
 <!-- Select 2 for Country Codes -->
@@ -765,7 +765,7 @@ if ( isset($_SESSION['admin_id']) ) {
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
 							$('#loader_img').hide();
-							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to YPS", "error");
+							swal("Server Error", "Something went wrong at the server. If this repeats please report the problem to <?php echo club_short_name_html(); ?>", "error");
 						}
 				});
 				return false;

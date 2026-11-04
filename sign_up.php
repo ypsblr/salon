@@ -117,7 +117,7 @@ $campaign_media_list = ["cm_email" => "Email", "cm_website" => "Website", "cm_fr
 										<label>Email: <span class="text text-color"><?=$profile['email'];?></span></label>
 										<br>
 										<?php if ($profile['yps_login_id'] != "") { ?>
-										<label>YPS Login ID: <span class="text text-color"><?=$profile['yps_login_id'];?></span></label>
+										<label><?php echo club_short_name_html(); ?> Login ID: <span class="text text-color"><?=$profile['yps_login_id'];?></span></label>
 										<?php } ?>
 									</div>
 									<?php
@@ -230,7 +230,7 @@ $campaign_media_list = ["cm_email" => "Email", "cm_website" => "Website", "cm_fr
 							<div class="form-group">
 								<div class="row">
 									<p class="text text-color" style="margin-left: 12px;">
-										NOTE: Age Proof is required only if you plan to avail any concessions offered by YPS Salons based on age. You are required to upload
+										NOTE: Age Proof is required only if you plan to avail any concessions offered by <?php echo club_short_name_html(); ?> Salons based on age. You are required to upload
 										a valid document (PDF/JPEG) issued by Government or by School/College that contains your name and date-of-birth.
 									</p>
 									<div class="col-sm-6">
@@ -478,7 +478,7 @@ $campaign_media_list = ["cm_email" => "Email", "cm_website" => "Website", "cm_fr
 							<div class="form-group">
 								<div class="row">
 									<div class="col-sm-12">
-										<label for="campaign_media">How did you learn about the YPS Salon ? (check all that apply)</label>
+										<label for="campaign_media">How did you learn about the <?php echo club_short_name_html(); ?> Salon ? (check all that apply)</label>
 										<div class="row">
 										<?php
 											foreach($campaign_media_list as $cm_tag => $cm_name) {
@@ -579,8 +579,8 @@ $campaign_media_list = ["cm_email" => "Email", "cm_website" => "Website", "cm_fr
 			$("#new_club_form").hide();
 			if (e.params.data.id == e.params.data.text) {
 				// New tag
-				if (e.params.data.text.match(/yps/i) || e.params.data.text.match(/youth *photo.*soc.*/i) || e.params.data.text.toLowerCase().indexOf(<?= json_encode(strtolower(club_name())) ?>) !== -1)
-					$("#club-contact").html(<?= json_encode("Invalid club name. Cannot use names YPS or " . club_name()) ?>);
+				if (e.params.data.text.match(/yps/i) || e.params.data.text.match(/youth *photo.*soc.*/i) || e.params.data.text.toLowerCase().indexOf(<?= json_encode(strtolower(club_name())) ?>) !== -1 || e.params.data.text.toLowerCase().indexOf(<?= json_encode(strtolower(club_short_name())) ?>) !== -1)
+					$("#club-contact").html(<?= json_encode("Invalid club name. Cannot use names " . club_short_name() . " or " . club_name()) ?>);
 				else {
 					$("#club_id").val("new");	// store selection in hidden variable
 					$("#new_club_name").val(e.params.data.text.toUpperCase());
@@ -658,7 +658,7 @@ function loadAvatar(input, target) {
 <script src="plugin/validate/js/jquery.validate.min.js"></script>
 
 <!-- Custom Validation Functions -->
-<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
+<script>var CLUB_NAME = <?= json_encode(club_name()) ?>; var CLUB_SHORT_NAME = <?= json_encode(club_short_name()) ?>;</script>
 <script src="custom/js/validate.js"></script>
 
 <!-- Custom Validation for updateInfoForm -->

@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 	$self = basename($_SERVER['PHP_SELF']);
 
 ?>
@@ -51,7 +52,7 @@ div#loader_img img {
 
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
-                        <small class="text-muted">Manage Panel for YPS Salon<b class="caret"></b></small>
+                        <small class="text-muted">Manage Panel for <?php echo club_short_name_html(); ?> Salon<b class="caret"></b></small>
                     </a>
                     <ul class="dropdown-menu animated flipInX m-t-xs">
                         <li><a href="index.php">Logout</a></li>

@@ -155,7 +155,7 @@ if(isset($_SESSION['USER_ID'])) {
 						<div class="row">
 							<div class="col-sm-12">
 								<p class="text text-color" style="margin-left: 12px;">
-									NOTE: Age Proof is required only if you plan to avail any concessions offered by YPS Salons based on age. You are required to upload
+									NOTE: Age Proof is required only if you plan to avail any concessions offered by <?php echo club_short_name_html(); ?> Salons based on age. You are required to upload
 									a valid document (PDF/JPEG) issued by Government or by School/College that contains your name and date-of-birth.
 								</p>
 								<div class="form-group">
@@ -618,8 +618,8 @@ if(isset($_SESSION['USER_ID'])) {
 		$("#club_select").on("select2:select", function (e) {
 			if (e.params.data.id == e.params.data.text) {
 				// New tag
-				if (e.params.data.text.match(/yps/i) || e.params.data.text.match(/youth *photo.*soc.*/i) || e.params.data.text.toLowerCase().indexOf(<?= json_encode(strtolower(club_name())) ?>) !== -1)
-					$("#club-contact").html(<?= json_encode("Invalid club name. Cannot use names YPS or " . club_name()) ?>);
+				if (e.params.data.text.match(/yps/i) || e.params.data.text.match(/youth *photo.*soc.*/i) || e.params.data.text.toLowerCase().indexOf(<?= json_encode(strtolower(club_name())) ?>) !== -1 || e.params.data.text.toLowerCase().indexOf(<?= json_encode(strtolower(club_short_name())) ?>) !== -1)
+					$("#club-contact").html(<?= json_encode("Invalid club name. Cannot use names " . club_short_name() . " or " . club_name()) ?>);
 				else {
 					$("#club_id").val("new");	// store selection in hidden variable
 					$("#club_name").val(e.params.data.text.toUpperCase());
@@ -730,7 +730,7 @@ $(document).ready(function () {
 <!--<script>-->
 <!--	$(document).ready(function() {-->
 <!--		if ($("#yps_email").length > 0) {-->
-			<!--// YPS retrieved values-->
+			<!--// <?php echo club_short_name_html(); ?> retrieved values-->
 <!--			let yps_email = $("#yps_email").val();-->
 <!--			let yps_first_name = $("#yps_first_name").val();-->
 <!--			let yps_last_name = $("#yps_last_name").val();-->
@@ -740,7 +740,7 @@ $(document).ready(function () {
 <!--			let salon_last_name = $("#last_name").val();-->
 			<!--// Get confirmation and update the form-->
 <!--			let yps_profile_changed = false;-->
-<!--			let change_text = "Your YPS Profile has been updated. ";-->
+<!--			let change_text = "Your <?php echo club_short_name_html(); ?> Profile has been updated. ";-->
 <!--			if (salon_email != yps_email) {-->
 <!--				yps_profile_changed = true;-->
 <!--				change_text += "Email has been updated to '" + yps_email + "'. ";-->
@@ -756,7 +756,7 @@ $(document).ready(function () {
 <!--			change_text += " you want to update your profile with these details? ";-->
 <!--			if (yps_profile_changed) {-->
 <!--				swal({-->
-<!--					title: 'Sync YPS Profile',-->
+<!--					title: 'Sync <?php echo club_short_name_html(); ?> Profile',-->
 <!--					text:  change_text,-->
 <!--					icon: "warning",-->
 <!--					showCancelButton: true,-->
@@ -813,7 +813,7 @@ function loadAvatar(input, target) {
 <script src="plugin/validate/js/jquery.validate.min.js"></script>
 
 <!-- Custom Validation Functions -->
-<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
+<script>var CLUB_NAME = <?= json_encode(club_name()) ?>; var CLUB_SHORT_NAME = <?= json_encode(club_short_name()) ?>;</script>
 <script src="custom/js/validate.js"></script>
 
 <!-- Custom Validation for updateInfoForm -->

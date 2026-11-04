@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 	$partner = array(
 					array("name" => "Prism Giclee Prints", "website" => "", "phone" => "+91-97393-96444", "email" => "vjaypattya@gmail.com", "img" => "PrismAd.jpg")
 				);
@@ -14,7 +15,7 @@
 <h2 class="headline text-color">
 	<span class="border-color">Print Partners</span>
 </h2>
-<p>Please place all print orders directly with the partners. YPS Salon Committee will not be involved in getting any pictures printed.</p>
+<p>Please place all print orders directly with the partners. <?php echo club_short_name_html(); ?> Salon Committee will not be involved in getting any pictures printed.</p>
 <?php
 	$idx = $_SESSION['partner_key'];
 	for ($i = 0; $i < sizeof($partner); $i ++) {

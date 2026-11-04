@@ -160,7 +160,7 @@ if ( (! empty($_SESSION['SALONBOND'])) && (! empty($_REQUEST['ypsd'])) ) {
 				handle_error("Error uploading $name", __FILE__, __LINE__);
 		}
 		else
-			handle_error("File could not be uploaded. Contact YPS Salon Committee !", __FILE__, __LINE__);
+			handle_error("File could not be uploaded. Contact " . club_short_name() . " Salon Committee !", __FILE__, __LINE__);
 	}
 	else
 		handle_error("Invalid Upload Code", __FILE__, __LINE__);
@@ -172,6 +172,6 @@ if ( (! empty($_SESSION['SALONBOND'])) && (! empty($_REQUEST['ypsd'])) ) {
 }
 else {
 	// Parameter error - go home
-	handle_error("File Upload failed. Possibly file is large. Please contact YPS for action !", __FILE__, __LINE__);
+	handle_error("File Upload failed. Possibly file is large. Please contact " . club_short_name() . " for action !", __FILE__, __LINE__);
 }
 ?>
