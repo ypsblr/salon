@@ -98,7 +98,7 @@ display: none
 								<td><b>Email:</b> <?=$tr_user['email'];?></td><td><b>Name:</b> <?=utf8_decode($tr_user['profile_name']);?></td>
 							</tr>
 							<tr>
-								<td><b>Club:</b> <?php echo ($tr_user['yps_login_id'] == "") ? $tr_user['club_name'] : "Youth Photographic Society, Bengaluru";?></td>
+								<td><b>Club:</b> <?php echo ($tr_user['yps_login_id'] == "") ? $tr_user['club_name'] : club_name_html() . ", Bengaluru";?></td>
 								<td><b>Honors:</b> <?=$tr_user['honors'];?></td>
 							</tr>
 							<tr>

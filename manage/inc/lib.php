@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 
 function toconsole($data) {
     $output = $data;
@@ -95,7 +96,7 @@ function send_mail($to, $subject, $message, $cc_to = "") {
 
 	$headers = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type:text/html" . "\r\n";
-	$headers .= "From: <salon@ypsbengaluru.in>" . "\r\n";
+	$headers .= "From: <" . salon_email() . ">" . "\r\n";
 
 	if (preg_match("/localhost/i", $_SERVER['SERVER_NAME'])) {
 		if (! is_dir("mails"))
@@ -116,7 +117,7 @@ function send_mail($to, $subject, $message, $cc_to = "") {
     }
 	else {
         if ($cc_to != "nocc")
-    	   $headers .= "Cc: <salon@ypsbengaluru.in>" . ($cc_to == "" ? "" : "," . $cc_to) . "\r\n";
+    	   $headers .= "Cc: <" . salon_email() . ">" . ($cc_to == "" ? "" : "," . $cc_to) . "\r\n";
 		return mail($to, $subject, $message, $headers);
 	}
 }

@@ -615,7 +615,7 @@ if(isset($_SESSION['jury_id']) && isset($_SESSION['jury_type']) && $_SESSION['ju
 <head>
 
     <!-- Page title -->
-	<title>Youth Photographic Society | Projection Panel</title>
+	<title><?php echo club_name_html(); ?> | Projection Panel</title>
 
 	<?php include("inc/header.php");?>
 
@@ -626,7 +626,7 @@ if(isset($_SESSION['jury_id']) && isset($_SESSION['jury_type']) && $_SESSION['ju
 	<div class="splash">
 		<div class="color-line"></div>
 		<div class="splash-title">
-			<h1>    YOUTH PHOTOGRAPHIC SOCIETY | PROJECTION PANEL  </h1>
+			<h1>    <?php echo club_name_upper_html(); ?> | PROJECTION PANEL  </h1>
 			<p>Please Wait. </p>
 			<div class="spinner">
 				<div class="rect1"></div>
@@ -645,7 +645,7 @@ if(isset($_SESSION['jury_id']) && isset($_SESSION['jury_type']) && $_SESSION['ju
 	<div id="header">
 		<div class="color-line"></div>
 		<div id="logo" class="light-version">
-			<span>Youth Photographic Society</span>
+			<span><?php echo club_name_html(); ?></span>
 		</div>
 		<nav role="navigation">
 			<div class="header-link hide-menu"><i class="fa fa-bars"></i></div>
@@ -929,7 +929,7 @@ if(isset($_SESSION['jury_id']) && isset($_SESSION['jury_type']) && $_SESSION['ju
 															<?=$row['profile_name'];?>
 														</h3>
 														<p class="text-muted"><small><?=$row['honors'];?></small></p>
-														<p class="text-muted"><small><?php echo ($row['yps_login_id'] == "") ? $row['club_name'] : "Youth Photographic Society";?></small></p>
+														<p class="text-muted"><small><?php echo ($row['yps_login_id'] == "") ? $row['club_name'] : club_name_html();?></small></p>
                                                         <p class="text-muted"><?=$row['city'];?>, <?=$row['state'];?>, <?=$row['country_name'];?></p>
 														<img src="/res/avatar/<?=$row['avatar'];?>" style="max-width: 80px; max-height: 80px; border: solid 1px #808080;" >
 														<!-- <br>

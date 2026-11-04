@@ -109,11 +109,11 @@ function refreshCaptcha(){
 					<h2 class="headline first-child first-child-m text-color">
 						<span class="border-color">Our Address</span>
 					</h2>
-					<p>YOUTH PHOTOGRAPHIC SOCIETY,<br>
+					<p><?php echo club_name_upper_html(); ?>,<br>
 						3rd Floor, State Youth Center, <br/>
 						Nrupathunga Road, Bengaluru - 560001.<br/>
-						Website: <a href="https://www.ypsbengaluru.com" target="_blank">www.ypsbengaluru.com</a><br />
-						Email: <a href="mailto:contactus@ypsbengaluru.com">contactus@ypsbengaluru.com</a><br/>
+						Website: <a href="<?php echo yps_website_with_www_html(); ?>" target="_blank">www.ypsbengaluru.com</a><br />
+						Email: <a href="mailto:<?php echo contact_email_html(); ?>"><?php echo contact_email_html(); ?></a><br/>
 						Phone: +91-9513-YPS-BLR (+91-9513-977-257)
 					</p>
 					<p>YPS President: Mr. Manju Vikas Sastry V, AFIP, sastry.vikas@gmail.com</p>
@@ -165,6 +165,7 @@ function refreshCaptcha(){
 	</script>
 
 	<!-- Custom Validation Functions -->
+	<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
 	<script src="custom/js/validate.js"></script>
 	<!-- Form Validation -->
 	<script>

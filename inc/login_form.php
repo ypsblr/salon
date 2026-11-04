@@ -77,7 +77,7 @@
 				<div class="row">
 					<div class="col-sm-12 col-md-12 col-lg-12">
 						<p>
-							NOTE: YPS Members should click on this <a href="https://www.ypsbengaluru.com/membership-login/password-reset/" target="_blank">YPS Password Reset Link</a> to reset password.
+							NOTE: YPS Members should click on this <a href="<?php echo yps_website_with_www_html(); ?>/membership-login/password-reset/" target="_blank">YPS Password Reset Link</a> to reset password.
 						</p>
 						<div class="form-group">
 							<label for="login_id">Email *</label>
@@ -99,7 +99,7 @@
 	</div>
 	<p id="login_err_msg" class="text-danger"></p>
 	<hr>
-	<p class="text-color"><a href="https://www.ypsbengaluru.com/membership-join/" target="_blank">Become a YPS Member</a></p>
+	<p class="text-color"><a href="<?php echo yps_website_with_www_html(); ?>/membership-join/" target="_blank">Become a YPS Member</a></p>
 	<!-- Form that will be used to submit data -->
 	<form id="submission_form" name="submission_form" action="op/login.php" method="post">
 		<input type="hidden" name="ypsd" id="ypsd" value="" >

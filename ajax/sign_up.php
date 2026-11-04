@@ -282,7 +282,7 @@ if ( (! empty($_SESSION['SALONBOND'])) && (! empty($_REQUEST['ypsd'])) ) {
 		$email_prompt = "Email (or) YPS Member ID";
 		$password_msg 	= "Login using the Email or YPS Member ID and YPS Password. ";
 		$password_msg .= "In case you forgot the password, use the <i>Forgot Password</i> link on ";
-		$password_msg .= "<a href='https://www.ypsbengaluru.com/membership-login/password-reset/'>YPS Website</a> ";
+		$password_msg .= "<a href='" . yps_website_with_www_html() . "/membership-login/password-reset/'>YPS Website</a> ";
 		$password_msg .= "to receive the password through email.";
 	}
 	else {

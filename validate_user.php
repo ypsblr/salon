@@ -1,9 +1,10 @@
 <?php
+include_once(__DIR__ . "/inc/club.php");
 $fp = fopen("errors.txt", "w");
 
     // Invoke YPS Authentication Service
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://www.ypsbengaluru.com/svc/getuserbyemail.php");
+    curl_setopt($ch, CURLOPT_URL, yps_website_with_www() . "/svc/getuserbyemail.php");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HEADER, false);
     $post_fields = array();

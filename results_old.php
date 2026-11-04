@@ -65,7 +65,7 @@ if($resultsReady) {
 					<!-- Overall Statistics -->
 					<h3 class="headline text-color"><span class="border-color"><?php echo $contestName;?></span></h3>   
 					<p>
-						Youth Photographic Society thanks all the participants for participating in the Salon and all the judges for taking time to select the award winning pictures.
+						<?php echo club_name_html(); ?> thanks all the participants for participating in the Salon and all the judges for taking time to select the award winning pictures.
 						It was a tough competition and we congratulate all the winners for emerging victorious.
 					</p>
 					<?php echo merge_data($resultsDescription, $contest_values);?>

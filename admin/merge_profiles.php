@@ -31,7 +31,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_yearmonth']) ) {
 <html>
 <head>
     <!-- Page title -->
-	<title>Youth Photographic Society | Merge Profiles</title>
+	<title><?php echo club_name_html(); ?> | Merge Profiles</title>
 
 	<?php include "inc/header.php"; ?>
 

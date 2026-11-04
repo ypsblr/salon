@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/club.php");
     //$soc_title=urlencode('Share On Facebook');
     //$soc_url=urlencode('http://salon.ypsbengaluru.in/social-buttons-jquery-popup-dialog.php');
     //$soc_summary=urlencode('34th YPS All India Digital Salon Of Photography 2016');
@@ -19,16 +20,16 @@ color:#fff !important;
 					<p>
 						<b><u>YPS President</u></b>: Mr. Manju Vikas Sastry V, ESFIP, AFIP | sastry.vikas@gmail.com<br>
 						<b><u>YPS Secretary</u></b>: Ms. Prema Kakade, ESFIP, EFIAP, EFIP, cMoL, E.CPE | pmkakade@gmail.com<br><br>
-						<strong>Youth Photographic Society Bengaluru</strong><br/>
+						<strong><?php echo club_name_html(); ?> Bengaluru</strong><br/>
 						TT Hall, 3rd Floor,<br/>
 						State Youth Centre of Karnataka, <br/>
 						Nrupathanga Road, Bengaluru - 560001.<br/>
-						Email: <a href="mailto:salon@ypsbengaluru.in" class="white">salon@ypsbengaluru.in</a><br/>
+						Email: <a href="mailto:<?php echo salon_email_html(); ?>" class="white"><?php echo salon_email_html(); ?></a><br/>
 						Phone: +91-9513-YPS-BLR (+91-9513-977-257)
 						<br><br>
-						<a href="http://ypsbengaluru.com" target="_blank"  class="white"><i class="fa fa-globe"></i> ypsbengaluru.com</a><br/>
+						<a href="<?php echo yps_website_without_www_html(); ?>" target="_blank"  class="white"><i class="fa fa-globe"></i> ypsbengaluru.com</a><br/>
 						<a href="https://www.facebook.com/ypsbengaluru/" target="_blank" class="white"><i class="fa fa-facebook-square"></i> /ypsbengaluru</a><br/>
-						<a href="https://www.ypsbengaluru.com/membership-join/" target="_blank" class="white"><i class="fa fa-globe"></i> Become a Member of YPS</a>
+						<a href="<?php echo yps_website_with_www_html(); ?>/membership-join/" target="_blank" class="white"><i class="fa fa-globe"></i> Become a Member of YPS</a>
 					</p>
 				</div>
 				<div class="content social">
@@ -37,9 +38,9 @@ color:#fff !important;
 			</div>
 			<!-- Subscribe -->
 			<div class="col-sm-6">
-				<a href="http://ypsbengaluru.com" target="_blank"><h3 class="text-color white"><span>Youth Photographic Society</span></h3></a>
+				<a href="<?php echo yps_website_without_www_html(); ?>" target="_blank"><h3 class="text-color white"><span><?php echo club_name_html(); ?></span></h3></a>
 				<div class="content">
-					<p><a href="http://ypsbengaluru.com" target="_blank" class="white">Youth Photographic Society (YPS) Bengaluru</a>,
+					<p><a href="<?php echo yps_website_without_www_html(); ?>" target="_blank" class="white"><?php echo club_name_html(); ?> (YPS) Bengaluru</a>,
 						the hosts for this contest, is a not-for-profit organization started in 1971 to further the Art of Photography.
 						With over 600 members, YPS is among the largest Photography Clubs in India and also boasts of hosting 50 National and
 						International Salons. It has been nurtured by doyens of Indian Photography like Late Mr. T N A Perumal,

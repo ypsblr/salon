@@ -182,7 +182,7 @@ if ( isset($_SESSION['jury_id']) && isset($_SESSION['jury_type']) && $_SESSION['
 <head>
 
     <!-- Page title -->
-    <title>Youth Photographic Society | Remote Rating Panel</title>
+    <title><?php echo club_name_html(); ?> | Remote Rating Panel</title>
 
 
 	<?php include("inc/header.php");?>
@@ -389,7 +389,7 @@ div.histogram-info {
 	<div class="splash">
 		<div class="color-line"></div>
 		<div class="splash-title">
-			<h1>    YOUTH PHOTOGRAPHIC SOCIETY | REMOTE RATING PANEL  </h1>
+			<h1>    <?php echo club_name_upper_html(); ?> | REMOTE RATING PANEL  </h1>
 			<p>We are loading the thumbnails from Server. This may take some time. Please wait !</p>
 			<div class="spinner">
 				<div class="rect1"></div>

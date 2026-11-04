@@ -41,7 +41,7 @@
 			the participant&apos;s number of sections will be automatically set to the participation level already configured and
 			no payment will be requested.
 		</p>
-		<p class="text"><a href="mailto:salon@ypsbengaluru.in">Write to us</a> for any clarifications.</p>
+		<p class="text"><a href="mailto:<?php echo salon_email_html(); ?>">Write to us</a> for any clarifications.</p>
 		<p class="text text-justify">Members of YPS will be automatically eligible for 20% discount. They can participate in 2 sections or
 			in all sections.</p>
 	</div>

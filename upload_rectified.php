@@ -336,6 +336,7 @@ table th, td {
 	<script src="plugin/validate/js/jquery.validate.min.js"></script>
 
 	<!-- Custom Validation Functions -->
+	<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
 	<script src="custom/js/validate.js"></script>
 	<!-- Form Validation -->
 	<script>

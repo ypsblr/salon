@@ -301,7 +301,7 @@ function fmtd ($str) {
 					<h2 class="headline first-child text-color">
 						<span class="border-color">All Salon Catalogs</span>
 					</h2>
-					<p style="text-align:justify;">Youth Photographic Society has a rich heritage of conducting Salons since 1977.
+					<p style="text-align:justify;"><?php echo club_name_html(); ?> has a rich heritage of conducting Salons since 1977.
 						We could finally pull together all the old Salon Catalogs in one place. You can see from these catalogs
 						how YPS was nurtured into a healthy Photography Club by some of the top names in the field of photography
 						at that time.

@@ -1,6 +1,6 @@
 <?php
 // Custom list of actions for each award winner
-$action_email = "<a href='mailto:salon@ypsbengaluru.in'>salon@ypsbengaluru.in</a>";
+$action_email = "<a href='mailto:" . salon_email() . "'>" . salon_email() . "</a>";
 $full_file_action = "We are yet to receive your high resolution files of awarded pictures. Please send the same by email to $action_email.";
 $avatar_action = "Please send a printable version of your latest profile picture (your portrait) to $action_email.";
 $video_action = "YPS hosts author video, on the results page, explaining how the awarded picture was shot. " .

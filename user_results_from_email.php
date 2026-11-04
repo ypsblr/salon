@@ -752,7 +752,7 @@ function countChar(val) {
 			let pdf_def = {
 					info : {
 						title : "<?= $contest['contest_name'];?> - Salon Results of <?= ucwords(strtolower($tr_user['profile_name']));?>",
-						author : "Youth Photographic Society"
+						author : <?= json_encode(club_name()) ?>
 					},
 					pageSize : "A4",
 					pageOrientation : "portrait",

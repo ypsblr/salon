@@ -1,4 +1,5 @@
 <?php
+	include_once(__DIR__ . "/club.php");
 	// Computations
 	// Check to see whether sponsorship opportunities are open
 	$sql = "SELECT COUNT(*) AS number_of_opportunities FROM opportunity WHERE yearmonth = '$contest_yearmonth' ";
@@ -29,9 +30,9 @@
 			<div class="col-sm-8">
 				<p>If you had participated in the YPS Salon in the past, your profile must already be available. You can login using your email and your last
 					registered password. If you do not know the password, you can enter your email ID and click on <i>Reset Password</i> button.</p>
-				<p>Members of Youth Photographic Society should login using email registered with YPS or using the YPS Member ID along with YPS Member password entered on YPS Website.
-					If you do not remember the YPS Member password, you can visit <a href="https://www.ypsbengaluru.com" target="_blank">YPS Website</a>,
-					reset member password using the <a href="https://www.ypsbengaluru.com/membership-login/password-reset/" target="_blank">Forgot Password?</a> link,
+				<p>Members of <?php echo club_name_html(); ?> should login using email registered with YPS or using the YPS Member ID along with YPS Member password entered on YPS Website.
+					If you do not remember the YPS Member password, you can visit <a href="<?php echo yps_website_with_www_html(); ?>" target="_blank">YPS Website</a>,
+					reset member password using the <a href="<?php echo yps_website_with_www_html(); ?>/membership-login/password-reset/" target="_blank">Forgot Password?</a> link,
 					and then login here using the password sent to you through email.</p>
 				<p>The following restrictions are enforced on uploaded pictures.</p>
 				<ol>
@@ -57,7 +58,7 @@
 					}
 				?>
 					<li class="list-group-item"><a href="term_condition.php">Terms &amp; Conditions</a></li>
-					<li class="list-group-item"><a href="https://www.ypsbengaluru.com/membership-join/" target="_blank">Join YPS</a></li>
+					<li class="list-group-item"><a href="<?php echo yps_website_with_www_html(); ?>/membership-join/" target="_blank">Join YPS</a></li>
 				</ul>
 			</div>
 			<div class="col-sm-4">

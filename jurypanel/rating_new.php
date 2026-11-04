@@ -30,7 +30,7 @@ if(isset($_SESSION['jury_id'])) {
 <head>
 
     <!-- Page title -->
-    <title>Youth Photographic Society | Jury Panel</title>
+    <title><?php echo club_name_html(); ?> | Jury Panel</title>
 
 	<?php include "inc/header.php"; ?>
 

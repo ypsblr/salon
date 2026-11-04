@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 include_once("connect.php");
 include_once("lib.php");
 
@@ -44,7 +45,7 @@ class MailGenerator {
 		}
 		// contest-data
 		$this->contest_data  = "Thank you for participating in this salon hosted by ";
-		$this->contest_data .= "<a href='[yps-website]'>Youth Photographic Society</a>, Bengaluru, India. ";
+		$this->contest_data .= "<a href='[yps-website]'>" . club_name_html() . "</a>, Bengaluru, India. ";
 		$this->contest_data .= "The Judging event was held between [judging-start-date] and [judging-end-date] to ";
 		$this->contest_data .= "evaluate the pictures and select award winners. The results have been posted on the ";
 		$this->contest_data .= "<a href='[salon-website]/results.php'>Salon Website</a>.";
@@ -249,7 +250,7 @@ class MailGenerator {
 
 				$m .= "<tr><td width='30%'><h4>Send Short Video</h4></td>";
 				$m .= "<td><p>We will be happy to host a short video not <b>exceeding 20 seconds</b> explaining the story and the ";
-				$m .= "thought process behind each of your awarded pictures. Send the videos to <a href='mailto:salon@ypsbengaluru.in'>salon@ypsbengaluru.in</a></p></td></tr>";
+				$m .= "thought process behind each of your awarded pictures. Send the videos to <a href='mailto:" . salon_email() . "'>" . salon_email() . "</a></p></td></tr>";
 			}
 			$m .= "</table>";
 
@@ -282,7 +283,7 @@ TEMPLATE;
 						"profile_name" => $this->profile['profile_name'],
 						"entrant_category" => $this->profile['entrant_category'],
 						"honors" => $this->profile['honors'],
-						"club" => ($this->profile['yps_login_id'] == "" ? $this->profile['club_name'] : "Youth Photographic Society"),
+						"club" => ($this->profile['yps_login_id'] == "" ? $this->profile['club_name'] : club_name_html()),
 						"address" => $address,
 						"phone" => $this->profile['phone'] );
 

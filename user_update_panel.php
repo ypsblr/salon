@@ -257,7 +257,7 @@ if(isset($_SESSION['USER_ID'])) {
 											<?php
 												if ($tr_user['yps_login_id'] != "") {
 											?>
-											<input type="text" class="form-control" name="club_yps" value="Youth Photographic Society, Bengaluru" readonly>
+											<input type="text" class="form-control" name="club_yps" value="<?php echo club_name_html(); ?>, Bengaluru" readonly>
 											<?php
 												}
 												else {
@@ -618,8 +618,8 @@ if(isset($_SESSION['USER_ID'])) {
 		$("#club_select").on("select2:select", function (e) {
 			if (e.params.data.id == e.params.data.text) {
 				// New tag
-				if (e.params.data.text.match(/yps/i) || e.params.data.text.match(/youth *photo.*soc.*/i))
-					$("#club-contact").html("Invalid club name. Cannot use names YPS or Youth Photographic Society");
+				if (e.params.data.text.match(/yps/i) || e.params.data.text.match(/youth *photo.*soc.*/i) || e.params.data.text.toLowerCase().indexOf(<?= json_encode(strtolower(club_name())) ?>) !== -1)
+					$("#club-contact").html(<?= json_encode("Invalid club name. Cannot use names YPS or " . club_name()) ?>);
 				else {
 					$("#club_id").val("new");	// store selection in hidden variable
 					$("#club_name").val(e.params.data.text.toUpperCase());
@@ -813,6 +813,7 @@ function loadAvatar(input, target) {
 <script src="plugin/validate/js/jquery.validate.min.js"></script>
 
 <!-- Custom Validation Functions -->
+<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
 <script src="custom/js/validate.js"></script>
 
 <!-- Custom Validation for updateInfoForm -->

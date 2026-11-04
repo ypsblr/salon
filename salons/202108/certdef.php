@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 /*
 ** certdef.php - Contains Print Definitions for the Certificate
 ** A separate file is created for each Salon depending upon Certificate Design
@@ -521,7 +522,7 @@ class Certificate {
 
 						"accept_about" => array("nodetype" => "text", "type" => "label",
 											"value" => "July 11, 2021 was an important milestone in the history of YPS. After 45+ years of being the identity " .
-											 			"of Youth Photographic Society, the logo was replaced by a new and contemporary logo that you see " .
+											 			"of [[CLUB_NAME]], the logo was replaced by a new and contemporary logo that you see " .
 														"on the left. The new logo is based on the photographer's action of framing using both hands. A " .
 														"a few more lines and a diamond was added to make the lines come to life with the letter YPS. The " .
 														"new logo was designed by Life Member Mr. Rajasimha Sathyanarayana. The logo was launched on ".
@@ -534,6 +535,13 @@ class Certificate {
 
 						);
 
+
+	function __construct($json = null) {
+		foreach ($this->nodes as $name => $node) {
+			if (isset($node["value"]) && is_string($node["value"]))
+				$this->nodes[$name]["value"] = str_replace("[[CLUB_NAME]]", club_name(), $node["value"]);
+		}
+	}
 
 	// Protected Methods
 	protected function log_error($errmsg, $phpfile, $phpline, $context = NULL) {

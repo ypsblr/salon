@@ -19,7 +19,7 @@
 					<tbody>
 						<tr>
 							<td>YPS Members</td>
-							<td><div class="text-center">Any Number<br><a href="https://www.ypsbengaluru.com/membership-join/" target="_blank"><small>Become a YPS Member</small></a> </div></td>
+							<td><div class="text-center">Any Number<br><a href="<?php echo yps_website_with_www_html(); ?>/membership-join/" target="_blank"><small>Become a YPS Member</small></a> </div></td>
 							<td><div class="text-center">30 %</div></td>
 						</tr>
 						<tr>
@@ -50,7 +50,7 @@
 				</ol>
 				<p class="text text-justify">An email will be sent to all emails registered. When they register, the discount will be applied automatically.
 					There is also facility for making a group payment.</p>
-				<p class="text"><a href="mailto:contest@ypsbengaluru.com">Write to us</a> for any clarifications.</p>
+				<p class="text"><a href="mailto:<?php echo contest_email_html(); ?>">Write to us</a> for any clarifications.</p>
 			</div>
 		</div>
 	</div>

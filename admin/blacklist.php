@@ -15,7 +15,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_yearmonth']) ) {
 
 <head>
     <!-- Page title -->
-	<title>Youth Photographic Society | Admin Panel</title>
+	<title><?php echo club_name_html(); ?> | Admin Panel</title>
 
 	<?php include "inc/header.php"; ?>
 
@@ -47,7 +47,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_yearmonth']) ) {
 	<div class="splash">
 		<div class="color-line"></div>
 		<div class="splash-title">
-			<h1>    YOUTH PHOTOGRAPHIC SOCIETY | ADMIN PANEL  </h1>
+			<h1>    <?php echo club_name_upper_html(); ?> | ADMIN PANEL  </h1>
 			<p>Please Wait. </p>
 			<div class="spinner">
 				<div class="rect1"></div>

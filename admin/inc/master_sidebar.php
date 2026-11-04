@@ -425,7 +425,7 @@ div#loader_img img {
 			?>
 			<li class="">
 				<li class="">
-	                <a href="https://ypsbengaluru.com/svc/yps_member_csv.php?magic=<?= encode_string_array("ypsmagic1971onwards");?>" target="_blank">
+	                <a href="<?php echo yps_website_without_www_html(); ?>/svc/yps_member_csv.php?magic=<?= encode_string_array("ypsmagic1971onwards");?>" target="_blank">
 						<span class="nav-label"><i class="fa fa-archive"></i> Download YPS Member List </span>
 					</a>
 	            </li>

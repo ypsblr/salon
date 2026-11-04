@@ -36,9 +36,9 @@ table th, td {
 							include("salons/$contest_yearmonth/blob/$contestAnnouncementBlob");
 					?>
 					<p style="text-align:justify;">
-						<b>Youth Photographic Society</b> (YPS) is one of the oldest photo clubs in India with <?= $yps_age->format("%y");?>
+						<b><?php echo club_name_html(); ?></b> (YPS) is one of the oldest photo clubs in India with <?= $yps_age->format("%y");?>
 						successful years behind it. Over the last few years, YPS has gone through a digital transformation modernizing its services.
-						Visit <a href="http://ypsbengaluru.com" target="_blank">YPS Website</a> to know more. We are pleased to welcome you
+						Visit <a href="<?php echo yps_website_without_www_html(); ?>" target="_blank">YPS Website</a> to know more. We are pleased to welcome you
 						to <b><?=$contestName;?></b>. Find more details of the salon below. We aim to make your participation experience seamless
 						and memorable.
 					</p>

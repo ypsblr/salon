@@ -36,12 +36,12 @@ function send_mail($to, $subject, $message, $cc_to = "") {
 
 	$headers = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type:text/html" . "\r\n";
-	$headers .= "From: <salon@ypsbengaluru.in>" . "\r\n";
+	$headers .= "From: <" . salon_email() . ">" . "\r\n";
 
 	// $headers = "MIME-Version: 1.0" . "\r\n";
 	// $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-	// $headers .= "From: <salon@ypsbengaluru.in>" . "\r\n";
-	$headers .= "Cc: <salon@ypsbengaluru.in>" . ($cc_to == "" ? "" : "," . $cc_to) . "\r\n";
+	// $headers .= "From: <" . salon_email() . ">" . "\r\n";
+	$headers .= "Cc: <" . salon_email() . ">" . ($cc_to == "" ? "" : "," . $cc_to) . "\r\n";
 
 	if (strpos($_SERVER['HTTP_HOST'], "localhost") == false) {
 		if( ! mail($to,$subject,wordwrap($message),$headers)) {

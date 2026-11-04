@@ -59,7 +59,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_yearmonth']) ) {
 
 <head>
     <!-- Page title -->
-	<title>Youth Photographic Society | Group Discount Administration Panel</title>
+	<title><?php echo club_name_html(); ?> | Group Discount Administration Panel</title>
 
 	<?php include "inc/header.php"; ?>
 

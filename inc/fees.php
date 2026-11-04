@@ -196,7 +196,7 @@
 					<li>If payment is done for the entire group by the co-ordinator, he/she can use "Group Payment" option to select number of sections participation by each member and pay the calculated fees.
 							Members will not be asked to make a payment.</li>
 				</ol>
-				<p class="text"><a href="mailto:salon@ypsbengaluru.in">Write to us</a> for any clarifications.</p>
+				<p class="text"><a href="mailto:<?php echo salon_email_html(); ?>">Write to us</a> for any clarifications.</p>
 		<?php
 					foreach($discount_period_list as $discount_period => $num_entries_for_period) {
 		?>
@@ -309,7 +309,7 @@
 							of sections participation by each member and pay the calculated fees. Members will not be asked to make a payment.</li>
 					<li>The Club co-ordinator will be able to add more participants to the list at any time.</li>
 				</ol>
-				<p class="text"><a href="mailto:salon@ypsbengaluru.in">Write to us</a> for any clarifications.</p>
+				<p class="text"><a href="mailto:<?php echo salon_email_html(); ?>">Write to us</a> for any clarifications.</p>
 			</div>
 		</div>
 		<?php

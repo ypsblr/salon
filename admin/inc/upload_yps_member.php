@@ -25,7 +25,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_yearmonth']) ) {
 
 <head>
     <!-- Page title -->
-	<title>Youth Photographic Society | Administration Panel</title>
+	<title><?php echo club_name_html(); ?> | Administration Panel</title>
 
 	<?php include "inc/header.php"; ?>
 

@@ -1,9 +1,10 @@
+<?php include_once(__DIR__ . "/club.php"); ?>
 <!-- <meta charset="utf-8"> --->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!-- General Tags -->
 <meta name="description" content="4th National Photography Salon by YPS">
-<meta name="keyword" content="photography, contest, fip, Karnataka, YPS, Youth Photographic Society, India, digital, color, monochrome, travel, nature ">
-<meta name="author" content="Youth Photographic Society, salon@ypsbengaluru.in">
+<meta name="keyword" content="photography, contest, fip, Karnataka, YPS, <?php echo club_name_html(); ?>, India, digital, color, monochrome, travel, nature ">
+<meta name="author" content="<?php echo club_name_html(); ?>, <?php echo salon_email_html(); ?>">
 <meta name="robots" content="index, follow"><meta name="fragment" content="!">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 

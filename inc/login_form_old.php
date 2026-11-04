@@ -33,7 +33,7 @@
 			</div>
 		</div>
 	</form>
-	<p class="text-color"><a href="http://www.ypsbengaluru.com/membership-join/" target="_blank">Become a YPS Member</a></p>
+	<p class="text-color"><a href="<?php echo yps_website_with_www_html(); ?>/membership-join/" target="_blank">Become a YPS Member</a></p>
 	<!-- Form that will be used to submit data -->
 	<form id="submission_form" name="submission_form" action="op/login.php" method="post">
 		<input type="hidden" name="ypsc" id="ypsc" value="<?= $key;?>" >

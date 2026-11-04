@@ -125,7 +125,7 @@ if (isset($_POST['item_name']) && isset($_POST['item_number']) && isset($_POST['
 			}
 		}
 
-		$_SESSION['info_msg']='Payment successful. Please contact <salon@ypsbengaluru.in> for any queries.<br>
+		$_SESSION['info_msg']='Payment successful. Please contact <' . salon_email() . '> for any queries.<br>
 								<b>Payment RequestID: </b>'.$request_id.' &nbsp;&nbsp;<b>Payment ReferenceNo: </b>'.$payment_ref;
 
 	}

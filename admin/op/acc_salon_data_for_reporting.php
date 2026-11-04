@@ -242,7 +242,7 @@ if (isset($_SESSION['admin_yearmonth']) && isset($_SESSION['admin_id'])) {
 				}
 				// Write CSV for FIP
 				if (isset($csv_file['FIP'])) {
-					$club_name = ($res['yps_login_id'] != "") ? "Youth Photographic Society" : $res['club_name'];
+					$club_name = ($res['yps_login_id'] != "") ? club_name() : $res['club_name'];
 					$club_name = ($res['club_type'] == 'CLUB') ? $club_name : "";
 					$club_name = preg_match("/\*\*/", $club_name) ? "" : $club_name;
 					$award_name = ($level < 99) ? $award_name : "";

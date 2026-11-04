@@ -208,7 +208,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_yearmonth']) ) {
 <html>
 <head>
     <!-- Page title -->
-	<title>Youth Photographic Society | Entry Dashboard</title>
+	<title><?php echo club_name_html(); ?> | Entry Dashboard</title>
 
 	<?php include "inc/header.php"; ?>
 

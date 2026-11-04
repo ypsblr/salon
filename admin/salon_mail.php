@@ -234,7 +234,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_yearmonth']) ) {
 
 <head>
     <!-- Page title -->
-	<title>Youth Photographic Society | Participant Follow-up Panel</title>
+	<title><?php echo club_name_html(); ?> | Participant Follow-up Panel</title>
 
 	<?php include "inc/header.php"; ?>
 

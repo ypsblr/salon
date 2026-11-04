@@ -1070,7 +1070,7 @@ function participation_by_club ($stat_yearmonth, $award_group, $stat_category, $
 
 	global $DBCON;
 
-	$yps_club = "YOUTH PHOTOGRAPHIC SOCIETY, BENGALURU";
+	$yps_club = mysqli_real_escape_string($DBCON, strtoupper(club_name()) . ", BENGALURU");
 
 	//
 	// DELETRE exiusting Statistics

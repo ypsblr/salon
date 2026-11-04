@@ -26,7 +26,7 @@ function display_full($rres, $award_name, $max_awards, $current_award_number) {
 					if ($rres['honors'] != "")
 						echo ", <small>". $rres['honors'] . "</small>";
 					if ($rres['yps_login_id'] != "")
-						echo "<br><i><span style='font-size: 0.7em; color: #aaa;'>YOUTH PHOTOGRAPHIC SOCIETY</span></i>";
+						echo "<br><i><span style='font-size: 0.7em; color: #aaa;'>" . club_name_upper_html() . "</span></i>";
 					else if ($rres['club_name'] != "")
 					 	echo "<br><i><span style='font-size: 0.7em; color: #aaa;'>" . $rres['club_name'] . "</span></i>";
 					echo "<br><span style='font-size: 0.8em;'>" . $rres['city'] . ", " . $rres['state'] . ", " . $rres['country_name'] . "</span>";
@@ -163,7 +163,7 @@ if(isset($_SESSION['jury_id']) && isset($_SESSION['jury_yearmonth']) ) {
 <head>
 
     <!-- Page title -->
-    <title>Youth Photographic Society | Results Panel</title>
+    <title><?php echo club_name_html(); ?> | Results Panel</title>
 
 	<?php include("inc/header.php");?>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -210,7 +210,7 @@ img {
 	<div id="header">
 		<div class="color-line"></div>
 		<div id="logo" class="light-version">
-			<span>Youth Photographic Society</span>
+			<span><?php echo club_name_html(); ?></span>
 		</div>
 		<nav role="navigation">
 			<div class="header-link hide-menu"><i class="fa fa-bars"></i></div>

@@ -314,7 +314,7 @@ if ( isset($_SESSION['admin_id']) && isset($_SESSION['admin_yearmonth']) ) {
 
 <head>
     <!-- Page title -->
-	<title>Youth Photographic Society | Salon Management</title>
+	<title><?php echo club_name_html(); ?> | Salon Management</title>
 
 	<?php include "inc/header.php"; ?>
 
@@ -983,6 +983,7 @@ if ( isset($_SESSION['admin_id']) && isset($_SESSION['admin_yearmonth']) ) {
 <script src="plugin/validate/js/jquery.validate.min.js"></script>
 
 <!-- Custom Validation Functions -->
+<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
 <script src="custom/js/validate.js"></script>
 
 <!-- Select 2 for Country Codes -->

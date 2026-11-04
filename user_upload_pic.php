@@ -440,7 +440,7 @@ if(isset($_SESSION['USER_ID']) && ($tr_user['fee_waived'] ||
 															<?php
 																if ($contestIsNoToPastAcceptance > 0) {
 															?>
-															<li>Pictures that have won acceptances in the previous Salons of Youth Photographic Society are not eligible for upload
+															<li>Pictures that have won acceptances in the previous Salons of <?php echo club_name_html(); ?> are not eligible for upload
 																in this salon. The list of pictures that have won in acceptances in the past salons of YPS shown below is for reference only.</li>
 															<?php
 																}
@@ -1360,6 +1360,7 @@ if(isset($_SESSION['USER_ID']) && ($tr_user['fee_waived'] ||
 	<script src="plugin/validate/js/jquery.validate.min.js"></script>
 
 	<!-- Custom Validation Functions -->
+	<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
 	<script src="custom/js/validate.js"></script>
 
 	<!-- Form Validation & Submission -->

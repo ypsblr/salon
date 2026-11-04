@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 if (preg_match("/public_html\/salontest\/manage/i", __DIR__)) {
 	// For *** Server Test Database ***
 	$DBCON = mysqli_connect("localhost", "ypsin_salondbadm", "MCnLOT8045FVzC1Y", "ypsin_salontestdb");
@@ -19,7 +20,7 @@ else {
 }
 
 define("DOCUMENT_ROOT", "../..");
-define("SALON_EMAIL", "salon@ypsbengaluru.in");
+define("SALON_EMAIL", salon_email());
 ini_set("error_log", "../../logs/error_log");
 
 if (mysqli_connect_errno())

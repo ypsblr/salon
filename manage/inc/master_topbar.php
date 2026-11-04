@@ -4,7 +4,7 @@
     </div>
     <div id="logo" class="light-version">
         <span class="text-align : center;" >
-               Youth Photographic Society
+               <?php echo club_name_html(); ?>
         </span>
     </div>
     <nav role="navigation" style="display : flex; align-items : center;">

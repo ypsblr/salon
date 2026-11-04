@@ -127,7 +127,7 @@ function rejection_text($notifications) {
                                         if ($pr['honors'] != "")
                                             $name = $name . "<br><span class='text-muted'><small><small>" . $pr['honors'] . "</small></small></span>";
                                         if ($pr['yps_login_id'] != "")
-                                            $name = $name . "<br><span class='text-muted'><small><small>" . "Club: Youth Photographic Society (YPS)" . "</small></small></span>";
+                                            $name = $name . "<br><span class='text-muted'><small><small>" . "Club: " . club_name_html() . " (YPS)" . "</small></small></span>";
                                         elseif ($pr['club_name'] != "")
                                             $name = $name . "<br><span class='text-muted'><small><small>" . "Club: " . $pr['club_name'] . "</small></small></span>";
                                 ?>

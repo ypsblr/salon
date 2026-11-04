@@ -124,8 +124,8 @@ if (isset($_REQUEST['profile_id']) && isset($_REQUEST['pic_id']) && isset($_REQU
 
 				$headers = "MIME-Version: 1.0" . "\r\n";
 				$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-				$headers .= 'From: YPS Salon <salon@ypsbengaluru.in>' . "\r\n";
-				$headers .= 'Cc: salon@ypsbengaluru.in' . "\r\n";
+				$headers .= 'From: YPS Salon <' . salon_email() . '>' . "\r\n";
+				$headers .= 'Cc: ' . salon_email() . "\r\n";
 
 				$send = mail($email, $subject, $msg, $headers);
 			}

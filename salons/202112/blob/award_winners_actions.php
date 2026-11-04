@@ -13,7 +13,7 @@
 
 
 // Custom list of actions for each award winner
-$action_email = "<a href='mailto:salon@ypsbengaluru.in'>salon@ypsbengaluru.in</a>";
+$action_email = "<a href='mailto:" . salon_email() . "'>" . salon_email() . "</a>";
 // $full_file_action = "We are yet to receive your high resolution files of awarded pictures. Please send the same by email to $action_email.";
 $avatar_action = "You have not updated your profile picture (Avatar) on your profile page. Please update your profile with the latest photo of yourselves. " .
                 " The Certificates and Slideshows will carry your profile picture. ";

@@ -59,7 +59,7 @@ if(isset($_SESSION['jury_id']) && isset($_SESSION['jury_type']) && ($_SESSION['j
 <html>
 <head>
     <!-- Page title -->
-	<title>Youth Photographic Society | Image Dashboard</title>
+	<title><?php echo club_name_html(); ?> | Image Dashboard</title>
 
 	<?php include "inc/header.php"; ?>
 
@@ -164,7 +164,7 @@ include "inc/master_sidebar.php";
 					</div>
                     <div class="panel-footer">
 						<span class="pull-right">
-							<a href="#">Youth Photographic Society Admin Panel</a>
+							<a href="#"><?php echo club_name_html(); ?> Admin Panel</a>
 						</span>
                     </div>
                 </div>

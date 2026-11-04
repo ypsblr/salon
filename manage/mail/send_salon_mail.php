@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 include("../inc/connect.php");
 include("lib.php");
 
@@ -10,7 +11,7 @@ define("SALON_HAS_CASH_AWARDS", false);
 define("MAX_LEVEL_FOR_FULL_UPLOAD", 9);
 define("SALON_ROOT", http_method() . $_SERVER['SERVER_NAME']);
 define("MAX_TOKEN_LENGTH", 32);
-define("YPS_WEBSITE", "https://ypsbengaluru.com");
+define("YPS_WEBSITE", yps_website_without_www());
 
 $mail_failed = "";
 $count = 0;
@@ -156,7 +157,7 @@ TEMPLATE;
 					"profile_name" => $res['profile_name'],
 					"entrant_category" => $res['entrant_category'],
 					"honors" => $res['honors'],
-					"club" => ($res['yps_login_id'] == "" ? $res['club_name'] : "Youth Photographic Society"),
+					"club" => ($res['yps_login_id'] == "" ? $res['club_name'] : club_name_html()),
 					"address" => $address,
 					"phone" => $res['phone'] );
 
@@ -503,8 +504,9 @@ function send_results_mail($profile_id) {
 	global $no_cc;
 
 	// [contest-data]
+	$hosted_by = club_name_html();
 	$about = <<<CONTEST
-		Thank you for participating in the [salon-name] hosted by <a href='[yps-website]'>Youth Photographic Society</a>, Bangalore, India.
+		Thank you for participating in the [salon-name] hosted by <a href='[yps-website]'>{$hosted_by}</a>, Bangalore, India.
 		An Open Judging event was held between [judging-start-date] and [judging-end-date] to rate the pictures and select award winners. The results
 		have been posted on the <a href='[results-link]'>[salon-name] Website</a>.
 CONTEST;
@@ -691,7 +693,7 @@ CONTEST;
 
 			$m .= "<tr><td width='30%'><h4>Send Short Video</h4></td>";
 			$m .= "<td><p>We will be happy to host a short video not <b>exceeding 20 seconds</b> explaining the story and the ";
-			$m .= "thought process behind each of your awarded pictures. Send the videos to <a href='mailto:salon@ypsbengaluru.in'>salon@ypsbengaluru.in</a></p></td></tr>";
+			$m .= "thought process behind each of your awarded pictures. Send the videos to <a href='mailto:" . salon_email() . "'>" . salon_email() . "</a></p></td></tr>";
 		}
 		$m .= "</table>";
 
@@ -838,7 +840,7 @@ function send_catalog_mail($profile_id) {
 
 	//echo "Stage 1<br>";
 	// Assemble Contest Opening Paragraph
-//	$contest_info  = "<p>We would like to thank you once again for participating in the " . $contest['contest_name'] . " hosted by <a href='yps-website'> Youth Photographic Society</a>, Bangalore, India. ";
+//	$contest_info  = "<p>We would like to thank you once again for participating in the " . $contest['contest_name'] . " hosted by <a href='yps-website'>{$hosted_by}</a>, Bangalore, India. ";
 //	$contest_info .= "The Salon Exhibition and Award function were held as planned at " . $contest['exhibition_venue'] . ". ";
 //	$contest_info .= "The Salon exhibited in print and frame all the pictures whose full resolution files were uploaded by the participants";
 //	if ($num_print_sections > 0)
@@ -852,7 +854,7 @@ function send_catalog_mail($profile_id) {
 //	$contest_info .= "<a href='" . SALON_ROOT . "/salons/" . $admin_yearmonth . "/files/" . $contest['catalog_download'] . "' download><b>Download the Catalog</b></a>.</p>";
 //
 //	$contest_info .= "<h2>Ordering Printed Catalog</h2>";
-//	$contest_info .= "<p>If you like to order a printed catalog, you can send an email to <a href='mailto:salon@ypsbengaluru.in'>salon@ypsbengaluru.in</a>. ";
+//	$contest_info .= "<p>If you like to order a printed catalog, you can send an email to <a href='mailto:" . salon_email() . "'>" . salon_email() . "</a>. ";
 //	$contest_info .= "The catalog will be printed in 8x10 inch size. Here is the cost of the catalog:</p>";
 //	$contest_info .= "<br>";
 //	$contest_info .= "<table class='table-data'><tbody>";
@@ -937,7 +939,7 @@ function send_catalog_mail($profile_id) {
 			$contest_info .= "<tr><td><p>Branch</p></td><td><p>" . $row['bank_branch'] . "</p></td></tr>";
 			$contest_info .= "<tr><td><p>IFSC Code</p></td><td><p>" . $row['bank_ifsc_code'] . "</p></td></tr>";
 			$contest_info .= "</table>";
-			$contest_info .= "<p>If any of these need to be corrected, please send an email to <a href='mailto:salon@ypsbengaluru.in'>salon@ypsbengaluru.in</a> immediately.</p>";
+			$contest_info .= "<p>If any of these need to be corrected, please send an email to <a href='mailto:" . salon_email() . "'>" . salon_email() . "</a> immediately.</p>";
 		}
 	}
 
@@ -1215,8 +1217,9 @@ function send_bank_details_mail($profile_id) {
 	$uploads_completed = ($frf_uploaded == sizeof(array_unique($upload_pics_list)));
 
 	// Generate Contest Info
+	$hosted_by = club_name_html();
 	$about = <<<CONTEST
-		Thank you for participating in the [salon-name] hosted by <a href='[yps-website]'> Youth Photographic Society</a>, Bangalore, India.
+		Thank you for participating in the [salon-name] hosted by <a href='[yps-website]'>{$hosted_by}</a>, Bangalore, India.
 		You have won awards in the Salon that requires action to be completed on or before <b>[update-end-date]</b>. Please see the details below and complete
 		the actions today.
 CONTEST;

@@ -266,7 +266,7 @@ HTML;
 			$m .= "Cash Award will be distributed by money transfer to the Bank Account you have specified in your profile. </p>";
 			if ($this->profile['bank_account_number'] == "") {
 				$m .= "<p><b>YOU ARE YET TO UPDATE BANK ACCOUNT DETAILS</b> on the Salon web-site. Please send the following details ";
-				$m .= "by email to <a href='mailto:salon@ypsbengaluru.in'>salon@ypsbengaluru.in</a> for updating the account.";
+				$m .= "by email to <a href='mailto:" . salon_email() . "'>" . salon_email() . "</a> for updating the account.";
 				$m .= "</p>";
 				$m .= "<ul>";
 				$m .= "<li>Name as in the Account</li>";
@@ -287,7 +287,7 @@ HTML;
 				$m .= "<tr><td><p>Branch</p></td><td><p>" . $this->profile['bank_branch'] . "</p></td></tr>";
 				$m .= "<tr><td><p>IFSC Code</p></td><td><p>" . $this->profile['bank_ifsc_code'] . "</p></td></tr>";
 				$m .= "</table>";
-				$m .= "<p>If any of these need to be corrected, please send an email to <a href='mailto:salon@ypsbengaluru.in'>salon@ypsbengaluru.in</a> immediately.</p>";
+				$m .= "<p>If any of these need to be corrected, please send an email to <a href='mailto:" . salon_email() . "'>" . salon_email() . "</a> immediately.</p>";
 			}
 		}
 		return $m;

@@ -152,7 +152,7 @@ if(isset($_SESSION['jury_id']) ) {  // to prevent being run from command line an
 	<!-- <meta http-equiv="refresh" content="10"> -->
 
     <!-- Page title -->
-    <title>Youth Photographic | Fully scored pictures</title>
+    <title><?php echo club_name_html(); ?> | Fully scored pictures</title>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!--<link rel="shortcut icon" type="image/ico" href="favicon.ico" />-->

@@ -33,7 +33,7 @@ include "inc/contest_lib.php";
 	<div class="splash">
 		<div class="color-line"></div>
 		<div class="splash-title">
-			<h1>Youth Photographic Society || Admin Panel</h1>
+			<h1><?php echo club_name_html(); ?> || Admin Panel</h1>
 			<div class="spinner">
 				<div class="rect1"></div>
 				<div class="rect2"></div>
@@ -90,7 +90,7 @@ include "inc/contest_lib.php";
 
 		<div class="row">
 			<div class="col-md-12 text-center">
-				<strong>Youth Photographic Society</strong> <br/>
+				<strong><?php echo club_name_html(); ?></strong> <br/>
 			</div>
 		</div>
 	</div>  <!-- Container -->

@@ -1,5 +1,5 @@
 <?php
-
+include_once(__DIR__ . "/../../inc/club.php");
 
 function get_contest($yearmonth = 0) {
 	global $DBCON;
@@ -133,7 +133,7 @@ function get_salon_values($yearmonth) {
 	// Arrange them into pairs
 	$contest_values = array(
 						"server-address" => http_method() . $_SERVER['SERVER_NAME'],
-						"yps-website" => "https://ypsbengaluru.com",
+						"yps-website" => yps_website_without_www(),
 						"yearmonth" => $yearmonth,
 						"salon-name" => $row['contest_name'],
 						"registration-start-date" => $row['registration_start_date'],

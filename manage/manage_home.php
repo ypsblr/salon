@@ -15,13 +15,12 @@ if (isset($_SESSION['admin_id']) ) {
 	// Set up user and contest information
 	include ("inc/load_common_data.php");
 
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <!-- Page title -->
-	<title>Youth Photographic Society | Manage Dashboard</title>
+	<title><?php echo club_name_html(); ?> | Manage Dashboard</title>
 
 	<?php include "inc/header.php"; ?>
 
@@ -441,6 +440,7 @@ include("inc/footer.php");
 <script src="plugin/validate/js/jquery.validate.js"></script>
 
 <!-- Custom Validation Functions -->
+<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
 <script src="custom/js/validate.js"></script>
 
 <!-- Action Handlers -->

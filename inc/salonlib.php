@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/club.php");
 // =====================================================================
 // salonlib - Library of functions for use by salon.php on the home page
 // provides functions to process data and display salon details
@@ -321,7 +322,7 @@ function show_entry_results($yearmonth, $award_id, $profile_id, $award_name) {
 <?php
 	}
 	if ($profile['yps_login_id'] != "")
-		$club_name = "Youth Photographic Society";
+		$club_name = club_name();
 	else if ($profile['club_id'] != 0 && $profile['club_name'] != "")
 		$club_name = $profile['club_name'];
 	if (! empty($club_name)) {
@@ -614,11 +615,11 @@ function show_pic_results($yearmonth, $profile_id, $pic_id){
 	$club_name = "";
 	if ($pic['yps_login_id'] != "") {
 		if (substr($pic['yps_login_id'], 0, 2) == "LM")
-			$club_name = "Life Member, Youth Photographic Society";
+			$club_name = "Life Member, " . club_name();
 		else if (substr($pic['yps_login_id'], 0, 2) == "IM")
-			$club_name = "Individual Member, Youth Photographic Society";
+			$club_name = "Individual Member, " . club_name();
 		if (substr($pic['yps_login_id'], 0, 2) == "JA")
-			$club_name = "Junior Associate, Youth Photographic Society";
+			$club_name = "Junior Associate, " . club_name();
 	}
 	else if ($pic['club_name'] != NULL)
 		$club_name = $pic['club_name'];
@@ -869,11 +870,11 @@ function show_acceptance_results($yearmonth, $award_list, $full_house_list){
 		$club_name = "";
 		if ($pic['yps_login_id'] != "") {
 			if (substr($pic['yps_login_id'], 0, 2) == "LM")
-				$club_name = "Life Member, Youth Photographic Society";
+				$club_name = "Life Member, " . club_name();
 			else if (substr($pic['yps_login_id'], 0, 2) == "IM")
-				$club_name = "Individual Member, Youth Photographic Society";
+				$club_name = "Individual Member, " . club_name();
 			if (substr($pic['yps_login_id'], 0, 2) == "JA")
-				$club_name = "Junior Associate, Youth Photographic Society";
+				$club_name = "Junior Associate, " . club_name();
 		}
 		else if ($pic['club_name'] != NULL)
 			$club_name = $pic['club_name'];
@@ -1117,11 +1118,11 @@ function show_portfolios($yearmonth, $award_group) {
 		if ($profile['yps_login_id'] != "") {
 			switch(substr($profile['yps_login_id'], 0, 2)) {
 				case "lm":
-				case "LM": $club_name = "YOUTH PHOTOGRAPIC SOCIETY (LIFE MEMBER)"; break;
+				case "LM": $club_name = strtoupper(club_name()) . " (LIFE MEMBER)"; break;
 				case "im":
-				case "IM": $club_name = "YOUTH PHOTOGRAPIC SOCIETY (INDIVIDUAL MEMBER)"; break;
+				case "IM": $club_name = strtoupper(club_name()) . " (INDIVIDUAL MEMBER)"; break;
 				case "ja":
-				case "JA": $club_name = "YOUTH PHOTOGRAPIC SOCIETY (JUNIOR ASSOCIATE)"; break;
+				case "JA": $club_name = strtoupper(club_name()) . " (JUNIOR ASSOCIATE)"; break;
 			}
 		}
 		if ($club_name != "") {

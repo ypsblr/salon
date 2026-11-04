@@ -668,7 +668,7 @@ if (file_exists("salons/$yearmonth/blob/member_video.php")) {
 			let pdf_def = {
 					info : {
 						title : "<?= $salon['contest']['contest_name'];?> - List of Exhibitors",
-						author : "Youth Photographic Society"
+						author : <?= json_encode(club_name()) ?>
 					},
 					pageSize : "A4",
 					pageOrientation : "portrait",
@@ -738,7 +738,7 @@ if (file_exists("salons/$yearmonth/blob/member_video.php")) {
 												{
 													width : "*",
 													stack : [
-																{ text : "Youth Photographic Society", style : "h1" },
+																{ text : <?= json_encode(club_name()) ?>, style : "h1" },
 																{ text : "<?= $salon['contest']['contest_name'];?>", style : "h2" },
 																{ text : "List of Exhibitors in " + award_group + " Group", style : "h2", margin : [0, 4, 0, 8] },
 													],

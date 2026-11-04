@@ -19,7 +19,7 @@ function yps_users() {
 
 	// Invoke YPS Authentication Service
 	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, "http://ypsbengaluru.com/svc/getuserlist.php");
+	curl_setopt($ch, CURLOPT_URL, yps_website_without_www() . "/svc/getuserlist.php");
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_HEADER, false);
 	$post_fields = array();
@@ -80,7 +80,7 @@ if ( ! empty($_SESSION['admin_id']) && ! empty($_SESSION['admin_yearmonth']) ) {
 <html>
 <head>
     <!-- Page title -->
-	<title>Youth Photographic Society | Member Reconciliation</title>
+	<title><?php echo club_name_html(); ?> | Member Reconciliation</title>
 
 	<style>
 		.group-heading, .column-heading {

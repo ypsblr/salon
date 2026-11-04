@@ -21,6 +21,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
+include_once(__DIR__ . "/club.php");
 include_once("inc/connect.php");
 include_once("inc/lib.php");
 include_once("inc/get_contest.php");

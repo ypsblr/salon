@@ -853,7 +853,7 @@ if (isset($_SESSION['admin_id']) ) {
 
 <head>
     <!-- Page title -->
-	<title>Youth Photographic Society | Participant Follow-up Panel</title>
+	<title><?php echo club_name_html(); ?> | Participant Follow-up Panel</title>
 
 	<?php include "inc/header.php"; ?>
 
@@ -1323,6 +1323,7 @@ if (isset($_SESSION['admin_id']) ) {
 <!-- Form Validation -->
 <script src="plugin/validate/js/jquery.validate.min.js"></script>
 <!-- Custom Validation Functions -->
+<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
 <script src="custom/js/validate.js"></script>
 
 <?php include("inc/blob_modal_script.php");?>
@@ -1793,7 +1794,7 @@ if (isset($_SESSION['admin_id']) ) {
 				if ($("#no-cc:checked").length > 0)
 					formData.append("cc_to", "");
 				else
-					formData.append("cc_to", "salon@ypsbengaluru.in");
+					formData.append("cc_to", "<?php echo salon_email_html(); ?>");
 				let profile_ids = "";
 				table.$(".row-selector:checked").each(function(){
 					if (profile_ids == "")

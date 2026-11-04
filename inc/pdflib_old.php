@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/club.php");
 require($_SERVER['DOCUMENT_ROOT'] . '/pdf/tfpdf.php');
 
 // General Functions
@@ -132,7 +133,7 @@ class PDF extends tFPDF {
 		$this->SetFont("Arial", 'I', 9);
 		$this->SetTextColor(0x80, 0x80, 0x80);
 		$this->SetXY($x, $y);
-		$this->Cell(20, 0, "www.ypsbengaluru.com", 0, 1, "R", false, "http://www.ypsbengaluru.com"); 
+		$this->Cell(20, 0, "www.ypsbengaluru.com", 0, 1, "R", false, yps_website_with_www()); 
 	}
 
 	function PrintFiller($font, $font_size, $color, $x, $y, $width, $height, $align, $text) {

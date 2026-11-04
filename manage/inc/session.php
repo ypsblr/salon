@@ -12,4 +12,6 @@ date_default_timezone_set("Asia/Kolkata");
 
 // Global Constants
 define("THIS", basename($_SERVER['PHP_SELF'], ".php"));
+
+include_once(__DIR__ . "/../../inc/club.php");
 ?>

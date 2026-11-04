@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 
 function encode_string_array ($stringArray) {
     $s = strtr(base64_encode(addslashes(gzcompress(serialize($stringArray),2))), '+/=', '_,');
@@ -85,7 +86,7 @@ function send_mail($to, $subject, $message, $cc_to = "") {
 	else {
         if ($cc_to != "nocc")
     	   $headers .= "Cc: " . SALON_EMAIL . ($cc_to == "" ? "" : "," . $cc_to) . "\r\n";
-		return mail($to, $subject, wordwrap($message), $headers, " -fsalon@ypsbengaluru.in");
+		return mail($to, $subject, wordwrap($message), $headers, " -f" . salon_email());
 	}
 }
 
@@ -443,7 +444,7 @@ function get_salon_values($yearmonth) {
 
 	// Value Substitution Array used in merging blobs
 	$contest_values = array(
-						"yps-website" => "https://ypsbengaluru.com",
+						"yps-website" => yps_website_without_www(),
 						"salon-website" => http_method() . SERVER_ADDRESS,
 						"yearmonth" => $salon['yearmonth'],
 						"is-salon-archived" => ($salon['archived'] == '1'),

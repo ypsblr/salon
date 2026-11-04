@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../../inc/club.php");
 include_once("connect.php");
 include_once("lib.php");
 
@@ -39,7 +40,7 @@ class MailGenerator {
 			$this->salon = mysqli_fetch_array($query, MYSQLI_ASSOC);
 		}
 		// contest-data
-		$this->contest_data  = "Thank you for participating in this Salon hosted by <a href='[yps-website]'>Youth Photographic Society</a>, Bangalore, India.";
+		$this->contest_data  = "Thank you for participating in this Salon hosted by <a href='[yps-website]'>" . club_name_html() . "</a>, Bangalore, India.";
 	}
 
 	function initProfile($profile_id) {

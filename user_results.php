@@ -744,7 +744,7 @@ function generate_results() {
 			let pdf_def = {
 					info : {
 						title : "<?= $contestName;?> - Salon Results of <?= ucwords(strtolower($tr_user['profile_name']));?>",
-						author : "Youth Photographic Society"
+						author : <?= json_encode(club_name()) ?>
 					},
 					pageSize : "A4",
 					pageOrientation : "portrait",

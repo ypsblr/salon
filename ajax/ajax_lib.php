@@ -13,6 +13,7 @@ require __DIR__ . "/../inc/CryptoJsAes.php";
 require __DIR__ . '/phpmailer/PHPMailer.php';
 require __DIR__ . '/phpmailer/Exception.php';
 require __DIR__ . '/phpmailer/SMTP.php';
+include_once(__DIR__ . "/../inc/club.php");
 
 function orderSuffix($i) {
    $str = "$i";
@@ -210,7 +211,7 @@ function send_salon_email($email_id, $subject, $email_code, $text, $replace_text
 		$cc_to = str_replace($text, $replace_text, $row['cc_to']);
 		// $headers = "MIME-Version: 1.0" . "\r\n";
 		// $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-		// $headers .= 'From: YPS Salon <salon@ypsbengaluru.in>' . "\r\n";
+		// $headers .= 'From: YPS Salon <' . salon_email() . '>' . "\r\n";
 		// if ($cc_to != "")
 		// 	$headers .= "Cc: $cc_to\r\n";
 
@@ -238,9 +239,9 @@ function send_salon_email($email_id, $subject, $email_code, $text, $replace_text
                 $mail->Port       = 25;                                 // For GoDaddy
 
                 //Recipients
-                $mail->setFrom('salon@ypsbengaluru.in', 'YPS Salons');
-                $mail->addReplyTo('salon@ypsbengaluru.in', 'YPS Salons');
-                // $mail->addCC('salon@ypsbengaluru.in');
+                $mail->setFrom(salon_email(), 'YPS Salons');
+                $mail->addReplyTo(salon_email(), 'YPS Salons');
+                // $mail->addCC(salon_email());
 
                 // Add additional CC recipients (comma separated list of emails)
                 if (! empty($cc_to)) {
@@ -366,7 +367,7 @@ function yps_login($login_id, $password, $email = "") {
 
 	// Invoke YPS Authentication Service
 	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, "https://www.ypsbengaluru.com/svc/authenticate.php");
+	curl_setopt($ch, CURLOPT_URL, yps_website_with_www() . "/svc/authenticate.php");
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_HEADER, false);
 	$post_fields = array();
@@ -416,7 +417,7 @@ function yps_users() {
 
 	// Invoke YPS Authentication Service
 	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, "https://www.ypsbengaluru.com/svc/getuserlist.php");
+	curl_setopt($ch, CURLOPT_URL, yps_website_with_www() . "/svc/getuserlist.php");
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_HEADER, false);
 	$post_fields = array();
@@ -448,7 +449,7 @@ function yps_getuserbyemail($email) {
 
 	// Invoke YPS Authentication Service
 	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, "https://www.ypsbengaluru.com/svc/getuserbyemail.php");
+	curl_setopt($ch, CURLOPT_URL, yps_website_with_www() . "/svc/getuserbyemail.php");
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_HEADER, false);
 	$post_fields = array();

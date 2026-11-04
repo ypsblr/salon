@@ -154,7 +154,7 @@ if(isset($_SESSION['jury_id']) && isset($_SESSION['jury_yearmonth']) && isset($_
 <head>
 
     <!-- Page title -->
-    <title>Youth Photographic Society | Results Panel</title>
+    <title><?php echo club_name_html(); ?> | Results Panel</title>
 
 	<?php include("inc/header.php");?>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->

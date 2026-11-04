@@ -53,7 +53,7 @@ if ( ! empty($_SESSION['admin_id']) && ! empty($_SESSION['admin_yearmonth']) ) {
 <html>
 <head>
     <!-- Page title -->
-	<title>Youth Photographic Society | Archiving</title>
+	<title><?php echo club_name_html(); ?> | Archiving</title>
 
 	<?php include "inc/header.php"; ?>
 

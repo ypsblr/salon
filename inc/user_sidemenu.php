@@ -349,7 +349,7 @@ function menu_list($tr_user) {
 	<?php
 			if ($tr_user['yps_login_id'] != "") {
 	?>
-	<p class="text-muted"><?=$tr_user['yps_login_id'];?>, Youth Photographic Society, Bengaluru</p>
+	<p class="text-muted"><?=$tr_user['yps_login_id'];?>, <?php echo club_name_html(); ?>, Bengaluru</p>
 	<?php
 			}
 			else {

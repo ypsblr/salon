@@ -126,7 +126,7 @@ table th, td {
 					<p>YPS Salon Committee requires full resolution JPEG file for printing 12x18 inch prints in 300 DPI for display at the exhibition
 						and/or for compiling the Salon Catalog. Please upload the highest resolution possible. Picture should not be less than <?= MIN_UPLOAD_SIZE;?>
 						pixels on any of the two sides. If you face any challenges, please
-						write to <a href="mailto:salon@ypsbengaluru.in">salon@ypsbengaluru.in</a> with details of the file and error message.</p>
+						write to <a href="mailto:<?php echo salon_email_html(); ?>"><?php echo salon_email_html(); ?></a> with details of the file and error message.</p>
 					<br><br>
 					<div class="row">
 						<br>
@@ -256,6 +256,7 @@ table th, td {
 	<script src="plugin/validate/js/jquery.validate.min.js"></script>
 
 	<!-- Custom Validation Functions -->
+	<script>var CLUB_NAME = <?= json_encode(club_name()) ?>;</script>
 	<script src="custom/js/validate.js"></script>
 	<!-- Form Validation -->
 	<script>

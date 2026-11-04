@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/club.php");
 // Generates Statistics for current salon. Called when a particular statistics is not available
 
 // $stat_yearmonth should be set before including this file
@@ -1002,7 +1003,7 @@ function participation_by_club ($stat_yearmonth, $award_group, $stat_category, $
 
 	global $DBCON;
 
-	$yps_club = "YOUTH PHOTOGRAPHIC SOCIETY, BENGALURU";
+	$yps_club = mysqli_real_escape_string($DBCON, strtoupper(club_name()) . ", BENGALURU");
 
 	//
 	// DELETRE exiusting Statistics
