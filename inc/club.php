@@ -90,4 +90,120 @@ if (!function_exists("club_config")) {
 	function contest_email_html() {
 		return htmlspecialchars(contest_email(), ENT_QUOTES, "UTF-8");
 	}
+
+	function club_contact1_label() {
+		return club_config("club_contact1_label");
+	}
+
+	function club_contact1_label_html() {
+		return htmlspecialchars(club_contact1_label(), ENT_QUOTES, "UTF-8");
+	}
+	
+	function club_contact1_name() {
+		return club_config("club_contact1_name");
+	}
+
+	function club_contact1_name_html() {
+		return htmlspecialchars(club_contact1_name(), ENT_QUOTES, "UTF-8");
+	}
+	
+	
+	function club_contact1_email() {
+		return club_config("club_contact1_email");
+	}
+
+	function club_contact1_email_html() {
+		return htmlspecialchars(club_contact1_email(), ENT_QUOTES, "UTF-8");
+	}
+	
+	
+	function club_contact1_phone() {
+		return club_config("club_contact1_phone");
+	}
+
+	function club_contact1_phone_html() {
+		return htmlspecialchars(club_contact1_phone(), ENT_QUOTES, "UTF-8");
+	}
+	
+	
+	function club_contact2_label() {
+		return club_config("club_contact2_label");
+	}
+
+	function club_contact2_label_html() {
+		return htmlspecialchars(club_contact2_label(), ENT_QUOTES, "UTF-8");
+	}
+	
+	
+	function club_contact2_name() {
+		return club_config("club_contact2_name");
+	}
+
+	function club_contact2_name_html() {
+		return htmlspecialchars(club_contact2_name(), ENT_QUOTES, "UTF-8");
+	}
+	
+	
+	function club_contact2_email() {
+		return club_config("club_contact2_email");
+	}
+
+	function club_contact2_email_html() {
+		return htmlspecialchars(club_contact2_email(), ENT_QUOTES, "UTF-8");
+	}
+	
+	
+	function address_line1() {
+		return club_config("address_line1");
+	}
+
+	function address_line1_html() {
+		return htmlspecialchars(address_line1(), ENT_QUOTES, "UTF-8");
+	}
+	
+	
+	function address_line2() {
+		return club_config("address_line2");
+	}
+
+	function address_line2_html() {
+		return htmlspecialchars(address_line2(), ENT_QUOTES, "UTF-8");
+	}
+	
+	
+	function city() {
+		return club_config("city");
+	}
+
+	function city_html() {
+		return htmlspecialchars(city(), ENT_QUOTES, "UTF-8");
+	}
+	
+	
+	function state() {
+		return club_config("state");
+	}
+
+	function state_html() {
+		return htmlspecialchars(state(), ENT_QUOTES, "UTF-8");
+	}
+	
+	
+	function country() {
+		return club_config("country");
+	}
+
+	function country_html() {
+		return htmlspecialchars(country(), ENT_QUOTES, "UTF-8");
+	}
+	
+	
+	function pincode() {
+		return club_config("pincode");
+	}
+
+	function pincode_html() {
+		return htmlspecialchars(pincode(), ENT_QUOTES, "UTF-8");
+	}
+	
 }

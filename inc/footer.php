@@ -18,12 +18,12 @@ color:#fff !important;
 				<h3 class="text-color white"><span class="border-color">Contacts</span></h3>
 				<div class="content">
 					<p>
-						<b><u><?php echo club_short_name_html(); ?> President</u></b>: Mr. Manju Vikas Sastry V, ESFIP, AFIP | sastry.vikas@gmail.com<br>
-						<b><u><?php echo club_short_name_html(); ?> Secretary</u></b>: Ms. Prema Kakade, ESFIP, EFIAP, EFIP, cMoL, E.CPE | pmkakade@gmail.com<br><br>
+						<b><u><?php echo club_contact1_label_html(); ?></u></b>: <?php echo club_contact1_name_html(); ?> | <?php echo club_contact1_email_html(); ?><br>
+						<b><u><?php echo club_contact2_label_html(); ?></u></b>: <?php echo club_contact2_name_html(); ?> | <?php echo club_contact2_email_html(); ?><br><br>
 						<strong><?php echo club_name_html(); ?> Bengaluru</strong><br/>
-						TT Hall, 3rd Floor,<br/>
-						State Youth Centre of Karnataka, <br/>
-						Nrupathanga Road, Bengaluru - 560001.<br/>
+						<?php echo address_line1_html(); ?><br/>
+						<?php echo address_line2_html(); ?><br/>
+						<?php echo city_html(); ?> - <?php echo pincode_html(); ?>.<br/>
 						Email: <a href="mailto:<?php echo salon_email_html(); ?>" class="white"><?php echo salon_email_html(); ?></a><br/>
 						Phone: +91-9513-<?php echo club_short_name_html(); ?>-BLR (+91-9513-977-257)
 						<br><br>
