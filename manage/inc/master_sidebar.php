@@ -70,6 +70,10 @@ div#loader_img img {
                 <a href="manage_home.php"> <span class="nav-label"><i class="fa fa-home"></i> Home </span></a>
             </li>
 
+            <li class="<?= ($self == 'club_settings.php') ? 'active' : '';?>">
+                <a href="club_settings.php"> <span class="nav-label"><i class="fa fa-cog"></i> Club Settings </span></a>
+            </li>
+
 			<li class="<?= ($self == 'backup_db.php') ? 'active' : '';?>">
 				<li><a href="javascript:void(0)" onclick="launchPage('op/backup_db.php', true)" ><i class="fa fa-database"></i> Backup Database </a></li>
             </li>

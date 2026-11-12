@@ -1,12 +1,68 @@
 <?php
 if (!function_exists("club_config")) {
+	function club_config_path() {
+		return __DIR__ . "/../club.config";
+	}
+
+	function club_config_keys() {
+		return array(
+			"club_name",
+			"club_short_name",
+			"yps_website_without_www",
+			"yps_website_with_www",
+			"contact_email",
+			"salon_email",
+			"contest_email",
+			"club_contact1_label",
+			"club_contact1_name",
+			"club_contact1_email",
+			"club_contact1_phone",
+			"club_contact2_label",
+			"club_contact2_name",
+			"club_contact2_email",
+			"club_contact2_phone",
+			"address_line1",
+			"address_line2",
+			"city",
+			"state",
+			"country",
+			"pincode",
+		);
+	}
+
+	function club_config_ini_line($key, $value) {
+		if ($value === "")
+			return $key . " = ";
+		$escaped = str_replace(array("\\", "\""), array("\\\\", "\\\""), $value);
+		return $key . ' = "' . $escaped . '"';
+	}
+
+	function club_config_save($values) {
+		$lines = array(
+			"; Club identity for the salon application.",
+			"; Change club_name here when this system is used by another club.",
+			"",
+		);
+		foreach (club_config_keys() as $key) {
+			$val = isset($values[$key]) ? $values[$key] : "";
+			$lines[] = club_config_ini_line($key, trim($val));
+		}
+		$path = club_config_path();
+		$written = file_put_contents($path, implode("\n", $lines) . "\n", LOCK_EX);
+		return $written !== false;
+	}
+
 	function club_config($key = null) {
 		static $config = null;
-		if ($config === null) {
-			$parsed = parse_ini_file(__DIR__ . "/../club.config");
+		static $config_mtime = null;
+		$path = club_config_path();
+		$mtime = is_file($path) ? filemtime($path) : 0;
+		if ($config === null || $config_mtime !== $mtime) {
+			$parsed = parse_ini_file($path);
 			$config = is_array($parsed) ? $parsed : array();
 			if (empty($config["club_name"]))
 				$config["club_name"] = "Youth Photographic Society";
+			$config_mtime = $mtime;
 		}
 		if ($key === null)
 			return $config;
@@ -150,6 +206,14 @@ if (!function_exists("club_config")) {
 
 	function club_contact2_email_html() {
 		return htmlspecialchars(club_contact2_email(), ENT_QUOTES, "UTF-8");
+	}
+
+	function club_contact2_phone() {
+		return club_config("club_contact2_phone");
+	}
+
+	function club_contact2_phone_html() {
+		return htmlspecialchars(club_contact2_phone(), ENT_QUOTES, "UTF-8");
 	}
 	
 	
