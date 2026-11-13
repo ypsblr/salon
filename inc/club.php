@@ -269,5 +269,103 @@ if (!function_exists("club_config")) {
 	function pincode_html() {
 		return htmlspecialchars(pincode(), ENT_QUOTES, "UTF-8");
 	}
-	
+
+	function club_logo_filename() {
+		return "ypsLogo.png";
+	}
+
+	function club_logo_path() {
+		return __DIR__ . "/../img/" . club_logo_filename();
+	}
+
+	function club_logo_exists() {
+		return is_file(club_logo_path());
+	}
+
+	function club_logo_web_path() {
+		return "img/" . club_logo_filename();
+	}
+
+	function club_logo_version_suffix() {
+		if (!club_logo_exists())
+			return "";
+		return "?v=" . (int) filemtime(club_logo_path());
+	}
+
+	function club_logo_url_root() {
+		return "/" . club_logo_web_path();
+	}
+
+	/** Site-root path for &lt;img src&gt; (e.g. /img/ypsLogo.png?v=…). */
+	function club_logo_src() {
+		return club_logo_url_root() . club_logo_version_suffix();
+	}
+
+	function club_logo_src_html() {
+		return htmlspecialchars(club_logo_src(), ENT_QUOTES, "UTF-8");
+	}
+
+	/** Absolute URL for payment gateways, PDF builders, etc. */
+	function club_logo_url() {
+		if (!function_exists("http_method"))
+			return club_logo_src();
+		return http_method() . $_SERVER["SERVER_NAME"] . club_logo_src();
+	}
+
+	function club_logo_url_html() {
+		return htmlspecialchars(club_logo_url(), ENT_QUOTES, "UTF-8");
+	}
+
+	/** Mail/HTML template token replacements for club logo. */
+	function club_logo_mail_pairs() {
+		return array("club-logo-url" => club_logo_url());
+	}
+
+	/**
+	 * Save uploaded club logo to img/ypsLogo.png (used site-wide).
+	 * Accepts PNG, JPEG, or GIF; non-PNG formats are converted when GD is available.
+	 *
+	 * @param array $file One entry from $_FILES
+	 * @return true on success, false on failure; true if no file was uploaded
+	 */
+	function club_logo_save_upload($file) {
+		if (!isset($file["error"]) || $file["error"] === UPLOAD_ERR_NO_FILE)
+			return true;
+		if ($file["error"] !== UPLOAD_ERR_OK)
+			return false;
+		if (!is_uploaded_file($file["tmp_name"]))
+			return false;
+
+		$info = @getimagesize($file["tmp_name"]);
+		if ($info === false)
+			return false;
+
+		$img_dir = __DIR__ . "/../img";
+		if (!is_dir($img_dir))
+			return false;
+
+		$dest = club_logo_path();
+		$type = $info[2];
+
+		if ($type === IMAGETYPE_PNG)
+			return move_uploaded_file($file["tmp_name"], $dest);
+
+		if (!function_exists("imagepng"))
+			return false;
+
+		$src = null;
+		if ($type === IMAGETYPE_JPEG && function_exists("imagecreatefromjpeg"))
+			$src = @imagecreatefromjpeg($file["tmp_name"]);
+		elseif ($type === IMAGETYPE_GIF && function_exists("imagecreatefromgif"))
+			$src = @imagecreatefromgif($file["tmp_name"]);
+		if ($src === false || $src === null)
+			return false;
+
+		imagealphablending($src, false);
+		imagesavealpha($src, true);
+		$ok = imagepng($src, $dest);
+		imagedestroy($src);
+		return $ok;
+	}
+
 }

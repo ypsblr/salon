@@ -252,7 +252,7 @@ if(isset($_SESSION['jury_id']) ) {  // to prevent being run from command line an
 							<div class="row" style="width: 100%; height: 100%; padding-bottom: 15px;">
 								<div class="col-sm-12" style="height: 80%;">
 									<a href="/jurypanel/index.php">
-										<img src="../../img/ypsLogo.png" style="max-width: 100%; max-height: 100%;">
+										<img src="<?php echo club_logo_src_html(); ?>" alt="<?php echo club_name_html(); ?>" style="max-width: 100%; max-height: 100%;">
 									</a>
 								</div>
 								<div class="col-sm-12" style="height: 20%;">

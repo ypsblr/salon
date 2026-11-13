@@ -1,4 +1,5 @@
 <?php
+include_once(__DIR__ . "/../inc/club.php");
 /*************************************/
 /** ==============================  **/
 /**  this is a PRODUCTION VERSION   **/
@@ -13,7 +14,7 @@ function initiate_paypal($purpose, $amount, $currency, $yearmonth, $profile_id, 
 	$return_url = http_method() . $_SERVER['SERVER_NAME'] . "/" . $redirect;
 	$cancel_url = http_method() . $_SERVER['SERVER_NAME'] . "/" . $cancelled;
 	$notify_url = http_method() . $_SERVER['SERVER_NAME'] . "/op/paypal_hook.php";
-	$logo_url = http_method() . $_SERVER['SERVER_NAME'] . "/img/ypsLogo.png";
+	$logo_url = club_logo_url();
 
     $querystring = '';
     

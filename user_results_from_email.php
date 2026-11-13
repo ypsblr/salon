@@ -828,7 +828,7 @@ function countChar(val) {
 
 					},
 					images : {
-								ypslogo : '<?= http_method() . $_SERVER['SERVER_NAME'] . '/img/ypsLogo.png';?>',
+								ypslogo : '<?= club_logo_url_html(); ?>',
 								report_banner : '<?= http_method() . $_SERVER['SERVER_NAME'] . "/salons/$yearmonth/img/results_banner.jpg";?>',
 					},
 			};

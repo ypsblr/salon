@@ -14,6 +14,7 @@ else
 
 
 function replace_values ($str, $pairs) {
+	$pairs = array_merge(club_logo_mail_pairs(), $pairs);
 	foreach ($pairs as $key => $value)
 		$str = str_replace("[" . $key . "]", $value, $str);
 	return $str;

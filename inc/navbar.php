@@ -2,6 +2,7 @@
 date_default_timezone_set("Asia/Kolkata");
 include("inc/analyticstracking.php");
 include_once("inc/connect.php");
+include_once(__DIR__ . "/club.php");
 // include("inc/get_contest.php");
 include("inc/topbar.php");
 
@@ -27,7 +28,7 @@ $row = mysqli_fetch_array($query);
 
 		<!-- Logos -->
 		<div class="pull-left hidden-xs" style="margin-top: 4px; margin-bottom: 4px;">
-			<img src="img/ypsLogo.png" style="margin-left: 0px; height: 80px;">
+			<img src="<?php echo club_logo_src_html(); ?>" alt="<?php echo club_name_html(); ?>" style="margin-left: 0px; height: 80px;">
 		</div>
         <!-- Navbar Links -->
         <div class="navbar-collapse collapse">

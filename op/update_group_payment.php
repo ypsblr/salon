@@ -64,7 +64,7 @@ function initiate_paypal($purpose, $amount, $currency, $yearmonth, $club_id, $na
 	$return_url = http_method() . $_SERVER['SERVER_NAME'] . "/" . $redirect;
 	$cancel_url = http_method() . $_SERVER['SERVER_NAME'] . "/" . $cancelled;
 	$notify_url = http_method() . $_SERVER['SERVER_NAME'] . "/op/paypal_hook.php";
-	$logo_url = http_method() . $_SERVER['SERVER_NAME'] . "/img/ypsLogo.png";
+	$logo_url = club_logo_url();
 
     $querystring = '';
 

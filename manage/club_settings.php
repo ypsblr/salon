@@ -15,10 +15,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_club_settings'])
 	foreach (club_config_keys() as $key) {
 		$values[$key] = isset($_POST[$key]) ? $_POST[$key] : "";
 	}
-	if (club_config_save($values))
-		$_SESSION['success_msg'] = "Club settings saved.";
-	else
-		$_SESSION['err_msg'] = "Could not write club.config. Check file permissions on the server.";
+	$config_saved = club_config_save($values);
+	$logo_saved = true;
+	if (isset($_FILES['club_logo']) && $_FILES['club_logo']['error'] !== UPLOAD_ERR_NO_FILE)
+		$logo_saved = club_logo_save_upload($_FILES['club_logo']);
+
+	$errors = array();
+	if (!$config_saved)
+		$errors[] = "Could not write club.config. Check file permissions on the server.";
+	if (!$logo_saved)
+		$errors[] = "Could not upload the club logo. Use a PNG, JPEG, or GIF image (max size allowed by PHP).";
+
+	if ($errors)
+		$_SESSION['err_msg'] = implode(" ", $errors);
+	else {
+		$parts = array();
+		if ($config_saved)
+			$parts[] = "Club settings saved.";
+		if (isset($_FILES['club_logo']) && $_FILES['club_logo']['error'] !== UPLOAD_ERR_NO_FILE && $logo_saved)
+			$parts[] = "Club logo updated.";
+		if ($parts)
+			$_SESSION['success_msg'] = implode(" ", $parts);
+	}
 	header("Location: club_settings.php");
 	die();
 }
@@ -64,7 +82,7 @@ $config = club_config();
 		</div>
 
 		<div class="content">
-			<form role="form" method="post" action="club_settings.php" id="club_settings_form">
+			<form role="form" method="post" action="club_settings.php" id="club_settings_form" enctype="multipart/form-data">
 				<input type="hidden" name="save_club_settings" value="1">
 
 				<div class="hpanel">
@@ -80,6 +98,18 @@ $config = club_config();
 								<label for="club_short_name">Short name (abbreviation)</label>
 								<input type="text" class="form-control" name="club_short_name" id="club_short_name"
 									value="<?php echo club_short_name_html(); ?>">
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-sm-6">
+								<label for="club_logo">Club logo</label>
+								<p class="text-muted small">Saved as <code>img/<?php echo club_logo_filename(); ?></code> and used across the site (navbar, emails, payment pages, etc.).</p>
+								<?php if (club_logo_exists()) { ?>
+									<p><img src="../<?php echo club_logo_web_path(); ?>?v=<?php echo (int) filemtime(club_logo_path()); ?>" alt="<?php echo club_name_html(); ?>" style="max-height: 120px; max-width: 100%; border: 1px solid #ddd; padding: 4px; background: #fff;"></p>
+								<?php } else { ?>
+									<p class="text-warning"><i class="fa fa-exclamation-triangle"></i> No logo file yet. Upload one below.</p>
+								<?php } ?>
+								<input type="file" class="form-control" name="club_logo" id="club_logo" accept=".png,.jpg,.jpeg,.gif,image/png,image/jpeg,image/gif">
 							</div>
 						</div>
 					</div>

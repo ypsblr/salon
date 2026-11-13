@@ -756,7 +756,7 @@ if (file_exists("salons/$yearmonth/blob/member_video.php")) {
 								},
 					],
 					images : {
-								ypslogo : '<?= http_method() . $_SERVER['SERVER_NAME'] . '/img/ypsLogo.png';?>',
+								ypslogo : '<?= club_logo_url_html(); ?>',
 					},
 			};
 			$(".pdf-avatar").filter("[data-filter='" + group_filter + "']").each(function(index, img){

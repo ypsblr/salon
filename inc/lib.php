@@ -225,6 +225,7 @@ function merge_data($message_blob, $data, $yearmonth = "")
 
 	if (file_exists("salons/$yearmonth/blob/" . $message_blob)) {
 		$message = file_get_contents("salons/$yearmonth/blob/" . $message_blob);
+		$data = array_merge(club_logo_mail_pairs(), $data);
 		foreach ($data as $variable => $value)
 			$message = str_replace("[" . $variable . "]", $value, $message);
 
