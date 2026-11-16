@@ -100,9 +100,17 @@ if ( isset($_SESSION['admin_id']) && isset($_REQUEST['yearmonth']) && isset($_RE
 	$sql = "COMMIT";
 	mysqli_query($DBCON, $sql) or sql_json_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
 
+	salon_logo_ensure_dir($yearmonth);
+
+	$logo_msg = "";
+	if (isset($_FILES['salon_logo']) && $_FILES['salon_logo']['error'] !== UPLOAD_ERR_NO_FILE) {
+		if (!salon_logo_save_upload($yearmonth, $_FILES['salon_logo']))
+			$logo_msg = " Details saved, but the logo could not be uploaded. Use a PNG, JPEG, or GIF image.";
+	}
+
 	$resArray = [];
 	$resArray['success'] = TRUE;
-	$resArray['msg'] = "";
+	$resArray['msg'] = $logo_msg;
 	echo json_encode($resArray);
 	die();
 

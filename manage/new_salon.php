@@ -163,6 +163,8 @@ if ( isset($_SESSION['admin_id']) ) {
 					</div>
 				</div>
 
+				<?php include("inc/salon_logo_field.php"); ?>
+
 				<!-- Some switches -->
 				<div class="row form-group">
 					<div class="col-sm-4">
@@ -389,9 +391,12 @@ jQuery.validator.addMethod(
 							$('#loader_img').hide();
 							response = JSON.parse(response);
 							if(response.success){
+								var okText = "Contest has been created successfully.";
+								if (response.msg && String(response.msg).trim())
+									okText += String(response.msg).trim();
 								swal({
 										title: "Details Saved",
-										text: "Contest has been created successfully.",
+										text: okText,
 										icon: "success",
 										confirmButtonClass: 'btn-success',
 										confirmButtonText: 'Great'

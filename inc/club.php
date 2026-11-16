@@ -368,4 +368,124 @@ if (!function_exists("club_config")) {
 		return $ok;
 	}
 
+	function salon_logo_filename() {
+		return "salon_logo.jpg";
+	}
+
+	function salon_logo_yearmonth_valid($yearmonth) {
+		$ym = (string) $yearmonth;
+		return preg_match('/^\d{6}$/', $ym) === 1;
+	}
+
+	function salon_logo_dir($yearmonth) {
+		return __DIR__ . "/../salons/" . $yearmonth . "/img";
+	}
+
+	function salon_logo_path($yearmonth) {
+		return salon_logo_dir($yearmonth) . "/" . salon_logo_filename();
+	}
+
+	function salon_logo_exists($yearmonth) {
+		if (!salon_logo_yearmonth_valid($yearmonth))
+			return false;
+		return is_file(salon_logo_path($yearmonth));
+	}
+
+	function salon_logo_web_path($yearmonth) {
+		return "salons/" . $yearmonth . "/img/" . salon_logo_filename();
+	}
+
+	function salon_logo_url_root($yearmonth) {
+		return "/" . salon_logo_web_path($yearmonth);
+	}
+
+	function salon_logo_version_suffix($yearmonth) {
+		if (!salon_logo_exists($yearmonth))
+			return "";
+		return "?v=" . (int) filemtime(salon_logo_path($yearmonth));
+	}
+
+	/** Site-root path for &lt;img src&gt; (e.g. /salons/202208/img/salon_logo.jpg?v=…). */
+	function salon_logo_src($yearmonth) {
+		return salon_logo_url_root($yearmonth) . salon_logo_version_suffix($yearmonth);
+	}
+
+	function salon_logo_src_html($yearmonth) {
+		return htmlspecialchars(salon_logo_src($yearmonth), ENT_QUOTES, "UTF-8");
+	}
+
+	/** Relative path from manage/ for preview images. */
+	function salon_logo_manage_src($yearmonth) {
+		return "../" . salon_logo_web_path($yearmonth) . salon_logo_version_suffix($yearmonth);
+	}
+
+	function salon_logo_ensure_dir($yearmonth) {
+		if (!salon_logo_yearmonth_valid($yearmonth))
+			return false;
+		$base = __DIR__ . "/../salons/" . $yearmonth;
+		if (!is_dir($base) && !@mkdir($base, 0775, true))
+			return false;
+		$blob = $base . "/blob";
+		if (!is_dir($blob) && !@mkdir($blob, 0775, true))
+			return false;
+		$img = salon_logo_dir($yearmonth);
+		if (!is_dir($img) && !@mkdir($img, 0775, true))
+			return false;
+		return is_dir($img);
+	}
+
+	/**
+	 * Save uploaded salon logo to salons/{yearmonth}/img/salon_logo.jpg.
+	 * Accepts PNG, JPEG, or GIF; non-JPEG formats are converted when GD is available.
+	 *
+	 * @param string|int $yearmonth Salon ID (YYYYMM)
+	 * @param array $file One entry from $_FILES
+	 * @return true on success, false on failure; true if no file was uploaded
+	 */
+	function salon_logo_save_upload($yearmonth, $file) {
+		if (!isset($file["error"]) || $file["error"] === UPLOAD_ERR_NO_FILE)
+			return true;
+		if ($file["error"] !== UPLOAD_ERR_OK)
+			return false;
+		if (!salon_logo_yearmonth_valid($yearmonth))
+			return false;
+		if (!is_uploaded_file($file["tmp_name"]))
+			return false;
+
+		$info = @getimagesize($file["tmp_name"]);
+		if ($info === false)
+			return false;
+
+		if (!salon_logo_ensure_dir($yearmonth))
+			return false;
+
+		$dest = salon_logo_path($yearmonth);
+		$type = $info[2];
+
+		if ($type === IMAGETYPE_JPEG)
+			return move_uploaded_file($file["tmp_name"], $dest);
+
+		if (!function_exists("imagejpeg"))
+			return false;
+
+		$src = null;
+		if ($type === IMAGETYPE_PNG && function_exists("imagecreatefrompng"))
+			$src = @imagecreatefrompng($file["tmp_name"]);
+		elseif ($type === IMAGETYPE_GIF && function_exists("imagecreatefromgif"))
+			$src = @imagecreatefromgif($file["tmp_name"]);
+		elseif ($type === IMAGETYPE_JPEG && function_exists("imagecreatefromjpeg"))
+			$src = @imagecreatefromjpeg($file["tmp_name"]);
+		if ($src === false || $src === null)
+			return false;
+
+		if ($type === IMAGETYPE_PNG) {
+			imagealphablending($src, true);
+			imagesavealpha($src, true);
+		}
+
+		$ok = imagejpeg($src, $dest, 90);
+		imagedestroy($src);
+		return $ok;
+	}
+
 }
