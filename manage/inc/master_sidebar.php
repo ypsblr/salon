@@ -71,7 +71,7 @@ div#loader_img img {
             </li>
 
             <li class="<?= ($self == 'club_settings.php') ? 'active' : '';?>">
-                <a href="club_settings.php"> <span class="nav-label"><i class="fa fa-cog"></i> Club Settings </span></a>
+                <a href="club_settings.php"> <span class="nav-label"><i class="fa fa-cog"></i> Salon Host </span></a>
             </li>
 
 			<li class="<?= ($self == 'backup_db.php') ? 'active' : '';?>">
