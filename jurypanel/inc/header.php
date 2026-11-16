@@ -1,6 +1,8 @@
+    <?php include_once(__DIR__ . "/../../inc/club.php"); ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="<?php echo site_favicon_link_type_html(); ?>" href="<?php echo site_favicon_link_href_html(); ?>">
 
 
     <!-- plugin styles -->

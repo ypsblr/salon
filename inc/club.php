@@ -328,6 +328,124 @@ if (!function_exists("club_config")) {
 	 * @param array $file One entry from $_FILES
 	 * @return true on success, false on failure; true if no file was uploaded
 	 */
+	function site_favicon_filename() {
+		return "favicon.png";
+	}
+
+	function site_favicon_path() {
+		return __DIR__ . "/../img/" . site_favicon_filename();
+	}
+
+	function site_favicon_exists() {
+		return is_file(site_favicon_path());
+	}
+
+	function site_favicon_web_path() {
+		return "img/" . site_favicon_filename();
+	}
+
+	function site_favicon_version_suffix() {
+		if (!site_favicon_exists())
+			return "";
+		return "?v=" . (int) filemtime(site_favicon_path());
+	}
+
+	function site_favicon_url_root() {
+		return "/" . site_favicon_web_path();
+	}
+
+	function site_favicon_src() {
+		return site_favicon_url_root() . site_favicon_version_suffix();
+	}
+
+	function site_favicon_src_html() {
+		return htmlspecialchars(site_favicon_src(), ENT_QUOTES, "UTF-8");
+	}
+
+	/**
+	 * Save uploaded site favicon to img/favicon.png.
+	 * Accepts PNG, JPEG, or GIF; non-PNG formats are converted when GD is available.
+	 *
+	 * @param array $file One entry from $_FILES
+	 * @return true on success, false on failure; true if no file was uploaded
+	 */
+	function site_favicon_save_upload($file) {
+		if (!isset($file["error"]) || $file["error"] === UPLOAD_ERR_NO_FILE)
+			return true;
+		if ($file["error"] !== UPLOAD_ERR_OK)
+			return false;
+		if (!is_uploaded_file($file["tmp_name"]))
+			return false;
+
+		$img_dir = __DIR__ . "/../img";
+		if (!is_dir($img_dir) && !@mkdir($img_dir, 0775, true))
+			return false;
+
+		$name = isset($file["name"]) ? strtolower($file["name"]) : "";
+		if (preg_match('/\.ico$/', $name)) {
+			$dest = $img_dir . "/favicon.ico";
+			if (@move_uploaded_file($file["tmp_name"], $dest)) {
+				if (is_file(site_favicon_path()))
+					@unlink(site_favicon_path());
+				return true;
+			}
+			return false;
+		}
+
+		$info = @getimagesize($file["tmp_name"]);
+		if ($info === false)
+			return false;
+
+		$dest = site_favicon_path();
+		$type = $info[2];
+
+		if (is_file($img_dir . "/favicon.ico"))
+			@unlink($img_dir . "/favicon.ico");
+
+		if ($type === IMAGETYPE_PNG)
+			return move_uploaded_file($file["tmp_name"], $dest);
+
+		if (!function_exists("imagepng"))
+			return false;
+
+		$src = null;
+		if ($type === IMAGETYPE_JPEG && function_exists("imagecreatefromjpeg"))
+			$src = @imagecreatefromjpeg($file["tmp_name"]);
+		elseif ($type === IMAGETYPE_GIF && function_exists("imagecreatefromgif"))
+			$src = @imagecreatefromgif($file["tmp_name"]);
+		if ($src === false || $src === null)
+			return false;
+
+		imagealphablending($src, false);
+		imagesavealpha($src, true);
+		$ok = imagepng($src, $dest);
+		imagedestroy($src);
+		return $ok;
+	}
+
+	/** Path for &lt;link rel="icon"&gt; (prefers img/favicon.ico if present). */
+	function site_favicon_link_href() {
+		$ico = __DIR__ . "/../img/favicon.ico";
+		if (is_file($ico))
+			return "/img/favicon.ico?v=" . (int) filemtime($ico);
+		return site_favicon_src();
+	}
+
+	function site_favicon_link_href_html() {
+		return htmlspecialchars(site_favicon_link_href(), ENT_QUOTES, "UTF-8");
+	}
+
+	function site_favicon_link_type() {
+		$ico = __DIR__ . "/../img/favicon.ico";
+		if (is_file($ico))
+			return "image/x-icon";
+		return "image/png";
+	}
+
+	function site_favicon_link_type_html() {
+		return htmlspecialchars(site_favicon_link_type(), ENT_QUOTES, "UTF-8");
+	}
+
 	function club_logo_save_upload($file) {
 		if (!isset($file["error"]) || $file["error"] === UPLOAD_ERR_NO_FILE)
 			return true;

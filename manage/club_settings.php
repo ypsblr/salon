@@ -19,12 +19,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_club_settings'])
 	$logo_saved = true;
 	if (isset($_FILES['club_logo']) && $_FILES['club_logo']['error'] !== UPLOAD_ERR_NO_FILE)
 		$logo_saved = club_logo_save_upload($_FILES['club_logo']);
+	$favicon_saved = true;
+	if (isset($_FILES['site_favicon']) && $_FILES['site_favicon']['error'] !== UPLOAD_ERR_NO_FILE)
+		$favicon_saved = site_favicon_save_upload($_FILES['site_favicon']);
 
 	$errors = array();
 	if (!$config_saved)
 		$errors[] = "Could not write club.config. Check file permissions on the server.";
 	if (!$logo_saved)
 		$errors[] = "Could not upload the club logo. Use a PNG, JPEG, or GIF image (max size allowed by PHP).";
+	if (!$favicon_saved)
+		$errors[] = "Could not upload the favicon. Use a PNG, JPEG, GIF, or ICO file (max size allowed by PHP).";
 
 	if ($errors)
 		$_SESSION['err_msg'] = implode(" ", $errors);
@@ -34,6 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_club_settings'])
 			$parts[] = "Club settings saved.";
 		if (isset($_FILES['club_logo']) && $_FILES['club_logo']['error'] !== UPLOAD_ERR_NO_FILE && $logo_saved)
 			$parts[] = "Club logo updated.";
+		if (isset($_FILES['site_favicon']) && $_FILES['site_favicon']['error'] !== UPLOAD_ERR_NO_FILE && $favicon_saved)
+			$parts[] = "Site favicon updated.";
 		if ($parts)
 			$_SESSION['success_msg'] = implode(" ", $parts);
 	}
@@ -110,6 +117,23 @@ $config = club_config();
 									<p class="text-warning"><i class="fa fa-exclamation-triangle"></i> No logo file yet. Upload one below.</p>
 								<?php } ?>
 								<input type="file" class="form-control" name="club_logo" id="club_logo" accept=".png,.jpg,.jpeg,.gif,image/png,image/jpeg,image/gif">
+							</div>
+							<div class="col-sm-6">
+								<label for="site_favicon">Site favicon</label>
+								<p class="text-muted small">Saved as <code>img/favicon.png</code> (or <code>img/favicon.ico</code> if you upload an ICO). Used in browser tabs site-wide.</p>
+								<?php
+									$favicon_preview = "";
+									if (is_file(__DIR__ . "/../img/favicon.ico"))
+										$favicon_preview = "../img/favicon.ico?v=" . (int) filemtime(__DIR__ . "/../img/favicon.ico");
+									elseif (site_favicon_exists())
+										$favicon_preview = "../" . site_favicon_web_path() . site_favicon_version_suffix();
+								?>
+								<?php if ($favicon_preview !== "") { ?>
+									<p><img src="<?php echo htmlspecialchars($favicon_preview, ENT_QUOTES, "UTF-8"); ?>" alt="Site favicon" style="width: 32px; height: 32px; border: 1px solid #ddd; padding: 2px; background: #fff;"></p>
+								<?php } else { ?>
+									<p class="text-warning"><i class="fa fa-exclamation-triangle"></i> No favicon uploaded yet. Browsers may show a generic icon until you upload one.</p>
+								<?php } ?>
+								<input type="file" class="form-control" name="site_favicon" id="site_favicon" accept=".png,.jpg,.jpeg,.gif,.ico,image/png,image/jpeg,image/gif,image/x-icon">
 							</div>
 						</div>
 					</div>

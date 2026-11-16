@@ -36,7 +36,7 @@
 <meta name="twitter:creator" content="@ypsbengaluru">
 <meta name="twitter:image" content="https://salon.ypsbengaluru.in/img/44NS2026.png">
 
-<link rel="shortcut icon" href="favicon.png">
+<link rel="shortcut icon" type="<?php echo site_favicon_link_type_html(); ?>" href="<?php echo site_favicon_link_href_html(); ?>">
 
 <title><?php echo club_short_name_html(); ?> Salons</title>
 
