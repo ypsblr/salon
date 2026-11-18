@@ -40,20 +40,50 @@ if ( isset($_SESSION['admin_id']) ) {
 			"max_pics_per_entry" => "0", "max_width" => "1920", "max_height" => "1080", "max_file_size_in_mb" => "4",
 	);
 	$yearmonth = 0;
+	$clone_trace = null;
 
 	// Clone Salon, if yearmonth passed
 	if (isset($_REQUEST['yearmonth'])) {
 		$yearmonth = $_REQUEST['yearmonth'];
+		$log_dir = $_SERVER["DOCUMENT_ROOT"] . "/logs";
+		if (!is_dir($log_dir))
+			@mkdir($log_dir, 0755, true);
+
+		debug_dump("new_salon CLONE request", array(
+			"method" => isset($_SERVER["REQUEST_METHOD"]) ? $_SERVER["REQUEST_METHOD"] : "",
+			"yearmonth" => $yearmonth,
+			"clone_button" => isset($_REQUEST["clone-contest-button"]) ? "yes" : "no",
+			"request" => $_REQUEST,
+		), __FILE__, __LINE__);
+
 		$sql = "SELECT * FROM contest WHERE yearmonth = '$yearmonth' ";
 		$query = mysqli_query($DBCON, $sql)or sql_error($sql, mysqli_error($DBCON), __FILE__, __LINE__);
-		if (mysqli_num_rows($query) == 0)
+		if (mysqli_num_rows($query) == 0) {
 			$_SESSION['err_msg'] = "Salon for " . $yearmonth . " not found !";
+			$clone_trace = array(
+				"status" => "not_found",
+				"yearmonth" => $yearmonth,
+				"sql" => $sql,
+			);
+			debug_dump("new_salon CLONE not found", $clone_trace, __FILE__, __LINE__);
+		}
 		else {
 			$row = mysqli_fetch_array($query);
+			$left_default = array();
 			foreach ($salon as $field => $value) {
 				if (isset($row[$field]))
 					$salon[$field] = $row[$field];
+				else
+					$left_default[$field] = $value;
 			}
+			$clone_trace = array(
+				"status" => "loaded",
+				"yearmonth" => $yearmonth,
+				"contest_name" => $salon["contest_name"],
+				"filled" => $salon,
+				"left_at_default_because_null" => $left_default,
+			);
+			debug_dump("new_salon CLONE loaded", $clone_trace, __FILE__, __LINE__);
 		}
 	}
 
@@ -133,7 +163,7 @@ if ( isset($_SESSION['admin_id']) ) {
 									?>
 									</select>
 									<span class="input-group-btn">
-										<button type="submit" class="btn btn-info pull-right" name="clone-contest-button" id="clone-contest-button" ><i class="fa fa-copy"></i> CLONE </a>
+										<button type="submit" class="btn btn-info pull-right" name="clone-contest-button" id="clone-contest-button" ><i class="fa fa-copy"></i> CLONE </button>
 									</span>
 								</div>
 							</div>
@@ -296,6 +326,29 @@ if ( isset($_SESSION['admin_id']) ) {
 	$(document).ready(function(){
 		$("#submission_timezone").change(function(){
 			$("#submission_timezone_name").val($("#submission_timezone option:selected").text());
+		});
+
+		var serverTrace = <?= json_encode($clone_trace) ?>;
+		var lastClick = null;
+		try {
+			lastClick = JSON.parse(sessionStorage.getItem("clone-salon-click") || "null");
+			sessionStorage.removeItem("clone-salon-click");
+		} catch (e) {}
+		if (lastClick || serverTrace) {
+			console.log("CLONE debug", {
+				click: lastClick,
+				server: serverTrace
+			});
+		}
+
+		$("#clone-salon-form").on("submit", function () {
+			var payload = {
+				at: new Date().toISOString(),
+				yearmonth: $("#select-yearmonth").val(),
+				contest: $("#select-yearmonth option:selected").text()
+			};
+			console.log("CLONE button clicked, submitting form", payload);
+			try { sessionStorage.setItem("clone-salon-click", JSON.stringify(payload)); } catch (e) {}
 		});
 	});
 </script>
