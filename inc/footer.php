@@ -27,8 +27,8 @@ color:#fff !important;
 						Email: <a href="mailto:<?php echo salon_email_html(); ?>" class="white"><?php echo salon_email_html(); ?></a><br/>
 						Phone: +91-9513-<?php echo club_short_name_html(); ?>-BLR (+91-9513-977-257)
 						<br><br>
-						<a href="<?php echo yps_website_without_www_html(); ?>" target="_blank"  class="white"><i class="fa fa-globe"></i> ypsbengaluru.com</a><br/>
-						<a href="https://www.facebook.com/ypsbengaluru/" target="_blank" class="white"><i class="fa fa-facebook-square"></i> /ypsbengaluru</a><br/>
+						<a href="<?php echo yps_website_without_www_html(); ?>" target="_blank"  class="white"><i class="fa fa-globe"></i> <?php echo yps_website_link_label_html(); ?></a><br/>
+						<a href="<?php echo facebook_url_html(); ?>" target="_blank" class="white"><i class="fa fa-facebook-square"></i> <?php echo facebook_link_label_html(); ?></a><br/>
 						<a href="<?php echo yps_website_with_www_html(); ?>/membership-join/" target="_blank" class="white"><i class="fa fa-globe"></i> Become a Member of <?php echo club_short_name_html(); ?></a>
 					</p>
 				</div>

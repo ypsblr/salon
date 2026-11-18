@@ -108,6 +108,14 @@ $config = club_config();
 							</div>
 						</div>
 						<div class="row form-group">
+							<div class="col-sm-4">
+								<label for="estd_date">Estd Date</label>
+								<input type="date" class="form-control" name="estd_date" id="estd_date"
+									value="<?php echo club_estd_date_html(); ?>">
+								<p class="text-muted small">Used on the home page to show how many years the club has been established.</p>
+							</div>
+						</div>
+						<div class="row form-group">
 							<div class="col-sm-6">
 								<label for="club_logo">Club logo</label>
 								<p class="text-muted small">Saved as <code>img/<?php echo club_logo_filename(); ?></code> and used across the site (navbar, emails, payment pages, etc.).</p>
@@ -152,6 +160,27 @@ $config = club_config();
 								<label for="yps_website_with_www">Website (with www)</label>
 								<input type="url" class="form-control" name="yps_website_with_www" id="yps_website_with_www"
 									value="<?php echo yps_website_with_www_html(); ?>">
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-sm-4">
+								<label for="yps_website_link_label">Website link text (footer)</label>
+								<input type="text" class="form-control" name="yps_website_link_label" id="yps_website_link_label"
+									value="<?php echo yps_website_link_label_html(); ?>"
+									placeholder="e.g. ypsbengaluru.com">
+								<p class="text-muted small">Shown next to the globe icon in the site footer. Leave blank to use the host from “Website (no www)”.</p>
+							</div>
+							<div class="col-sm-4">
+								<label for="facebook_url">Facebook page URL</label>
+								<input type="url" class="form-control" name="facebook_url" id="facebook_url"
+									value="<?php echo facebook_url_html(); ?>"
+									placeholder="https://www.facebook.com/ypsbengaluru/">
+							</div>
+							<div class="col-sm-4">
+								<label for="facebook_link_label">Facebook link text (footer)</label>
+								<input type="text" class="form-control" name="facebook_link_label" id="facebook_link_label"
+									value="<?php echo facebook_link_label_html(); ?>"
+									placeholder="e.g. /ypsbengaluru">
 							</div>
 						</div>
 					</div>

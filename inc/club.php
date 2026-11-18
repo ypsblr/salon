@@ -8,8 +8,12 @@ if (!function_exists("club_config")) {
 		return array(
 			"club_name",
 			"club_short_name",
+			"estd_date",
 			"yps_website_without_www",
 			"yps_website_with_www",
+			"yps_website_link_label",
+			"facebook_url",
+			"facebook_link_label",
 			"contact_email",
 			"salon_email",
 			"contest_email",
@@ -92,6 +96,25 @@ if (!function_exists("club_config")) {
 		return htmlspecialchars(club_short_name(), ENT_QUOTES, "UTF-8");
 	}
 
+	function club_estd_date() {
+		$date = club_config("estd_date");
+		if ($date === "")
+			$date = "1971-09-01";
+		return $date;
+	}
+
+	function club_estd_date_html() {
+		return htmlspecialchars(club_estd_date(), ENT_QUOTES, "UTF-8");
+	}
+
+	/** Years since establishment (DateInterval from estd date to today). */
+	function club_age() {
+		$estd = date_create(club_estd_date());
+		if ($estd === false)
+			$estd = date_create("1971-09-01");
+		return date_diff($estd, date_create());
+	}
+
 	function yps_website_without_www() {
 		$url = club_config("yps_website_without_www");
 		if ($url === "")
@@ -112,6 +135,42 @@ if (!function_exists("club_config")) {
 
 	function yps_website_with_www_html() {
 		return htmlspecialchars(yps_website_with_www(), ENT_QUOTES, "UTF-8");
+	}
+
+	function yps_website_link_label() {
+		$label = club_config("yps_website_link_label");
+		if ($label !== "")
+			return $label;
+		$host = parse_url(yps_website_without_www(), PHP_URL_HOST);
+		if ($host !== false && $host !== null && $host !== "")
+			return $host;
+		return "ypsbengaluru.com";
+	}
+
+	function yps_website_link_label_html() {
+		return htmlspecialchars(yps_website_link_label(), ENT_QUOTES, "UTF-8");
+	}
+
+	function facebook_url() {
+		$url = club_config("facebook_url");
+		if ($url === "")
+			$url = "https://www.facebook.com/ypsbengaluru/";
+		return $url;
+	}
+
+	function facebook_url_html() {
+		return htmlspecialchars(facebook_url(), ENT_QUOTES, "UTF-8");
+	}
+
+	function facebook_link_label() {
+		$label = club_config("facebook_link_label");
+		if ($label === "")
+			$label = "/ypsbengaluru";
+		return $label;
+	}
+
+	function facebook_link_label_html() {
+		return htmlspecialchars(facebook_link_label(), ENT_QUOTES, "UTF-8");
 	}
 
 	function contact_email() {

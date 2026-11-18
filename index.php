@@ -1,6 +1,6 @@
 <?php
 include_once("inc/session.php");
-$yps_age = date_diff(date_create("1971-09-01"), date_create());
+$yps_age = club_age();
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,5 +1,7 @@
 .well-known/
 
+club.config
+
 generated/
 photos/
 logs/
